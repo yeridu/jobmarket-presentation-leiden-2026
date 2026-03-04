@@ -258,9 +258,9 @@ a:hover { color: var(--orange-dim); }
 .pillar-arrow { display: flex; align-items: center; justify-content: center; font-size: 1.8rem; color: var(--orange); font-weight: 700; align-self: center; }
 
 /* === VIDEO SLIDES === */
-.video-container { width: 65%; max-width: 780px; margin: 0 auto; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.08); }
-.video-container video { width: 100%; display: block; }
-.video-caption { font-size: 0.88rem; color: var(--text-light); margin-top: 12px; max-width: 48ch; text-align: center; }
+.video-container { width: 72%; max-width: 880px; margin: 0 auto; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.08); background: #000; }
+.video-container video { width: 100%; display: block; object-fit: contain; max-height: 55vh; }
+.video-caption { font-size: 0.88rem; color: var(--text-light); margin-top: 12px; max-width: 56ch; text-align: center; }
 
 /* === SYNTHESIS === */
 .synth-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; width: 100%; max-width: 900px; margin-top: 14px; }
@@ -549,21 +549,15 @@ img { -webkit-user-drag: none; user-select: none; }
      ═══════════════════════════════════════════════════════════ -->
 <section class="slide">
   <div class="research-arc"><div class="arc-dot"></div><div class="arc-dot active"></div><div class="arc-dot"></div><div class="arc-dot"></div><div class="arc-dot"></div><div class="arc-dot"></div></div>
-  <div class="slide-label anim">PAPER 2 &mdash; SCHOOL-BASED TRIAL</div>
-  <h2 class="slide-heading anim anim-d1" style="max-width:30ch; font-size:clamp(1.7rem,3.5vw,2.6rem)">Green Dot: Changing Norms Takes Years</h2>
-  <div class="accent-line anim anim-d2"></div>
-  <div class="video-container anim anim-d3">
+  <div class="slide-label anim">PAPER 2 &mdash; BYSTANDER TRIAL</div>
+  <h2 class="slide-heading anim anim-d1" style="font-size:clamp(1.5rem,3vw,2.2rem); margin-bottom:14px">Green Dot: Changing Norms Takes Years</h2>
+  <div class="video-container anim anim-d2">
     <video controls preload="metadata">
       <source src="videos/ARSAVB-GreenDot.mp4" type="video/mp4">
-      Your browser does not support the video tag.
     </video>
   </div>
-  <p class="video-caption anim anim-d4">4-year cluster-randomized trial &middot; 26 Kentucky high schools &middot; 16,509 students</p>
-  <div class="lc anim anim-d5" style="max-width:520px; margin-top:14px">
-    <div class="lc-label">Connection to Prof. Weenink</div>
-    <div class="lc-text">Green Dot trains bystanders to intervene &mdash; the same dynamic <strong>Weenink&rsquo;s &ldquo;Circles of Peace&rdquo;</strong> captures in real-time. My evaluation provides the outcome evidence for the process he observes.</div>
-  </div>
-  <div class="speaker-note">TIMING: 2.5 minutes. Play video if time allows, otherwise summarize. SAY: "Green Dot is a bystander intervention — it trains students to recognize warning signs and intervene. [Point to video] 26 high schools across Kentucky, randomly assigned. Over 16,000 students followed for four years. The key finding: nothing happened for the first three years. The change only appeared in Year 4. That tells us prevention takes sustained commitment — you can't run a program for one semester and expect lasting change. We also found that boys endorsed victim-blaming at nearly twice the rate of girls, and there were racial differences too. Attitudes shifted, but actual reported violence didn't decrease yet — norms change before behavior. [Weenink] Professor Weenink, your Circles of Peace work captures how bystanders spontaneously de-escalate violence. My evaluation shows what happens when you systematically train them over years. Together we could connect situational dynamics to population-level outcomes." TRANSITION: "From changing norms to understanding risk."</div>
+  <p class="video-caption anim anim-d3">4-year trial &middot; 26 Kentucky high schools &middot; 16,509 students &middot; Attitudes shifted only in Year 4</p>
+  <div class="speaker-note">TIMING: 2.5 minutes. Play video. KEY FINDINGS if summarizing: (1) No difference in Years 1-3, effect emerged ONLY in Year 4 — lasting change takes sustained effort. (2) Boys 1.7x more likely to endorse victim-blaming than girls. (3) Non-White students endorsed at 1.5x rate — need culturally responsive programming. (4) Attitudes shifted but reported violence did not yet decrease — norms change before behavior. CONNECTION TO WEENINK: Green Dot trains bystanders to intervene — the same dynamic Weenink's "Circles of Peace" captures in real-time. My evaluation provides outcome evidence for the process he observes. Together we could connect situational dynamics to population-level outcomes.</div>
 </section>
 
 <!-- ═══════════════════════════════════════════════════════════
@@ -572,20 +566,14 @@ img { -webkit-user-drag: none; user-select: none; }
 <section class="slide">
   <div class="research-arc"><div class="arc-dot"></div><div class="arc-dot"></div><div class="arc-dot active"></div><div class="arc-dot"></div><div class="arc-dot"></div><div class="arc-dot"></div></div>
   <div class="slide-label anim">PAPER 3 &mdash; NATIONAL SURVEY</div>
-  <h2 class="slide-heading anim anim-d1" style="max-width:30ch; font-size:clamp(1.7rem,3.5vw,2.6rem)">Why Opioids? Not All Substances Are Equal</h2>
-  <div class="accent-line anim anim-d2"></div>
-  <div class="video-container anim anim-d3">
+  <h2 class="slide-heading anim anim-d1" style="font-size:clamp(1.5rem,3vw,2.2rem); margin-bottom:14px">Why Opioids? Bullying Is the Unique Link</h2>
+  <div class="video-container anim anim-d2">
     <video controls preload="metadata">
       <source src="videos/NMPOU-YRBS.mp4" type="video/mp4">
-      Your browser does not support the video tag.
     </video>
   </div>
-  <p class="video-caption anim anim-d4">20,103 U.S. high school students &middot; YRBS 2023 &middot; Three explanations tested</p>
-  <div class="lc anim anim-d5" style="max-width:520px; margin-top:14px">
-    <div class="lc-label">Deaths of Despair connection</div>
-    <div class="lc-text">Opioid misuse clusters with suicidal thoughts, dating violence, and bullying &mdash; the convergence of despair-driven outcomes. Extends <strong>Prof. Liem &amp; Moeller&rsquo;s</strong> work on drugs and violence.</div>
-  </div>
-  <div class="speaker-note">TIMING: 2.5 minutes. Play video if time allows. SAY: "Why do some teenagers turn specifically to opioids, and not other substances? I tested three explanations with 20,000 U.S. high schoolers. [Play clip or summarize] Risk-taking, emotional pain, and tough life circumstances — all three mattered. But bullying stood out: it was the ONLY factor uniquely linked to opioid use and not to alcohol, marijuana, cigarettes, or cocaine. Social rejection activates the same brain pathways opioids target — being excluded literally hurts, and opioids relieve that pain. The story also differs by ethnicity: for Latino youth, life circumstances are the primary driver. For White youth, prescription access. For multiracial youth, identity-related stress. And all three explanations overlap in the same young people — this is accumulated burden, not neat categories. [Leiden] This directly extends the drugs-violence framework Professor Liem and Moeller have developed." TRANSITION: "From understanding risk to building solutions."</div>
+  <p class="video-caption anim anim-d3">20,103 U.S. high schoolers &middot; YRBS 2023 &middot; Bullying uniquely linked to opioid use, not other substances</p>
+  <div class="speaker-note">TIMING: 2.5 minutes. Play video. KEY FINDINGS: (1) Three explanations tested: risk-taking, emotional pain, tough circumstances — all mattered. (2) Bullying ONLY factor uniquely linked to opioids, not alcohol/marijuana/cigarettes/cocaine. Social rejection activates same brain pathways opioids target. (3) Ethnic differences: Latino youth driven by life circumstances, White youth by prescription access, Black youth by emotional distress, Multiracial youth highest rates (identity stress). (4) All three explanations overlap — accumulated burden, not neat categories. DEATHS OF DESPAIR CONNECTION: Opioid misuse clusters with suicidal thoughts, dating violence, and bullying — extends Prof. Liem &amp; Moeller's drugs-violence framework.</div>
 </section>
 
 <!-- ═══════════════════════════════════════════════════════════
@@ -623,12 +611,12 @@ img { -webkit-user-drag: none; user-select: none; }
         </ul>
       </div>
     </div>
-    <div style="text-align:left">
-      <div class="lc anim anim-d3" style="margin-bottom:10px">
+    <div style="text-align:left; display:flex; flex-direction:column; justify-content:space-between; align-self:stretch">
+      <div class="lc anim anim-d3">
         <div class="lc-label">Connection to Dr. Di Marco</div>
         <div class="lc-text">Module 2 &mdash; the &ldquo;Man Box&rdquo; sessions &mdash; puts into practice what Di Marco studies from the perpetrator-narrative side. His research shows <strong>why rigid masculinity norms produce violence</strong>. My curriculum makes sure the next generation never gets there. <strong>Upstream prevention meets downstream understanding.</strong></div>
       </div>
-      <div class="lc anim anim-d4" style="margin-bottom:10px">
+      <div class="lc anim anim-d4">
         <div class="lc-label">Connection to van Wieringen</div>
         <div class="lc-text">THRIVE intervenes at the age when harmful ideas take root &mdash; directly relevant to her research on <strong>how violence and extreme beliefs pass from one generation to the next</strong> within families.</div>
       </div>
@@ -851,12 +839,36 @@ img { -webkit-user-drag: none; user-select: none; }
   <div class="speaker-note">TIMING: 30 seconds. Eye contact. Let it land. SAY: "I don't just study violence from a distance. I work alongside communities to prevent it. [Pause] My ethnographic training taught me to listen before I try to model. National data tells me where to go. And fieldwork — in Belizean classrooms, Tijuana police stations, communities at the U.S.-Mexico border — that's where the real work happens. [Pause] I believe effective prevention starts from the bottom up. With communities, not committees. With listening, not lecturing. And I bring that approach — along with the computational tools to make it scalable — to everything I do. Thank you." Q&A PREP: (1) How would you prioritize among the three aims? Start with Aim 1 because it's the quickest win using existing data. Aim 3 is the long-term legacy piece. (2) What challenges adapting text analysis to Dutch text? Language-specific tokenization, but the pipeline architecture transfers. Would collaborate with Dutch-speaking colleagues for validation. (3) How does THRIVE scale beyond one school? The MICS5 cascade methodology identifies the next target communities. (4) Grant mechanisms? NWO Veni, NWO Open Competition, Horizon Europe Cluster 2. (5) Your on-the-ground experience — how does it inform your research differently? I've seen what programs look like when they fail in practice. Theory doesn't prepare you for a 16-year-old who won't participate, or a principal who cancels your sessions. Ethnographic experience means I design for reality, not for journals. (6) Dutch language? I'm committed to learning. I speak English and Spanish fluently.</div>
 </section>
 
+<!-- ═══════════════════════════════════════════════════════════
+     SLIDE 17: THANK YOU & Q&A
+     ═══════════════════════════════════════════════════════════ -->
+<section class="slide" style="background:var(--black); color:var(--white)">
+  <h1 class="anim" style="font-family:var(--font-display); font-size:clamp(2.8rem,6vw,4.2rem); font-weight:700; color:var(--white); margin-bottom:14px">Thank You</h1>
+  <div class="chapter-line anim anim-d1"></div>
+  <div class="anim anim-d2" style="margin-top:36px; display:flex; flex-direction:column; align-items:center; gap:12px">
+    <div style="font-family:var(--font-display); font-size:1.3rem; font-weight:600; color:var(--white)">Mario Morales</div>
+    <div style="font-size:0.95rem; color:rgba(255,255,255,0.65)">mariomorales@arizona.edu</div>
+    <a href="https://www.yeridu.com" target="_blank" style="font-family:var(--font-display); font-size:1.4rem; font-weight:700; color:var(--orange); margin-top:6px">yeridu.com</a>
+  </div>
+  <p class="anim anim-d3" style="margin-top:44px; font-size:1.05rem; color:rgba(255,255,255,0.5); max-width:34ch; text-align:center; font-style:italic; line-height:1.5">Looking forward to the conversation &mdash; I came here with questions for you, too.</p>
+  <div class="speaker-note">Q&amp;A PREPARATION NOTES:
+
+(1) "How will you adapt your U.S./Belize methods to a European context?"
+My text analysis pipeline is language-agnostic in architecture — the NLP components need retraining on Dutch/European text, but the pipeline design transfers directly. I would collaborate with Dutch-speaking colleagues for validation. For the Caribbean work, the former Dutch colonies (Curaçao, Aruba, Bonaire, Sint Maarten, Saba, Sint Eustatius) share institutional structures with the Netherlands — the Dutch Caribbean Homicide Monitor already uses the EHM framework, which is a ready-made bridge.
+
+(2) "What's your Dutch language plan?"
+I'm committed to learning Dutch. I speak English and Spanish fluently, and I learned English as an adult through immersion fieldwork. I would begin Dutch classes before arriving and continue intensively during my first year. Most MSc courses are in English, but I take integration seriously — being part of a community means speaking its language.
+
+(3) "How does your work fit the Deaths of Despair framing specifically?"
+Deaths of Despair — Case and Deaton's framework — is the thread connecting my NVDRS work (partner-related deaths across all three dimensions), my YRBS study (substance use as response to accumulated hardship), and my intervention work (THRIVE addresses upstream conditions that produce despair). What I add is the prevention dimension: not just documenting despair, but testing whether community-based programs can interrupt the trajectories that produce it.</div>
+</section>
+
 </div><!-- /deck -->
 
 <!-- NAV -->
 <nav class="nav">
   <button class="nav-btn" id="prev-btn" aria-label="Previous"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg></button>
-  <span class="slide-counter" id="slide-counter">1 / 16</span>
+  <span class="slide-counter" id="slide-counter">1 / 17</span>
   <button class="nav-btn" id="next-btn" aria-label="Next"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></button>
   <span class="pres-timer" id="pres-timer">00:00</span>
 </nav>
@@ -928,23 +940,23 @@ img { -webkit-user-drag: none; user-select: none; }
 
   var narrations = {
     gap: [
-      { id: "gap-bring-1", text: "What I bring first is upstream prevention and life-skills programming. I don't study violence after it happens — I design programs that prevent it. Programs built from the ground up, with young people in schools and communities. This is where my heart is." },
-      { id: "gap-bring-2", text: "Second, I bring computational tools — text analysis and machine learning — that can find patterns in the data your group already collects. I can help make your existing infrastructure more powerful." },
-      { id: "gap-bring-3", text: "Third, and this is especially meaningful for a group at a Dutch university — I've done community-partnered fieldwork in the Caribbean. In former colonial territories where the legacies of colonialism still shape who faces violence and who gets help. I test whether frameworks built in Europe hold in places where structural harm has deeper, inherited roots. I believe we can do this work together." },
-      { id: "gap-bring-4", text: "And fourth, I bring real-world experience with security institutions. I've trained over eighteen hundred police officers in harm reduction in Tijuana. This isn't theoretical. It's years of working inside the systems that are supposed to protect people, understanding when they don't, and helping them do better." }
+      { id: "gap-bring-1", text: "Your group has deep expertise in understanding violence. Homicide patterns, perpetrator trajectories, policing dynamics. What I add is the prevention side — programs that stop these trajectories before they start." },
+      { id: "gap-bring-2", text: "I also bring computational tools. Text analysis, machine learning. Things that plug directly into data you already collect. It's about making your infrastructure do more." },
+      { id: "gap-bring-3", text: "And I've done community-partnered research in the Caribbean, in former colonies where the same structural inequalities you study here play out in very different ways. I think there's real potential for comparative work." },
+      { id: "gap-bring-4", text: "Plus years of practical experience inside security institutions. Training police officers, reforming programs. That kind of field knowledge complements what you do here." }
     ],
     web: [
-      { id: "node-liem", text: "Professor Liem, the text analysis tools I built for U.S. death records can be directly adapted to the European Homicide Monitor and the Femicide Monitor. I also bring access to U.S. data through my collaboration with Dr. Maeve Wallace. Together, we could publish the first comparative U.S.-European analysis of partner violence in death records. I've already designed the pipeline." },
-      { id: "node-weenink", text: "Professor Weenink, your Circles of Peace research captures how bystanders spontaneously de-escalate violence in real time. My Green Dot evaluation shows what happens when you systematically train those bystanders over four years. A co-authored study bridging your micro-level observation with my outcome evaluation would be genuinely new." },
-      { id: "node-dimarco", text: "Dr. Di Marco, your book Taking Lives reveals how rigid masculinity norms create a pathway to lethal violence. My THRIVE curriculum puts prevention at the other end of that pathway. I would love to co-supervise a PhD student who examines masculinity norms from both ends — your desistance narratives and my prevention programs." },
-      { id: "node-vanwieringen", text: "Layla, THRIVE intervenes at the exact developmental stage when harmful beliefs take root — which is the core question of your intergenerational transmission research. I would like to develop a family-focused prevention module that builds directly on your work." },
-      { id: "node-aarten", text: "Dr. Aarten, my analysis of twenty thousand U.S. adolescents shows how violence, substance use, and suicidal thoughts co-occur in the same young people. This maps directly onto your victim-offender overlap research. A joint analysis combining my data with European datasets could reveal whether these patterns look the same across very different contexts." },
-      { id: "node-dekker", text: "Professor Dekker, my systematic review of dating violence prevention programs and my THRIVE gender-based violence modules are directly relevant to your Tackle project. I would contribute an evidence synthesis that directly informs the intervention design. These are not abstract connections. I've read your work and I have a plan." }
+      { id: "node-liem", text: "Professor Liem, I see a natural bridge between my NVDRS work on hidden partners in pregnancy-associated deaths and your domestic homicide research. My text analysis pipeline could bring something genuinely useful to the Femicide Monitor." },
+      { id: "node-weenink", text: "Professor Weenink, your work on bystander dynamics and third-party de-escalation maps directly onto my Green Dot evaluation. You study how de-escalation happens naturally. I've tested a program that trains people to do it intentionally. I think comparing those perspectives could be really interesting." },
+      { id: "node-dimarco", text: "Dr. Di Marco, THRIVE's masculinities module is essentially the prevention-side counterpart to your research on how rigid gender norms shape perpetration. We're approaching the same problem from opposite ends, and that feels like a productive place to start." },
+      { id: "node-vanwieringen", text: "I've also found promising points of connection with van Wieringen's work on intergenerational transmission of violence." },
+      { id: "node-aarten", text: "With Dr. Aarten's research on the victim-offender overlap in young people." },
+      { id: "node-dekker", text: "And with Professor Dekker's T@CKLE project on sexual violence prevention. I'd be excited to explore these collaborations as I learn more about their ongoing work." }
     ],
     teach: [
-      { id: "teach-msc", text: "In the Master's specialization in Violence, Interventions, and Policing, I can teach interpersonal violence prevention, policing and harm reduction — drawing on my years of working directly with police officers in Tijuana — and gender-based violence. I bring field experience from the programs I've designed and evaluated, not just familiarity with the literature. I've seen what works and what doesn't in real settings." },
-      { id: "teach-comp", text: "I would also offer something this specialization doesn't currently have: a computational methods course. Text analysis, machine learning, and reproducible data workflows in R and Python. I also use AI as a teaching tool — not to replace critical thinking, but to help students learn faster and work more efficiently." },
-      { id: "teach-minor", text: "And for the Minor in Violence Studies — this is an undergraduate program open to students from any faculty at Leiden. It introduces them to understanding violence from multiple perspectives. I would bring courses on violence prevention approaches and Global South case studies — real-world examples from Belize, Mexico, and the U.S.-Mexico border. Because I believe students learn best when they see how research connects to real communities and real people." }
+      { id: "teach-msc", text: "For the Master's specialization, I can teach violence prevention, policing and harm reduction — that's from years of actually working with police in Tijuana — and gender-based violence. I bring practical experience, not just readings." },
+      { id: "teach-comp", text: "I'd also offer something new here. A computational methods course. Text analysis, machine learning, reproducible workflows. And I use AI as a teaching tool — to help students work smarter, not to replace their thinking." },
+      { id: "teach-minor", text: "And for the Minor in Violence Studies, I'd bring prevention science and Global South case studies into the curriculum. Real examples from Belize, Mexico, the border. Because understanding violence means going where it happens and listening to the people who live it." }
     ]
   };
 
@@ -1001,7 +1013,7 @@ img { -webkit-user-drag: none; user-select: none; }
     var utt = new SpeechSynthesisUtterance(segments[idx].text);
     var voice = pickVoice();
     if (voice) utt.voice = voice;
-    utt.rate = 1.08;
+    utt.rate = 1.12;
     utt.pitch = 1.0;
     utt.onend = function () { speakSegments(btn, segments, idx + 1); };
     utt.onerror = function () { speakSegments(btn, segments, idx + 1); };
