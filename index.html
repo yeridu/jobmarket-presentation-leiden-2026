@@ -255,6 +255,30 @@ img { -webkit-user-drag: none; user-select: none; }
 .photo-shield { position: relative; display: inline-block; }
 .photo-shield::after { content: ""; position: absolute; inset: 0; z-index: 1; }
 
+/* === NARRATE BUTTON === */
+.narrate-btn {
+  display: inline-flex; align-items: center; gap: 8px;
+  margin-top: 16px; padding: 10px 24px;
+  border: 2px solid var(--orange); border-radius: 999px;
+  background: var(--white); color: var(--orange);
+  font-family: var(--font-body); font-size: 0.92rem; font-weight: 600;
+  cursor: pointer; transition: background 200ms var(--ease), color 200ms var(--ease);
+}
+.narrate-btn:hover { background: var(--orange); color: var(--white); }
+.narrate-btn.playing { background: var(--orange); color: var(--white); }
+.narrate-icon { width: 18px; height: 18px; }
+
+/* Speaking highlights */
+.card.speaking, .teach-card.speaking { border-left: 3px solid var(--orange); background: var(--orange-glow); transition: background 350ms var(--ease), border-color 350ms var(--ease); }
+.web-node.speaking .wn-dot { background: var(--orange); color: var(--white); transform: scale(1.15); transition: all 350ms var(--ease); }
+.web-node.speaking .wn-name { color: var(--orange); }
+
+/* White chapter card variant */
+.chapter-card.chapter-white { background: var(--white); color: var(--black); }
+.chapter-card.chapter-white .chapter-title { color: var(--black); }
+.chapter-card.chapter-white .chapter-num { color: var(--orange); }
+.chapter-card.chapter-white .chapter-line { background: var(--orange); }
+
 /* === RESPONSIVE === */
 @media (max-width: 900px) {
   .slide { padding: 28px 20px; }
@@ -346,10 +370,14 @@ img { -webkit-user-drag: none; user-select: none; }
     <div class="gap-plus anim anim-d4">+</div>
     <div class="gap-col anim anim-d5">
       <div style="font-size:0.72rem; font-weight:700; text-transform:uppercase; letter-spacing:0.14em; color:var(--green); margin-bottom:6px; text-align:left">I bring</div>
-      <div class="card accent-green"><div class="card-title">Upstream Prevention &amp; Life-Skills</div><div class="card-desc">School-based programs, bystander interventions, life-skills curricula &mdash; preventing violence before it happens, from the ground up</div></div>
-      <div class="card accent-green"><div class="card-title">Computational Tools</div><div class="card-desc">Text analysis, machine learning, survey-based modeling &mdash; tools that scale your existing data</div></div>
-      <div class="card accent-green"><div class="card-title">Caribbean &amp; Postcolonial Field Research</div><div class="card-desc">Community-partnered work in former colonies in the Caribbean &mdash; where colonial legacies still shape who experiences violence and who gets help. Testing whether a framework built in Europe holds where structural harm has deeper, inherited roots.</div></div>
-      <div class="card accent-green"><div class="card-title">Practitioner-Level Security Experience</div><div class="card-desc">1,800+ police officers trained in harm reduction. Federal Police institutional reform. From curriculum design to on-the-ground delivery.</div></div>
+      <div class="card accent-green" id="gap-bring-1"><div class="card-title">Upstream Prevention &amp; Life-Skills</div><div class="card-desc">School-based programs, bystander interventions, life-skills curricula &mdash; preventing violence before it happens, from the ground up</div></div>
+      <div class="card accent-green" id="gap-bring-2"><div class="card-title">Computational Tools</div><div class="card-desc">Text analysis, machine learning, survey-based modeling &mdash; tools that scale your existing data</div></div>
+      <div class="card accent-green" id="gap-bring-3"><div class="card-title">Caribbean &amp; Postcolonial Field Research</div><div class="card-desc">Community-partnered work in former colonies in the Caribbean &mdash; where colonial legacies still shape who experiences violence and who gets help. Testing whether a framework built in Europe holds where structural harm has deeper, inherited roots.</div></div>
+      <div class="card accent-green" id="gap-bring-4"><div class="card-title">Practitioner-Level Security Experience</div><div class="card-desc">1,800+ police officers trained in harm reduction. Federal Police institutional reform. From curriculum design to on-the-ground delivery.</div></div>
+      <button class="narrate-btn anim anim-d6" type="button" data-narrate="gap">
+        <svg class="narrate-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>
+        Listen
+      </button>
     </div>
   </div>
   <div class="speaker-note">TIMING: 2.5 minutes. Frame as ADDITIVE, never competitive. SAY: "Let me be direct about the fit. [Left column] This group already does outstanding work — Professor Liem's European Homicide Monitor, Professor Weenink's work on violence dynamics, Dr. Di Marco's research on why men kill their partners, and the governance dimension with policing. [Gesture right] What I add is four things. First, upstream prevention: I don't just study violence after it happens — I build programs that prevent it, starting with communities. Second, computational tools that can scale your existing data. Third — and this matters for a group at a Dutch university — I've done community-partnered fieldwork in the Caribbean, in former colonial territories where the legacies of colonialism continue to shape who is exposed to violence and who has access to prevention. In postcolonial contexts, you can't just export a European framework and expect it to work. You have to build with communities, from the bottom up. And fourth, I've trained 1,800 police officers. I know how institutions work from the inside." TRANSITION: "Let me show you the research."</div>
@@ -358,7 +386,7 @@ img { -webkit-user-drag: none; user-select: none; }
 <!-- ═══════════════════════════════════════════════════════════
      ACT II CHAPTER CARD
      ═══════════════════════════════════════════════════════════ -->
-<section class="slide chapter-card">
+<section class="slide chapter-card chapter-white">
   <div class="chapter-num anim">ACT TWO</div>
   <div class="chapter-title anim anim-d1">What I&rsquo;ve Done</div>
   <div class="chapter-line anim anim-d2"></div>
@@ -641,7 +669,7 @@ img { -webkit-user-drag: none; user-select: none; }
 <!-- ═══════════════════════════════════════════════════════════
      ACT III CHAPTER CARD
      ═══════════════════════════════════════════════════════════ -->
-<section class="slide chapter-card">
+<section class="slide chapter-card chapter-white">
   <div class="chapter-num anim">ACT THREE</div>
   <div class="chapter-title anim anim-d1">What I&rsquo;ll Do &mdash; With You</div>
   <div class="chapter-line anim anim-d2"></div>
@@ -668,37 +696,41 @@ img { -webkit-user-drag: none; user-select: none; }
       <div class="wc-name">Mario Morales</div>
       <div class="wc-role">Prevention &middot; Field<br>Computational</div>
     </div>
-    <div class="web-node" style="top:15px; left:40px">
+    <div class="web-node" id="node-liem" style="top:15px; left:40px">
       <div class="wn-dot">ML</div>
       <div class="wn-name">Prof. Liem</div>
       <div class="wn-detail">Joint paper: NLP on EHM<br>+ comparative U.S.-EU analysis</div>
     </div>
-    <div class="web-node" style="top:15px; right:40px">
+    <div class="web-node" id="node-weenink" style="top:15px; right:40px">
       <div class="wn-dot">BY</div>
       <div class="wn-name">Prof. Weenink</div>
       <div class="wn-detail">Co-authored study: bystander<br>dynamics + outcome evaluation</div>
     </div>
-    <div class="web-node" style="top:220px; left:-25px">
+    <div class="web-node" id="node-dimarco" style="top:220px; left:-25px">
       <div class="wn-dot">MN</div>
       <div class="wn-name">Dr. Di Marco</div>
       <div class="wn-detail">Co-supervised PhD: masculinity<br>norms in prevention + desistance</div>
     </div>
-    <div class="web-node" style="top:220px; right:-25px">
+    <div class="web-node" id="node-vanwieringen" style="top:220px; right:-25px">
       <div class="wn-dot">IG</div>
       <div class="wn-name">van Wieringen</div>
       <div class="wn-detail">Family prevention module for<br>intergenerational transmission</div>
     </div>
-    <div class="web-node" style="bottom:0; left:80px">
+    <div class="web-node" id="node-aarten" style="bottom:0; left:80px">
       <div class="wn-dot">YV</div>
       <div class="wn-name">Dr. Aarten</div>
       <div class="wn-detail">Joint analysis: youth<br>victim-offender overlap (YRBS + EU)</div>
     </div>
-    <div class="web-node" style="bottom:0; right:80px">
+    <div class="web-node" id="node-dekker" style="bottom:0; right:80px">
       <div class="wn-dot">SV</div>
       <div class="wn-name">Prof. Dekker</div>
       <div class="wn-detail">Evidence synthesis for<br>T@CKLE intervention design</div>
     </div>
   </div>
+  <button class="narrate-btn anim anim-d4" type="button" data-narrate="web">
+    <svg class="narrate-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>
+    Listen
+  </button>
   <div class="speaker-note">TIMING: 2 minutes. Point to each node and name concrete outputs. SAY: "Let me make the connections concrete. These are not vague overlaps — these are specific collaborations I've planned. [Liem] Professor Liem: a joint paper applying my text analysis methods to EHM case descriptions, plus a comparative U.S.-European analysis of partner violence in death records. I bring NVDRS access through my collaboration with Dr. Maeve Wallace. [Weenink] Professor Weenink: a co-authored study connecting your micro-level observation of bystander dynamics with my population-level outcome evaluation from Green Dot. [Di Marco] Dr. Di Marco: co-supervision of a PhD student examining masculinity norms from both ends — prevention programs and desistance narratives. Your 'Taking Lives' work and my THRIVE curriculum are two sides of the same coin. [Van Wieringen] Layla: a family-focused prevention module building on your intergenerational transmission research. [Aarten] Dr. Aarten: joint analysis of the victim-offender overlap in adolescents, combining my YRBS data with European datasets. [Dekker] Professor Dekker: an evidence synthesis directly informing the T@CKLE intervention design, drawn from my systematic review. These are not ideas I came up with this morning. I have read your work, and I know how to build on it."</div>
 </section>
 
@@ -741,19 +773,23 @@ img { -webkit-user-drag: none; user-select: none; }
   <h2 class="slide-heading anim anim-d1">Ready for Your Curriculum</h2>
   <div class="accent-line anim anim-d2"></div>
   <div class="teaching-grid">
-    <div class="teach-card anim anim-d3">
+    <div class="teach-card anim anim-d3" id="teach-msc">
       <div class="tc-title">MSc Criminology: Violence, Interventions &amp; Policing</div>
       <div class="tc-desc">I can teach courses on <strong>interpersonal violence prevention</strong>, <strong>policing and harm reduction</strong> (drawing on ESCUDO &mdash; 1,800+ officers), and <strong>gender-based violence</strong>. I bring field experience from the programs I&rsquo;ve designed and evaluated, not just the literature.</div>
     </div>
-    <div class="teach-card anim anim-d4">
+    <div class="teach-card anim anim-d4" id="teach-comp">
       <div class="tc-title">Computational Methods for Violence Research</div>
       <div class="tc-desc">A new course offering: <strong>text analysis, machine learning, and reproducible data workflows</strong> in R and Python. Currently, this specialization does not offer computational methods training. I&rsquo;m ready to build it, and I use AI as a teaching tool &mdash; not to replace critical thinking, but to make it faster.</div>
     </div>
-    <div class="teach-card anim anim-d5">
+    <div class="teach-card anim anim-d5" id="teach-minor">
       <div class="tc-title">Minor in Violence Studies</div>
       <div class="tc-desc">Leiden offers a <strong>Minor in Violence Studies</strong> for undergraduates from any faculty &mdash; an introduction to understanding violence across disciplines. I would contribute courses on <strong>violence prevention approaches</strong> and <strong>Global South case studies</strong>, bringing real-world examples from Belize, Mexico, and the U.S.-Mexico border into the classroom. Students would learn that prevention starts with communities, not textbooks.</div>
     </div>
   </div>
+  <button class="narrate-btn anim anim-d6" type="button" data-narrate="teach">
+    <svg class="narrate-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>
+    Listen
+  </button>
   <div class="speaker-note">TIMING: 1.5 minutes. Be concrete. SAY: "Three teaching contributions. First, the MSc specialization in Violence, Interventions, and Policing — I can teach interpersonal violence prevention, policing and harm reduction from my years working with police in Tijuana, and gender-based violence from my systematic review and THRIVE work. I bring field experience, not just literature. Second, a new course this specialization doesn't currently have: computational methods for violence research. Text analysis, machine learning, reproducible workflows. I use AI in my teaching — to scaffold learning, not replace it. Third, the Minor in Violence Studies. This is an undergraduate program open to students from any faculty at Leiden — an introduction to understanding violence from multiple angles. I would bring prevention science and Global South case studies into that curriculum. Real examples. Community-based work. The idea that if you want to understand violence, you have to go where it happens and listen to the people living it."</div>
 </section>
 
@@ -837,6 +873,106 @@ img { -webkit-user-drag: none; user-select: none; }
   }
 
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", init); else init();
+
+  /* ================================================================
+     NARRATION ENGINE — Web Speech API with segment-by-segment sync
+     ================================================================ */
+  var LISTEN_HTML = '<svg class="narrate-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg> Listen';
+  var STOP_HTML = '<svg class="narrate-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="4" width="4" height="16"/><rect x="14" y="4" width="4" height="16"/></svg> Stop';
+
+  var narrations = {
+    gap: [
+      { id: "gap-bring-1", text: "What I bring first is upstream prevention and life-skills programming. I don't study violence after it happens — I design programs that prevent it. Programs built from the ground up, with young people in schools and communities. This is where my heart is." },
+      { id: "gap-bring-2", text: "Second, I bring computational tools — text analysis and machine learning — that can find patterns in the data your group already collects. I can help make your existing infrastructure more powerful." },
+      { id: "gap-bring-3", text: "Third, and this is especially meaningful for a group at a Dutch university — I've done community-partnered fieldwork in the Caribbean. In former colonial territories where the legacies of colonialism still shape who faces violence and who gets help. I test whether frameworks built in Europe hold in places where structural harm has deeper, inherited roots. I believe we can do this work together." },
+      { id: "gap-bring-4", text: "And fourth, I bring real-world experience with security institutions. I've trained over eighteen hundred police officers in harm reduction in Tijuana. This isn't theoretical. It's years of working inside the systems that are supposed to protect people, understanding when they don't, and helping them do better." }
+    ],
+    web: [
+      { id: "node-liem", text: "Professor Liem, the text analysis tools I built for U.S. death records can be directly adapted to the European Homicide Monitor and the Femicide Monitor. I also bring access to U.S. data through my collaboration with Dr. Maeve Wallace. Together, we could publish the first comparative U.S.-European analysis of partner violence in death records. I've already designed the pipeline." },
+      { id: "node-weenink", text: "Professor Weenink, your Circles of Peace research captures how bystanders spontaneously de-escalate violence in real time. My Green Dot evaluation shows what happens when you systematically train those bystanders over four years. A co-authored study bridging your micro-level observation with my outcome evaluation would be genuinely new." },
+      { id: "node-dimarco", text: "Dr. Di Marco, your book Taking Lives reveals how rigid masculinity norms create a pathway to lethal violence. My THRIVE curriculum puts prevention at the other end of that pathway. I would love to co-supervise a PhD student who examines masculinity norms from both ends — your desistance narratives and my prevention programs." },
+      { id: "node-vanwieringen", text: "Layla, THRIVE intervenes at the exact developmental stage when harmful beliefs take root — which is the core question of your intergenerational transmission research. I would like to develop a family-focused prevention module that builds directly on your work." },
+      { id: "node-aarten", text: "Dr. Aarten, my analysis of twenty thousand U.S. adolescents shows how violence, substance use, and suicidal thoughts co-occur in the same young people. This maps directly onto your victim-offender overlap research. A joint analysis combining my data with European datasets could reveal whether these patterns look the same across very different contexts." },
+      { id: "node-dekker", text: "Professor Dekker, my systematic review of dating violence prevention programs and my THRIVE gender-based violence modules are directly relevant to your Tackle project. I would contribute an evidence synthesis that directly informs the intervention design. These are not abstract connections. I've read your work and I have a plan." }
+    ],
+    teach: [
+      { id: "teach-msc", text: "In the Master's specialization in Violence, Interventions, and Policing, I can teach interpersonal violence prevention, policing and harm reduction — drawing on my years of working directly with police officers in Tijuana — and gender-based violence. I bring field experience from the programs I've designed and evaluated, not just familiarity with the literature. I've seen what works and what doesn't in real settings." },
+      { id: "teach-comp", text: "I would also offer something this specialization doesn't currently have: a computational methods course. Text analysis, machine learning, and reproducible data workflows in R and Python. I also use AI as a teaching tool — not to replace critical thinking, but to help students learn faster and work more efficiently." },
+      { id: "teach-minor", text: "And for the Minor in Violence Studies — this is an undergraduate program open to students from any faculty at Leiden. It introduces them to understanding violence from multiple perspectives. I would bring courses on violence prevention approaches and Global South case studies — real-world examples from Belize, Mexico, and the U.S.-Mexico border. Because I believe students learn best when they see how research connects to real communities and real people." }
+    ]
+  };
+
+  var activeNarration = null;
+
+  function clearSpeaking() {
+    var els = document.querySelectorAll(".speaking");
+    for (var i = 0; i < els.length; i++) els[i].classList.remove("speaking");
+  }
+
+  function stopNarration() {
+    if (!activeNarration) return;
+    window.speechSynthesis.cancel();
+    clearSpeaking();
+    activeNarration.btn.classList.remove("playing");
+    activeNarration.btn.innerHTML = LISTEN_HTML;
+    activeNarration = null;
+  }
+
+  function pickVoice() {
+    var voices = window.speechSynthesis.getVoices();
+    var preferred = ["Microsoft Guy Online", "Google UK English Male", "Microsoft Mark", "Microsoft David", "Daniel", "Google US English"];
+    for (var p = 0; p < preferred.length; p++) {
+      for (var v = 0; v < voices.length; v++) {
+        if (voices[v].name.indexOf(preferred[p]) !== -1 && voices[v].lang.indexOf("en") === 0) return voices[v];
+      }
+    }
+    for (var v2 = 0; v2 < voices.length; v2++) {
+      if (voices[v2].lang.indexOf("en") === 0) return voices[v2];
+    }
+    return null;
+  }
+
+  function speakSegments(btn, segments, idx) {
+    if (!activeNarration || activeNarration.btn !== btn) return;
+    if (idx >= segments.length) { stopNarration(); return; }
+
+    clearSpeaking();
+    var el = document.getElementById(segments[idx].id);
+    if (el) { el.classList.add("speaking"); el.scrollIntoView && el.scrollIntoView({ behavior: "smooth", block: "nearest" }); }
+
+    var utt = new SpeechSynthesisUtterance(segments[idx].text);
+    var voice = pickVoice();
+    if (voice) utt.voice = voice;
+    utt.rate = 0.92;
+    utt.pitch = 1.0;
+    utt.onend = function () { speakSegments(btn, segments, idx + 1); };
+    utt.onerror = function () { speakSegments(btn, segments, idx + 1); };
+    window.speechSynthesis.speak(utt);
+  }
+
+  function startNarration(btn, key) {
+    var segments = narrations[key];
+    if (!segments) return;
+    btn.classList.add("playing");
+    btn.innerHTML = STOP_HTML;
+    activeNarration = { btn: btn };
+    speakSegments(btn, segments, 0);
+  }
+
+  document.addEventListener("click", function (e) {
+    var btn = e.target.closest(".narrate-btn");
+    if (!btn) return;
+    if (activeNarration && activeNarration.btn === btn) { stopNarration(); return; }
+    if (activeNarration) stopNarration();
+    var key = btn.getAttribute("data-narrate");
+    if (key && window.speechSynthesis) startNarration(btn, key);
+  });
+
+  // Preload voices (Chrome loads them async)
+  if (window.speechSynthesis) {
+    window.speechSynthesis.getVoices();
+    window.speechSynthesis.onvoiceschanged = function () { window.speechSynthesis.getVoices(); };
+  }
 })();
 </script>
 </body>
