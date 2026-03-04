@@ -782,127 +782,136 @@ img { -webkit-user-drag: none; user-select: none; }
     <!-- LEFT: Dual Map (overview + detail) -->
     <div class="anim anim-d3" style="text-align:center; display:flex; flex-direction:column; gap:6px">
 
-      <!-- OVERVIEW MAP: Caribbean basin in context -->
-      <svg viewBox="0 0 440 180" width="100%" style="max-width:480px; display:block; margin:0 auto">
-        <rect x="0" y="0" width="440" height="180" rx="8" fill="#f0f8ff" stroke="var(--border)" stroke-width="0.5"/>
+      <!-- OVERVIEW MAP: Caribbean basin — equirectangular projection -->
+      <!-- Projection: lon -100 to -55 → x 0..450, lat 5 to 35 → y 210..0 (7px/°) -->
+      <svg viewBox="0 0 450 215" width="100%" style="max-width:480px; display:block; margin:0 auto">
+        <rect x="0" y="0" width="450" height="215" rx="8" fill="#f0f8ff" stroke="var(--border)" stroke-width="0.5"/>
 
-        <!-- North America (simplified) -->
-        <path d="M20,15 L60,12 L100,8 L130,18 L145,40 L150,55 L140,62 L125,58 L110,65 L100,75 L90,78 L80,72 L70,60 L55,50 L35,42 L20,30 Z" fill="#e0ddd8" stroke="#ccc" stroke-width="0.5"/>
-        <!-- USA south coast -->
-        <path d="M35,42 L55,50 L70,60 L80,72 L90,78 L100,82 L115,78 L125,72 L140,68 L150,65 L155,60 L150,55" fill="#e0ddd8" stroke="#ccc" stroke-width="0.5"/>
-        <!-- Florida -->
-        <path d="M100,75 L105,82 L112,95 L115,105 L112,108 L108,102 L103,90 L98,80" fill="#e0ddd8" stroke="#ccc" stroke-width="0.5"/>
-        <text x="80" y="50" fill="#999" font-family="var(--font-body)" font-size="7" font-weight="600">USA</text>
+        <!-- USA Gulf + Atlantic coast (visible: TX→FL→GA) -->
+        <path d="M0,0 L0,63 Q15,60 25,63 Q35,58 50,42 Q58,38 70,37 Q90,34 108,32 Q125,30 140,33 Q155,38 170,48 L178,54 L183,60 Q188,68 192,77 L194,82 L196,90 L198,97 Q196,100 192,100 Q189,97 186,90 L183,82 L178,72 Q172,62 165,56 Q155,50 145,48 Q130,50 115,50 Q95,50 80,49 Q65,48 55,48 Q40,50 25,53 L0,63 L0,0 L450,0 L450,25 Q430,22 410,20 Q390,18 370,20 Q355,24 340,28 Q330,30 320,28 Q310,25 305,22 Q300,20 295,22 Q285,30 270,35 Q258,38 250,35 Q242,30 235,28 L230,30 Q220,38 215,42 Q210,46 207,48 L205,50 Q202,52 200,55 L198,58 L197,64 L198,70 Q199,75 198,80 Z" fill="#e0ddd8" stroke="#ccc" stroke-width="0.6"/>
+        <text x="120" y="25" fill="#999" font-family="var(--font-body)" font-size="8" font-weight="600">USA</text>
 
-        <!-- Mexico -->
-        <path d="M20,30 L35,42 L55,50 L50,60 L40,72 L30,80 L25,90 L30,100 L40,108 L55,112 L70,110 L80,105 L90,100 L95,95 L100,105 L95,115 L85,120 L70,118 L55,120 L40,115 L25,100 L15,85 L10,65 L15,45 Z" fill="#e0ddd8" stroke="#ccc" stroke-width="0.5"/>
-        <text x="40" y="90" fill="#999" font-family="var(--font-body)" font-size="6.5" font-weight="600">Mexico</text>
+        <!-- Mexico (east coast + Yucatan) -->
+        <path d="M0,63 L25,53 Q30,60 28,70 Q25,80 20,90 Q18,100 20,110 Q25,118 35,125 Q45,130 55,132 Q65,132 75,128 Q82,124 88,118 Q92,112 96,105 L98,100 L100,96 Q104,100 108,108 Q110,115 108,122 Q102,130 92,135 Q82,138 72,140 Q62,142 52,145 Q42,150 35,155 Q30,158 28,162 Q25,168 20,175 Q15,180 10,185 L0,195 L0,63 Z" fill="#e0ddd8" stroke="#ccc" stroke-width="0.6"/>
+        <!-- Yucatan peninsula -->
+        <path d="M96,105 L100,96 Q105,92 112,90 Q118,88 125,90 Q130,93 132,98 L130,105 Q126,110 120,112 Q114,114 108,112 Q104,110 100,108 Z" fill="#e0ddd8" stroke="#ccc" stroke-width="0.6"/>
+        <text x="40" y="105" fill="#999" font-family="var(--font-body)" font-size="7" font-weight="600">Mexico</text>
 
-        <!-- Central America -->
-        <path d="M95,115 L100,118 L108,122 L115,128 L120,132 L125,130 L128,125 L130,120 L128,115 L122,112 L115,110 L105,112 Z" fill="#e0ddd8" stroke="#ccc" stroke-width="0.5"/>
+        <!-- Central America (simplified) -->
+        <path d="M108,122 Q112,128 118,135 Q122,140 128,145 Q132,148 138,150 Q142,152 148,150 Q152,148 155,142 Q158,136 160,130 Q158,125 154,122 Q150,120 145,118 Q138,115 132,115 Q125,116 118,118 Z" fill="#e0ddd8" stroke="#ccc" stroke-width="0.6"/>
 
-        <!-- Cuba -->
-        <path d="M115,95 L130,90 L155,88 L175,90 L185,95 L180,98 L165,100 L145,100 L125,100 L115,98 Z" fill="#e0ddd8" stroke="#ccc" stroke-width="0.5"/>
-        <text x="150" y="87" fill="#999" font-family="var(--font-body)" font-size="5.5">Cuba</text>
+        <!-- Cuba (long east-west, slightly arched) -->
+        <path d="M148,88 Q160,84 175,82 Q190,80 210,82 Q230,84 248,90 Q255,94 252,98 Q245,100 235,100 Q215,98 195,97 Q175,96 160,94 Q150,92 148,90 Z" fill="#e0ddd8" stroke="#ccc" stroke-width="0.6"/>
+        <text x="195" y="79" fill="#999" font-family="var(--font-body)" font-size="6">Cuba</text>
+
+        <!-- Jamaica -->
+        <ellipse cx="225" cy="108" rx="10" ry="4" fill="#e0ddd8" stroke="#ccc" stroke-width="0.5"/>
 
         <!-- Hispaniola -->
-        <path d="M195,95 L215,92 L230,95 L228,100 L218,102 L200,100 Z" fill="#e0ddd8" stroke="#ccc" stroke-width="0.5"/>
+        <path d="M265,100 Q275,96 290,94 Q305,96 315,100 Q312,106 305,108 Q295,108 285,108 Q275,106 268,104 Z" fill="#e0ddd8" stroke="#ccc" stroke-width="0.5"/>
 
         <!-- Puerto Rico -->
-        <ellipse cx="245" cy="97" rx="8" ry="4" fill="#e0ddd8" stroke="#ccc" stroke-width="0.5"/>
+        <ellipse cx="340" cy="102" rx="9" ry="4" fill="#e0ddd8" stroke="#ccc" stroke-width="0.5"/>
+        <text x="340" y="96" text-anchor="middle" fill="#999" font-family="var(--font-body)" font-size="4.5">PR</text>
 
-        <!-- Lesser Antilles arc (small dots) -->
-        <circle cx="262" cy="95" r="1.5" fill="#d0cdc8"/>
-        <circle cx="268" cy="100" r="1.5" fill="#d0cdc8"/>
-        <circle cx="272" cy="106" r="1.5" fill="#d0cdc8"/>
-        <circle cx="275" cy="112" r="1.5" fill="#d0cdc8"/>
-        <circle cx="276" cy="118" r="1.5" fill="#d0cdc8"/>
-        <circle cx="275" cy="124" r="1.5" fill="#d0cdc8"/>
-        <circle cx="272" cy="130" r="1.5" fill="#d0cdc8"/>
-        <circle cx="268" cy="136" r="1.5" fill="#d0cdc8"/>
+        <!-- Lesser Antilles arc -->
+        <circle cx="358" cy="100" r="1.5" fill="#d0cdc8"/>
+        <circle cx="365" cy="108" r="1.5" fill="#d0cdc8"/>
+        <circle cx="370" cy="115" r="1.5" fill="#d0cdc8"/>
+        <circle cx="374" cy="122" r="1.5" fill="#d0cdc8"/>
+        <circle cx="378" cy="130" r="1.5" fill="#d0cdc8"/>
+        <circle cx="380" cy="138" r="1.5" fill="#d0cdc8"/>
+        <circle cx="380" cy="146" r="1.5" fill="#d0cdc8"/>
+        <circle cx="378" cy="154" r="1.5" fill="#d0cdc8"/>
+        <circle cx="374" cy="162" r="1.5" fill="#d0cdc8"/>
 
-        <!-- South America (north coast) -->
-        <path d="M130,140 L160,150 L200,155 L240,152 L280,145 L320,142 L360,148 L400,155 L430,160 L440,165 L440,180 L0,180 L0,170 L30,160 L60,152 L90,145 L130,140 Z" fill="#e0ddd8" stroke="#ccc" stroke-width="0.5"/>
-        <text x="280" y="168" fill="#999" font-family="var(--font-body)" font-size="7" font-weight="600">South America</text>
-        <text x="200" y="165" fill="#999" font-family="var(--font-body)" font-size="5.5">Venezuela</text>
-        <text x="330" y="158" fill="#999" font-family="var(--font-body)" font-size="5.5">Brazil</text>
+        <!-- South America (north coast: Colombia → Venezuela → Guyana) -->
+        <path d="M0,195 L10,185 Q20,180 32,180 Q50,178 70,180 Q90,182 110,180 Q130,176 150,170 Q170,166 190,168 Q210,170 230,172 Q250,170 270,168 Q290,168 310,172 Q330,176 348,180 Q365,184 382,188 Q400,192 420,198 Q435,204 450,210 L450,215 L0,215 Z" fill="#e0ddd8" stroke="#ccc" stroke-width="0.6"/>
+        <text x="210" y="195" fill="#999" font-family="var(--font-body)" font-size="6">Venezuela</text>
+        <text x="90" y="195" fill="#999" font-family="var(--font-body)" font-size="6">Colombia</text>
 
-        <!-- Netherlands indicator (top right) -->
-        <text x="390" y="18" fill="var(--orange)" font-family="var(--font-display)" font-size="6.5" font-weight="700" text-anchor="middle">NETHERLANDS</text>
-        <line x1="390" y1="22" x2="390" y2="35" stroke="var(--orange)" stroke-width="0.8" stroke-dasharray="2 2" marker-end="url(#arrowNL)"/>
-        <text x="390" y="42" fill="var(--orange)" font-family="var(--font-body)" font-size="5" text-anchor="middle">8,700 km away</text>
+        <!-- Netherlands indicator (top-right corner) -->
+        <text x="415" y="14" fill="var(--orange)" font-family="var(--font-display)" font-size="6.5" font-weight="700" text-anchor="middle">NETHERLANDS</text>
+        <line x1="415" y1="18" x2="415" y2="30" stroke="var(--orange)" stroke-width="0.8" stroke-dasharray="2 2"/>
+        <text x="415" y="38" fill="var(--orange)" font-family="var(--font-body)" font-size="5" text-anchor="middle">8,700 km &rarr;</text>
 
-        <!-- SSS highlight zone -->
-        <circle cx="270" cy="108" r="10" fill="none" stroke="var(--green)" stroke-width="1.8" stroke-dasharray="3 2"/>
-        <text x="292" y="105" fill="var(--green)" font-family="var(--font-display)" font-size="5.5" font-weight="700">SSS</text>
+        <!-- SSS highlight zone (~63°W, 17.5°N → x≈370, y≈123) -->
+        <circle cx="368" cy="118" r="14" fill="rgba(26,122,76,0.08)" stroke="var(--green)" stroke-width="1.8" stroke-dasharray="3 2"/>
+        <text x="390" y="115" fill="var(--green)" font-family="var(--font-display)" font-size="5.5" font-weight="700">SSS</text>
 
-        <!-- ABC highlight zone -->
-        <circle cx="258" cy="142" r="14" fill="none" stroke="var(--orange)" stroke-width="1.8" stroke-dasharray="3 2"/>
-        <text x="240" y="140" fill="var(--orange)" font-family="var(--font-display)" font-size="5.5" font-weight="700">ABC</text>
+        <!-- ABC highlight zone (~69°W, 12.2°N → x≈310, y≈160) -->
+        <circle cx="308" cy="160" r="16" fill="rgba(232,99,10,0.08)" stroke="var(--orange)" stroke-width="1.8" stroke-dasharray="3 2"/>
+        <text x="282" y="158" fill="var(--orange)" font-family="var(--font-display)" font-size="5.5" font-weight="700">ABC</text>
 
-        <!-- Zoom box connecting to detail map -->
-        <rect x="232" y="92" rx="3" ry="3" width="60" height="60" fill="none" stroke="var(--black)" stroke-width="1.2" stroke-dasharray="4 2" opacity="0.5"/>
+        <!-- Zoom rectangle around island region -->
+        <rect x="278" y="100" rx="3" ry="3" width="115" height="80" fill="none" stroke="var(--black)" stroke-width="1.2" stroke-dasharray="4 2" opacity="0.4"/>
 
-        <!-- Caribbean Sea label -->
-        <text x="180" y="120" fill="#aec8e0" font-family="var(--font-body)" font-size="7" font-style="italic" opacity="0.7">Caribbean Sea</text>
-        <text x="300" y="78" fill="#aec8e0" font-family="var(--font-body)" font-size="7" font-style="italic" opacity="0.7">Atlantic Ocean</text>
+        <!-- Water labels -->
+        <text x="220" y="130" fill="#aec8e0" font-family="var(--font-body)" font-size="7.5" font-style="italic" opacity="0.6">Caribbean Sea</text>
+        <text x="380" y="65" fill="#aec8e0" font-family="var(--font-body)" font-size="7" font-style="italic" opacity="0.6">Atlantic</text>
+        <text x="100" y="65" fill="#aec8e0" font-family="var(--font-body)" font-size="6.5" font-style="italic" opacity="0.5">Gulf of Mexico</text>
       </svg>
 
       <!-- Connector lines (zoom indicator) -->
       <div style="display:flex; justify-content:center; margin:-2px 0">
-        <svg viewBox="0 0 100 12" width="80" height="10">
-          <line x1="30" y1="0" x2="10" y2="12" stroke="var(--black)" stroke-width="0.6" opacity="0.35" stroke-dasharray="2 2"/>
-          <line x1="70" y1="0" x2="90" y2="12" stroke="var(--black)" stroke-width="0.6" opacity="0.35" stroke-dasharray="2 2"/>
+        <svg viewBox="0 0 100 10" width="90" height="8">
+          <line x1="28" y1="0" x2="8" y2="10" stroke="var(--black)" stroke-width="0.6" opacity="0.35" stroke-dasharray="2 2"/>
+          <line x1="72" y1="0" x2="92" y2="10" stroke="var(--black)" stroke-width="0.6" opacity="0.35" stroke-dasharray="2 2"/>
         </svg>
       </div>
 
       <!-- DETAIL MAP: Island positions -->
-      <svg viewBox="0 0 340 200" width="100%" style="max-width:480px; display:block; margin:0 auto">
-        <rect x="0" y="0" width="340" height="200" rx="8" fill="#f0f8ff" stroke="var(--border)" stroke-width="0.5"/>
-        <text x="170" y="16" text-anchor="middle" fill="var(--text-light)" font-family="var(--font-body)" font-size="7" font-weight="600" opacity="0.5">DETAIL VIEW</text>
+      <!-- Projection: lon -71 to -62 → x 0..340, lat 11 to 19 → y 190..0 (~24px/°) -->
+      <svg viewBox="0 0 340 190" width="100%" style="max-width:480px; display:block; margin:0 auto">
+        <rect x="0" y="0" width="340" height="190" rx="8" fill="#f0f8ff" stroke="var(--border)" stroke-width="0.5"/>
+        <text x="170" y="15" text-anchor="middle" fill="var(--text-light)" font-family="var(--font-body)" font-size="7" font-weight="600" opacity="0.5">DETAIL VIEW</text>
 
-        <!-- Venezuela coast hint -->
-        <path d="M0,175 Q80,162 160,168 Q240,174 340,165" fill="none" stroke="var(--border)" stroke-width="1" stroke-dasharray="4 3"/>
-        <text x="170" y="192" text-anchor="middle" fill="var(--text-light)" font-family="var(--font-body)" font-size="6.5" opacity="0.4">Venezuela</text>
+        <!-- Venezuela coast (lat ~10.5, ~12) -->
+        <path d="M0,172 Q40,165 80,168 Q140,174 200,170 Q260,166 310,170 Q330,172 340,175" fill="#e0ddd8" stroke="#ccc" stroke-width="0.8"/>
+        <path d="M0,172 Q40,165 80,168 Q140,174 200,170 Q260,166 310,170 Q330,172 340,175 L340,190 L0,190 Z" fill="#e0ddd8" opacity="0.4"/>
+        <text x="170" y="186" text-anchor="middle" fill="var(--text-light)" font-family="var(--font-body)" font-size="6.5" opacity="0.5">Venezuela</text>
 
-        <!-- ABC Islands (south, near Venezuela) -->
-        <!-- Aruba -->
-        <ellipse cx="60" cy="148" rx="14" ry="7" fill="var(--orange-glow)" stroke="var(--orange)" stroke-width="1.5"/>
-        <circle cx="60" cy="148" r="3" fill="var(--orange)"/>
-        <text x="60" y="136" text-anchor="middle" fill="var(--orange)" font-family="var(--font-display)" font-size="8" font-weight="700">Aruba</text>
+        <!-- ABC Islands (south, near Venezuela coast) -->
+        <!-- Aruba: -70.0, 12.5 → x=38, y=156 -->
+        <ellipse cx="38" cy="150" rx="14" ry="6" fill="var(--orange-glow)" stroke="var(--orange)" stroke-width="1.5"/>
+        <circle cx="38" cy="150" r="3" fill="var(--orange)"/>
+        <text x="38" y="138" text-anchor="middle" fill="var(--orange)" font-family="var(--font-display)" font-size="8" font-weight="700">Aruba</text>
 
-        <!-- Cura&ccedil;ao -->
-        <ellipse cx="140" cy="153" rx="22" ry="7" fill="var(--orange-glow)" stroke="var(--orange)" stroke-width="1.5"/>
-        <circle cx="140" cy="153" r="3" fill="var(--orange)"/>
-        <text x="140" y="141" text-anchor="middle" fill="var(--orange)" font-family="var(--font-display)" font-size="8" font-weight="700">Cura&ccedil;ao</text>
+        <!-- Cura&ccedil;ao: -69.0, 12.2 → x=76, y=163 -->
+        <ellipse cx="76" cy="155" rx="22" ry="6" fill="var(--orange-glow)" stroke="var(--orange)" stroke-width="1.5"/>
+        <circle cx="76" cy="155" r="3" fill="var(--orange)"/>
+        <text x="76" y="143" text-anchor="middle" fill="var(--orange)" font-family="var(--font-display)" font-size="8" font-weight="700">Cura&ccedil;ao</text>
 
-        <!-- Bonaire -->
-        <ellipse cx="210" cy="148" rx="12" ry="8" fill="var(--orange-glow)" stroke="var(--orange)" stroke-width="1.5"/>
-        <circle cx="210" cy="148" r="3" fill="var(--orange)"/>
-        <text x="210" y="136" text-anchor="middle" fill="var(--orange)" font-family="var(--font-display)" font-size="8" font-weight="700">Bonaire</text>
+        <!-- Bonaire: -68.3, 12.15 → x=102, y=164 -->
+        <ellipse cx="108" cy="153" rx="12" ry="7" fill="var(--orange-glow)" stroke="var(--orange)" stroke-width="1.5"/>
+        <circle cx="108" cy="153" r="3" fill="var(--orange)"/>
+        <text x="108" y="141" text-anchor="middle" fill="var(--orange)" font-family="var(--font-display)" font-size="8" font-weight="700">Bonaire</text>
 
         <!-- SSS Islands (north, Leeward) -->
-        <!-- Sint Maarten -->
-        <ellipse cx="270" cy="42" rx="11" ry="7" fill="var(--green-glow)" stroke="var(--green)" stroke-width="1.5"/>
-        <circle cx="270" cy="42" r="3" fill="var(--green)"/>
-        <text x="270" y="30" text-anchor="middle" fill="var(--green)" font-family="var(--font-display)" font-size="7.5" font-weight="700">St. Maarten</text>
+        <!-- St. Maarten: -63.05, 18.05 → x=300, y=23 -->
+        <ellipse cx="300" cy="30" rx="11" ry="6" fill="var(--green-glow)" stroke="var(--green)" stroke-width="1.5"/>
+        <circle cx="300" cy="30" r="3" fill="var(--green)"/>
+        <text x="300" y="20" text-anchor="middle" fill="var(--green)" font-family="var(--font-display)" font-size="7.5" font-weight="700">St. Maarten</text>
 
-        <!-- Saba -->
-        <circle cx="245" cy="72" r="6" fill="var(--green-glow)" stroke="var(--green)" stroke-width="1.5"/>
-        <circle cx="245" cy="72" r="2.5" fill="var(--green)"/>
-        <text x="228" y="86" text-anchor="middle" fill="var(--green)" font-family="var(--font-display)" font-size="7" font-weight="700">Saba</text>
+        <!-- Saba: -63.23, 17.63 → x=293, y=33 -->
+        <circle cx="275" cy="55" r="6" fill="var(--green-glow)" stroke="var(--green)" stroke-width="1.5"/>
+        <circle cx="275" cy="55" r="2.5" fill="var(--green)"/>
+        <text x="258" y="68" text-anchor="middle" fill="var(--green)" font-family="var(--font-display)" font-size="7" font-weight="700">Saba</text>
 
-        <!-- St. Eustatius -->
-        <circle cx="290" cy="80" r="6" fill="var(--green-glow)" stroke="var(--green)" stroke-width="1.5"/>
-        <circle cx="290" cy="80" r="2.5" fill="var(--green)"/>
-        <text x="308" y="84" text-anchor="start" fill="var(--green)" font-family="var(--font-display)" font-size="7" font-weight="700">St. Eustatius</text>
+        <!-- St. Eustatius: -62.97, 17.49 → x=304, y=36 -->
+        <circle cx="318" cy="60" r="6" fill="var(--green-glow)" stroke="var(--green)" stroke-width="1.5"/>
+        <circle cx="318" cy="60" r="2.5" fill="var(--green)"/>
+        <text x="332" y="55" text-anchor="start" fill="var(--green)" font-family="var(--font-display)" font-size="7" font-weight="700">St. Eustatius</text>
 
         <!-- Grouping labels -->
-        <text x="140" y="122" text-anchor="middle" fill="var(--orange)" font-family="var(--font-body)" font-size="6.5" font-weight="700" letter-spacing="0.08em">ABC ISLANDS</text>
-        <text x="270" y="100" text-anchor="middle" fill="var(--green)" font-family="var(--font-body)" font-size="6.5" font-weight="700" letter-spacing="0.08em">SSS ISLANDS</text>
+        <text x="76" y="125" text-anchor="middle" fill="var(--orange)" font-family="var(--font-body)" font-size="6.5" font-weight="700" letter-spacing="0.08em">ABC ISLANDS</text>
+        <text x="300" y="82" text-anchor="middle" fill="var(--green)" font-family="var(--font-body)" font-size="6.5" font-weight="700" letter-spacing="0.08em">SSS ISLANDS</text>
 
         <!-- Dashed line connecting groups -->
-        <line x1="170" y1="118" x2="250" y2="102" stroke="var(--border)" stroke-width="0.8" stroke-dasharray="3 2"/>
+        <line x1="110" y1="120" x2="270" y2="85" stroke="var(--border)" stroke-width="0.8" stroke-dasharray="3 2"/>
+
+        <!-- Caribbean Sea label -->
+        <text x="180" y="105" fill="#aec8e0" font-family="var(--font-body)" font-size="7" font-style="italic" opacity="0.5">Caribbean Sea</text>
       </svg>
 
       <div style="font-size:0.68rem; color:var(--text-light); margin-top:2px">Six territories, ~330,000 people, one Kingdom</div>
