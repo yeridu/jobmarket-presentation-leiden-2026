@@ -920,14 +920,26 @@ img { -webkit-user-drag: none; user-select: none; }
 
   function pickVoice() {
     var voices = window.speechSynthesis.getVoices();
-    var preferred = ["Microsoft Guy Online", "Google UK English Male", "Microsoft Mark", "Microsoft David", "Daniel", "Google US English"];
-    for (var p = 0; p < preferred.length; p++) {
+    // Prefer Mexican Spanish voices speaking English — gives a natural Mexican accent twist
+    var mxPref = ["Microsoft Jorge", "Microsoft Dalia", "Paulina", "Juan"];
+    for (var m = 0; m < mxPref.length; m++) {
       for (var v = 0; v < voices.length; v++) {
-        if (voices[v].name.indexOf(preferred[p]) !== -1 && voices[v].lang.indexOf("en") === 0) return voices[v];
+        if (voices[v].name.indexOf(mxPref[m]) !== -1 && voices[v].lang.indexOf("es") === 0) return voices[v];
       }
     }
+    // Fallback: any es-MX voice
     for (var v2 = 0; v2 < voices.length; v2++) {
-      if (voices[v2].lang.indexOf("en") === 0) return voices[v2];
+      if (voices[v2].lang === "es-MX") return voices[v2];
+    }
+    // Final fallback: English voice
+    var enPref = ["Microsoft Guy Online", "Microsoft Mark", "Microsoft David", "Google US English"];
+    for (var p = 0; p < enPref.length; p++) {
+      for (var v3 = 0; v3 < voices.length; v3++) {
+        if (voices[v3].name.indexOf(enPref[p]) !== -1 && voices[v3].lang.indexOf("en") === 0) return voices[v3];
+      }
+    }
+    for (var v4 = 0; v4 < voices.length; v4++) {
+      if (voices[v4].lang.indexOf("en") === 0) return voices[v4];
     }
     return null;
   }
@@ -943,7 +955,7 @@ img { -webkit-user-drag: none; user-select: none; }
     var utt = new SpeechSynthesisUtterance(segments[idx].text);
     var voice = pickVoice();
     if (voice) utt.voice = voice;
-    utt.rate = 0.92;
+    utt.rate = 1.08;
     utt.pitch = 1.0;
     utt.onend = function () { speakSegments(btn, segments, idx + 1); };
     utt.onerror = function () { speakSegments(btn, segments, idx + 1); };
