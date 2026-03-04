@@ -117,7 +117,7 @@ a:hover { color: var(--orange-dim); }
 /* === GAP GRID === */
 .gap-grid { display: grid; grid-template-columns: 1fr auto 1fr; gap: 24px; width: 100%; max-width: 1000px; margin-top: 12px; align-items: start; }
 .gap-col { display: flex; flex-direction: column; gap: 10px; }
-.gap-plus { display: flex; align-items: center; justify-content: center; font-family: var(--font-display); font-size: 2.4rem; font-weight: 700; color: var(--orange); padding-top: 40px; }
+.gap-plus { display: flex; align-items: center; justify-content: center; font-family: var(--font-display); font-size: 2.4rem; font-weight: 700; color: var(--orange); align-self: center; }
 
 /* === FULL-WIDTH PAPER LAYOUT === */
 .paper-full { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; width: 100%; max-width: 1100px; align-items: start; text-align: left; }
@@ -194,14 +194,14 @@ a:hover { color: var(--orange-dim); }
 .wn-detail { font-size: 0.58rem; color: var(--text-light); line-height: 1.3; margin-top: 2px; }
 
 /* === PROPOSAL === */
-.proposal-aims { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; width: 100%; max-width: 1060px; margin-top: 10px; }
-.aim-card { background: var(--card-bg); border-radius: 12px; padding: 20px 16px; text-align: left; border-top: 3px solid var(--orange); border: 1px solid var(--border); border-top: 3px solid var(--orange); }
-.aim-card.green-top { border-top-color: var(--green); }
-.aim-num { font-family: var(--font-display); font-size: 1.2rem; font-weight: 700; color: var(--orange); margin-bottom: 5px; }
+.proposal-aims { display: flex; flex-direction: column; gap: 18px; width: 100%; max-width: 900px; margin-top: 10px; }
+.aim-card { background: var(--card-bg); border-radius: 14px; padding: 26px 28px; text-align: left; border: 1px solid var(--border); border-left: 4px solid var(--orange); }
+.aim-card.green-top { border-left-color: var(--green); }
+.aim-num { font-family: var(--font-display); font-size: 1.3rem; font-weight: 700; color: var(--orange); margin-bottom: 4px; }
 .aim-card.green-top .aim-num { color: var(--green); }
-.aim-title { font-family: var(--font-display); font-size: 0.9rem; font-weight: 600; color: var(--black); margin-bottom: 5px; }
-.aim-desc { font-size: 0.82rem; color: var(--text-light); line-height: 1.45; }
-.aim-outputs { font-size: 0.75rem; color: var(--orange); font-weight: 600; margin-top: 10px; }
+.aim-title { font-family: var(--font-display); font-size: 1.4rem; font-weight: 700; color: var(--black); margin-bottom: 6px; }
+.aim-desc { font-size: 1.1rem; color: var(--text-mid); line-height: 1.5; }
+.aim-outputs { font-size: 0.82rem; color: var(--orange); font-weight: 600; margin-top: 10px; }
 .aim-card.green-top .aim-outputs { color: var(--green); }
 
 /* === TEACHING === */
@@ -231,6 +231,43 @@ a:hover { color: var(--orange-dim); }
 .tags { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; }
 .tag { font-size: 0.75rem; font-weight: 600; padding: 5px 14px; border-radius: 999px; border: 1.5px solid var(--orange); color: var(--orange); background: var(--orange-glow); }
 .tag.green { border-color: var(--green); color: var(--green); background: var(--green-glow); }
+
+/* === JOURNEY PATH === */
+.journey-path { display: flex; align-items: flex-start; justify-content: center; gap: 0; width: 100%; max-width: 880px; margin-top: 20px; }
+.journey-stop { text-align: center; flex: 1; }
+.journey-dot {
+  width: 42px; height: 42px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  margin: 0 auto 8px; font-size: 0.65rem; font-weight: 700;
+}
+.journey-dot.orange { background: var(--orange); color: var(--white); }
+.journey-dot.green { background: var(--green); color: var(--white); }
+.journey-dot.outline { background: var(--white); border: 2px dashed var(--orange); color: var(--orange); }
+.journey-place { font-family: var(--font-display); font-size: 0.78rem; font-weight: 600; color: var(--black); }
+.journey-role { font-size: 0.68rem; color: var(--text-light); line-height: 1.3; margin-top: 2px; }
+.journey-line { width: 36px; height: 2px; background: var(--orange-dim); flex-shrink: 0; margin-top: 20px; }
+
+/* === PILLAR PIPELINE === */
+.pillar-grid { display: grid; grid-template-columns: 1fr auto 1fr auto 1fr; gap: 16px; width: 100%; max-width: 1080px; margin-top: 12px; align-items: start; }
+.pillar { background: var(--card-bg); border-radius: 14px; padding: 22px 18px; text-align: left; border: 1px solid var(--border); }
+.pillar-label { font-size: 0.68rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.14em; margin-bottom: 8px; }
+.pillar-title { font-family: var(--font-display); font-size: 1.05rem; font-weight: 700; color: var(--black); margin-bottom: 10px; }
+.pillar-items { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+.pillar-item { font-size: 0.82rem; color: var(--text-mid); line-height: 1.45; padding-left: 14px; border-left: 2px solid var(--border); }
+.pillar-item.green { border-left-color: var(--green); }
+.pillar-arrow { display: flex; align-items: center; justify-content: center; font-size: 1.8rem; color: var(--orange); font-weight: 700; align-self: center; }
+
+/* === VIDEO SLIDES === */
+.video-container { width: 65%; max-width: 780px; margin: 0 auto; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.08); }
+.video-container video { width: 100%; display: block; }
+.video-caption { font-size: 0.88rem; color: var(--text-light); margin-top: 12px; max-width: 48ch; text-align: center; }
+
+/* === SYNTHESIS === */
+.synth-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; width: 100%; max-width: 900px; margin-top: 14px; }
+.synth-card { background: var(--card-bg); border-radius: 12px; padding: 18px 16px; text-align: left; border: 1px solid var(--border); border-top: 3px solid var(--orange); }
+.synth-label { font-size: 0.68rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--orange); margin-bottom: 6px; }
+.synth-title { font-family: var(--font-display); font-size: 0.92rem; font-weight: 600; color: var(--black); margin-bottom: 4px; }
+.synth-desc { font-size: 0.8rem; color: var(--text-light); line-height: 1.45; }
 
 /* === NAV === */
 .nav { position: fixed; bottom: 22px; left: 50%; transform: translateX(-50%); display: flex; align-items: center; gap: 11px; z-index: 90; background: rgba(255,255,255,0.92); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); border: 1px solid var(--border); border-radius: 999px; padding: 7px 16px; box-shadow: 0 4px 18px rgba(0,0,0,0.06); }
@@ -284,11 +321,17 @@ img { -webkit-user-drag: none; user-select: none; }
   .slide { padding: 28px 20px; }
   .paper-full, .paper-wide, .thrive-layout { grid-template-columns: 1fr; }
   .gap-grid { grid-template-columns: 1fr; }
-  .gap-plus { padding-top: 0; }
-  .proposal-aims, .teaching-grid { grid-template-columns: 1fr; }
+  .proposal-aims { max-width: 100%; }
+  .teaching-grid { grid-template-columns: 1fr; }
   .web-container { width: 100%; height: auto; position: static; }
   .web-center { position: static; transform: none; margin: 0 auto 20px; }
   .web-node { position: static; width: auto; margin-bottom: 12px; }
+  .pillar-grid { grid-template-columns: 1fr; }
+  .pillar-arrow { display: none; }
+  .journey-path { flex-wrap: wrap; gap: 8px; }
+  .journey-line { display: none; }
+  .video-container { width: 90%; }
+  .synth-grid { grid-template-columns: 1fr; }
 }
 
 @media print {
@@ -306,16 +349,47 @@ img { -webkit-user-drag: none; user-select: none; }
 <div class="deck" id="deck">
 
 <!-- ═══════════════════════════════════════════════════════════
-     SLIDE 1: SELF-INTRODUCTION
+     SLIDE 1: JOURNEY
      ═══════════════════════════════════════════════════════════ -->
 <section class="slide active">
   <div class="slide-label anim">LEIDEN UNIVERSITY &middot; VIOLENCE &amp; VIOLENCE PREVENTION</div>
-  <h1 class="slide-heading anim anim-d1" style="font-size:clamp(2.4rem,5vw,3.8rem); max-width:20ch">Mario Morales</h1>
+  <h1 class="slide-heading anim anim-d1" style="font-size:clamp(2.4rem,5vw,3.8rem); max-width:22ch">Mario Morales</h1>
   <div class="accent-line anim anim-d2"></div>
-  <p class="slide-subheading anim anim-d3" style="max-width:42ch; font-size:clamp(1.1rem,2.2vw,1.35rem)">Preventing violence and building life-skills across borders &mdash; from classrooms in Belize to police stations in Tijuana.</p>
-  <p class="slide-body anim anim-d4" style="margin-top:12px; max-width:48ch">PhD Candidate, Health Behavior &amp; Health Promotion<br>Certificate in Computational Social Science<br>University of Arizona &middot; Graduating May 2026</p>
-  <div class="anim anim-d5" style="margin-top:24px"><a href="https://www.yeridu.com" target="_blank" style="font-family:var(--font-display); font-size:1.5rem; font-weight:700; color:var(--orange); border-bottom:3px solid var(--orange); padding-bottom:4px">yeridu.com</a></div>
-  <div class="speaker-note">TIMING: 1 minute. Start confident, collegial. SAY: "Good morning / afternoon. My name is Mario Morales. I prevent violence and build life-skills programs — and I do this work on the ground, alongside the communities most affected. Over the past decade, I've trained over 1,800 police officers in harm reduction in Tijuana, designed a life-skills curriculum with adolescents in rural Belize, and used national data from the U.S. to understand why certain young people are at higher risk. Today I want to show you my work, and more importantly, how it fits with what this group is building." TRANSITION: "Let me tell you a bit more about my background."</div>
+  <p class="slide-subheading anim anim-d3" style="max-width:48ch; font-size:clamp(1rem,2vw,1.2rem)">From police stations in Tijuana to classrooms in Belize &mdash; preventing violence where it starts, building life-skills where they&rsquo;re needed most.</p>
+  <div class="journey-path anim anim-d4">
+    <div class="journey-stop">
+      <div class="journey-dot orange">TJ</div>
+      <div class="journey-place">Tijuana</div>
+      <div class="journey-role">Police training<br>Ethnography</div>
+    </div>
+    <div class="journey-line"></div>
+    <div class="journey-stop">
+      <div class="journey-dot orange">MX</div>
+      <div class="journey-place">Mexico City</div>
+      <div class="journey-role">Demography<br>Public Policy</div>
+    </div>
+    <div class="journey-line"></div>
+    <div class="journey-stop">
+      <div class="journey-dot orange">AZ</div>
+      <div class="journey-place">Arizona</div>
+      <div class="journey-role">Public Health<br>Data Science</div>
+    </div>
+    <div class="journey-line"></div>
+    <div class="journey-stop">
+      <div class="journey-dot green">BZ</div>
+      <div class="journey-place">Belize</div>
+      <div class="journey-role">Life-Skills<br>Community</div>
+    </div>
+    <div class="journey-line"></div>
+    <div class="journey-stop">
+      <div class="journey-dot outline">?</div>
+      <div class="journey-place">Leiden</div>
+      <div class="journey-role">Your team</div>
+    </div>
+  </div>
+  <p class="slide-body anim anim-d5" style="margin-top:18px; max-width:46ch; font-size:0.92rem"><em>Deaths of Despair</em> &mdash; violence, substance use, and self-harm &mdash; is the thread that connects every stop on this journey.</p>
+  <div class="anim anim-d6" style="margin-top:16px"><a href="https://www.yeridu.com" target="_blank" style="font-family:var(--font-display); font-size:1.3rem; font-weight:700; color:var(--orange); border-bottom:3px solid var(--orange); padding-bottom:4px">yeridu.com</a></div>
+  <div class="speaker-note">TIMING: 1 minute. Start confident, collegial. SAY: "Good morning / afternoon. My name is Mario Morales. [Point to path] My journey started in Tijuana, training police officers in harm reduction during the drug war. That ethnographic training — learning to listen before trying to fix anything — shaped everything I've done since. From there I moved to Mexico City for demography and public policy, then Arizona for public health and data science. And most recently, Belize, where I built a life-skills curriculum from the ground up with Maya adolescents. The thread connecting every stop is Deaths of Despair — the intersection of violence, substance use, and self-harm. Today I want to show you my work, and why this group is the right place for the next stop." TRANSITION: "Let me tell you about my background."</div>
 </section>
 
 <!-- ═══════════════════════════════════════════════════════════
@@ -394,28 +468,49 @@ img { -webkit-user-drag: none; user-select: none; }
 </section>
 
 <!-- ═══════════════════════════════════════════════════════════
-     SLIDE 5: RESEARCH PROGRAM OVERVIEW
+     SLIDE 5: RESEARCH PROGRAM — THREE PILLARS
      ═══════════════════════════════════════════════════════════ -->
 <section class="slide">
   <div class="slide-label anim">RESEARCH PROGRAM</div>
-  <h2 class="slide-heading anim anim-d1" style="max-width:30ch">Five Directions, One Mission</h2>
-  <p class="slide-subheading anim anim-d2" style="max-width:52ch">Every project connects violence, substance use, and prevention &mdash; using big data to know where to go, and fieldwork to build what&rsquo;s needed.</p>
+  <h2 class="slide-heading anim anim-d1" style="max-width:32ch">Review &rarr; Surveillance &rarr; Intervention</h2>
+  <p class="slide-subheading anim anim-d2" style="max-width:54ch">Every project feeds the next: understanding what works, mapping where the need is, then building prevention on the ground.</p>
   <div class="accent-line anim anim-d3"></div>
-  <div style="display:grid; grid-template-columns:repeat(5,1fr); gap:10px; width:100%; max-width:1060px; margin-top:6px">
-    <div class="fc anim anim-d3" style="border-top:3px solid var(--orange)"><div class="fc-label">1 &middot; The Evidence Gap</div><div class="fc-desc" style="font-size:0.78rem">Systematic Review: Dating Violence + Substance Use Prevention Programs</div></div>
-    <div class="fc anim anim-d4" style="border-top:3px solid var(--orange)"><div class="fc-label">2 &middot; Changing Norms</div><div class="fc-desc" style="font-size:0.78rem">Green Dot: Bystander Program in 26 Kentucky High Schools (4 years)</div></div>
-    <div class="fc anim anim-d5" style="border-top:3px solid var(--orange)"><div class="fc-label">3 &middot; Why Opioids?</div><div class="fc-desc" style="font-size:0.78rem">Risk, Distress &amp; Life Circumstances Behind Adolescent Opioid Use (YRBS 2023)</div></div>
-    <div class="fc anim anim-d6" style="border-top:3px solid var(--green)"><div class="fc-label" style="color:var(--green)">4 &middot; Life-Skills</div><div class="fc-desc" style="font-size:0.78rem">THRIVE-Belize: Prevention Curriculum for Adolescents in Toledo District</div></div>
-    <div class="fc anim anim-d7" style="border-top:3px solid var(--orange)"><div class="fc-label">5 &middot; Surveillance</div><div class="fc-desc" style="font-size:0.78rem">NVDRS: Hidden Partners in Death Records + MICS5 Belize: Mapping Violence Tolerance</div></div>
+  <div class="pillar-grid">
+    <div class="pillar anim anim-d3" style="border-top:3px solid var(--orange)">
+      <div class="pillar-label" style="color:var(--orange)">REVIEW</div>
+      <div class="pillar-title">What works?</div>
+      <div class="pillar-items">
+        <div class="pillar-item"><strong>Systematic Review</strong> &mdash; 5,413 studies screened, only 3 programs prevent both dating violence &amp; substance use worldwide</div>
+      </div>
+    </div>
+    <div class="pillar-arrow anim anim-d4">&rarr;</div>
+    <div class="pillar anim anim-d5" style="border-top:3px solid var(--orange)">
+      <div class="pillar-label" style="color:var(--orange)">SURVEILLANCE</div>
+      <div class="pillar-title">Where is the need?</div>
+      <div class="pillar-items">
+        <div class="pillar-item"><strong>NMPOU / YRBS</strong> &mdash; Why adolescents turn to opioids: risk, emotional pain, tough circumstances</div>
+        <div class="pillar-item"><strong>NVDRS + NLP</strong> &mdash; Hidden partner violence in 20,000+ U.S. death records</div>
+        <div class="pillar-item"><strong>MICS5 Belize</strong> &mdash; Mapping violence tolerance to find where prevention is most needed</div>
+      </div>
+    </div>
+    <div class="pillar-arrow anim anim-d6">&rarr;</div>
+    <div class="pillar anim anim-d7" style="border-top:3px solid var(--green)">
+      <div class="pillar-label" style="color:var(--green)">INTERVENTION</div>
+      <div class="pillar-title">Build what&rsquo;s needed</div>
+      <div class="pillar-items">
+        <div class="pillar-item green"><strong>Green Dot</strong> &mdash; 4-year bystander trial in 26 Kentucky schools: norms change before behavior</div>
+        <div class="pillar-item green"><strong>THRIVE-Belize</strong> &mdash; 7-module life-skills curriculum co-designed with Maya adolescents</div>
+      </div>
+    </div>
   </div>
-  <div class="speaker-note">TIMING: 1 minute. Quick overview — point to each card. SAY: "Five directions, one mission. [Point] First, a systematic review asking: what prevention programs even exist that address both dating violence and substance use? Answer: almost none. Second, an evaluation of a bystander program in Kentucky — does training students to intervene actually change attitudes? Third, a national study of 20,000 U.S. high schoolers asking why opioid use is different from other substances. Fourth — the heart of my work — a life-skills curriculum I built with a community in Belize, from the ground up. And fifth, surveillance work: using text analysis to find hidden patterns in death records, and using Belize's national survey to map exactly where violence tolerance concentrates. Let me walk you through each one."</div>
+  <div class="speaker-note">TIMING: 1 minute. Quick overview — point to each pillar. SAY: "My research follows a pipeline. First, Review: what prevention programs exist, and what actually works? The answer, from over 5,000 studies: almost nothing that addresses violence and substance use together. Second, Surveillance: using national data to map exactly where the need is — which communities, which ages, which circumstances. I've done this with U.S. adolescent surveys, death records, and Belize's national survey. And third, Intervention: building prevention where the data says it's needed, with the communities who live there. A bystander program in Kentucky and a life-skills curriculum in Belize. Let me walk you through each one."</div>
 </section>
 
 <!-- ═══════════════════════════════════════════════════════════
      SLIDE 6: PAPER 1 — SYSTEMATIC REVIEW (full-width)
      ═══════════════════════════════════════════════════════════ -->
 <section class="slide">
-  <div class="research-arc"><div class="arc-dot active"></div><div class="arc-dot"></div><div class="arc-dot"></div><div class="arc-dot"></div><div class="arc-dot"></div></div>
+  <div class="research-arc"><div class="arc-dot active"></div><div class="arc-dot"></div><div class="arc-dot"></div><div class="arc-dot"></div><div class="arc-dot"></div><div class="arc-dot"></div></div>
   <div class="paper-full">
     <div style="text-align:left">
       <div class="slide-label anim">PAPER 1 &mdash; SYSTEMATIC REVIEW</div>
@@ -450,118 +545,54 @@ img { -webkit-user-drag: none; user-select: none; }
 </section>
 
 <!-- ═══════════════════════════════════════════════════════════
-     SLIDE 7: PAPER 2 — GREEN DOT + KENTUCKY MAP (full-width)
+     SLIDE 7: PAPER 2 — GREEN DOT VIDEO
      ═══════════════════════════════════════════════════════════ -->
 <section class="slide">
-  <div class="research-arc"><div class="arc-dot"></div><div class="arc-dot active"></div><div class="arc-dot"></div><div class="arc-dot"></div><div class="arc-dot"></div></div>
-  <div class="paper-full">
-    <div style="text-align:left">
-      <div class="slide-label anim">PAPER 2 &mdash; SCHOOL-BASED TRIAL</div>
-      <h2 class="slide-heading anim anim-d1" style="max-width:28ch; font-size:clamp(1.7rem,3.5vw,2.6rem)">Changing Norms Takes Years</h2>
-      <p class="slide-subheading anim anim-d2" style="max-width:40ch; text-align:left">Does the Green Dot bystander program change how high schoolers think about sexual violence? A 4-year randomized trial.</p>
-      <div class="accent-line anim anim-d3" style="margin-left:0"></div>
-      <!-- Kentucky Map -->
-      <div class="anim anim-d3" style="margin:8px 0 10px">
-        <svg viewBox="0 0 300 140" width="260" style="display:block">
-          <path d="M8,72 C12,65 22,58 38,50 C55,42 78,35 105,28 C132,22 162,18 192,16 C218,14 240,16 258,22 L274,30 L286,42 L292,58 L290,72 L282,84 L270,93 L252,100 L228,104 L198,106 L162,107 L126,106 L94,104 L66,100 L42,94 L24,84 L12,76 Z" fill="var(--orange-glow)" stroke="var(--orange)" stroke-width="2"/>
-          <text x="150" y="56" text-anchor="middle" fill="var(--orange)" font-family="var(--font-display)" font-size="11" font-weight="700">KENTUCKY</text>
-          <text x="150" y="72" text-anchor="middle" fill="var(--text-light)" font-family="var(--font-body)" font-size="9">26 high schools &middot; 16,509 students</text>
-          <text x="150" y="86" text-anchor="middle" fill="var(--text-light)" font-family="var(--font-body)" font-size="9">13 treatment &middot; 13 control &middot; 2010&ndash;2014</text>
-        </svg>
-      </div>
-      <div class="lc anim anim-d5" style="max-width:400px; margin-top:8px">
-        <div class="lc-label">Connection to Prof. Weenink</div>
-        <div class="lc-text">Green Dot trains bystanders to intervene &mdash; the same dynamic <strong>Weenink&rsquo;s &ldquo;Circles of Peace&rdquo;</strong> research captures in real-time. My evaluation provides the outcome evidence for the process he observes.</div>
-      </div>
-    </div>
-    <div style="text-align:left">
-      <div class="fc anim anim-d3" style="margin-bottom:10px">
-        <div class="fc-label">THE QUESTION</div>
-        <div class="fc-desc">At baseline, <strong>30% of students</strong> in both groups agreed that a girl who is sexually assaulted while drunk is to blame. Can a bystander program change that?</div>
-      </div>
-      <div class="anim anim-d4" style="background:var(--card-bg); border-radius:10px; padding:14px; border:1px solid var(--border)">
-        <div class="fc-label">YEAR 4 RESULTS</div>
-        <div class="bar-chart" style="margin-top:8px">
-          <div class="bar-row"><div class="bar-label">Control</div><div class="bar-track"><div class="bar-fill control" style="width:72%">21.6%</div></div></div>
-          <div class="bar-row"><div class="bar-label">Treatment</div><div class="bar-track"><div class="bar-fill treatment" style="width:63%">18.8%</div></div></div>
-        </div>
-        <div style="font-size:0.78rem; color:var(--text-light); margin-top:8px">Treatment schools showed a <strong style="color:var(--orange)">15% reduction</strong> in victim-blaming by Year 4. The effect survived strict statistical testing.</div>
-      </div>
-      <div class="fc anim anim-d5" style="margin-top:8px">
-        <div class="fc-label">KEY FINDINGS</div>
-        <div class="fc-desc">
-          &bull; No difference in Years 1&ndash;3. The effect emerged <strong>only in Year 4</strong> &mdash; lasting change takes sustained effort.<br>
-          &bull; <strong>Boys were 1.7&times; more likely</strong> to endorse victim-blaming than girls.<br>
-          &bull; Non-White students endorsed at <strong>1.5&times; the rate</strong> of White students &mdash; pointing to the need for culturally responsive programming.<br>
-          &bull; Students who received direct training showed <strong>17% lower endorsement</strong>, even after accounting for self-selection.<br>
-          &bull; Attitudes shifted, but actual reported sexual violence did <strong>not yet decrease</strong> &mdash; norms change before behavior does.
-        </div>
-      </div>
-    </div>
+  <div class="research-arc"><div class="arc-dot"></div><div class="arc-dot active"></div><div class="arc-dot"></div><div class="arc-dot"></div><div class="arc-dot"></div><div class="arc-dot"></div></div>
+  <div class="slide-label anim">PAPER 2 &mdash; SCHOOL-BASED TRIAL</div>
+  <h2 class="slide-heading anim anim-d1" style="max-width:30ch; font-size:clamp(1.7rem,3.5vw,2.6rem)">Green Dot: Changing Norms Takes Years</h2>
+  <div class="accent-line anim anim-d2"></div>
+  <div class="video-container anim anim-d3">
+    <video controls preload="metadata">
+      <source src="videos/ARSAVB-GreenDot.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
   </div>
-  <div class="speaker-note">TIMING: 2.5 minutes. Name Weenink. SAY: "Green Dot is a bystander intervention. It trains students to recognize warning signs and intervene. [Point to map] 26 high schools across Kentucky, randomly assigned. Over 16,000 students followed for four years. At the start, almost a third of students in BOTH groups agreed that a drunk girl is to blame for her own assault. [Point to chart] By Year 4, treatment schools were 15% lower. But here's the critical finding: nothing happened for the first three years. The change only appeared in Year 4. That tells us something important about prevention: you can't run a program for one semester and expect lasting change. You have to commit for years. We also found that boys endorsed victim-blaming at nearly twice the rate of girls, and there were racial differences too. And importantly — attitudes shifted, but actual reported violence didn't decrease yet. Norms change before behavior. [Point to Weenink] Professor Weenink, your Circles of Peace work captures how bystanders spontaneously de-escalate violence. My Green Dot evaluation shows what happens when you systematically train them. Together we could connect the situational dynamics to population-level outcomes." TRANSITION: "From bystander intervention to understanding risk."</div>
+  <p class="video-caption anim anim-d4">4-year cluster-randomized trial &middot; 26 Kentucky high schools &middot; 16,509 students</p>
+  <div class="lc anim anim-d5" style="max-width:520px; margin-top:14px">
+    <div class="lc-label">Connection to Prof. Weenink</div>
+    <div class="lc-text">Green Dot trains bystanders to intervene &mdash; the same dynamic <strong>Weenink&rsquo;s &ldquo;Circles of Peace&rdquo;</strong> captures in real-time. My evaluation provides the outcome evidence for the process he observes.</div>
+  </div>
+  <div class="speaker-note">TIMING: 2.5 minutes. Play video if time allows, otherwise summarize. SAY: "Green Dot is a bystander intervention — it trains students to recognize warning signs and intervene. [Point to video] 26 high schools across Kentucky, randomly assigned. Over 16,000 students followed for four years. The key finding: nothing happened for the first three years. The change only appeared in Year 4. That tells us prevention takes sustained commitment — you can't run a program for one semester and expect lasting change. We also found that boys endorsed victim-blaming at nearly twice the rate of girls, and there were racial differences too. Attitudes shifted, but actual reported violence didn't decrease yet — norms change before behavior. [Weenink] Professor Weenink, your Circles of Peace work captures how bystanders spontaneously de-escalate violence. My evaluation shows what happens when you systematically train them over years. Together we could connect situational dynamics to population-level outcomes." TRANSITION: "From changing norms to understanding risk."</div>
 </section>
 
 <!-- ═══════════════════════════════════════════════════════════
-     SLIDE 8: PAPER 3 — NMPOU (improved)
+     SLIDE 8: PAPER 3 — NMPOU VIDEO
      ═══════════════════════════════════════════════════════════ -->
 <section class="slide">
-  <div class="research-arc"><div class="arc-dot"></div><div class="arc-dot"></div><div class="arc-dot active"></div><div class="arc-dot"></div><div class="arc-dot"></div></div>
-  <div class="paper-full">
-    <div style="text-align:left">
-      <div class="slide-label anim">PAPER 3 &mdash; NATIONAL SURVEY ANALYSIS</div>
-      <h2 class="slide-heading anim anim-d1" style="max-width:28ch; font-size:clamp(1.7rem,3.5vw,2.6rem)">Why Opioids? What Makes Them Different?</h2>
-      <p class="slide-subheading anim anim-d2" style="max-width:40ch; text-align:left">Three explanations tested with 20,103 U.S. high school students (YRBS 2023)</p>
-      <div class="accent-line anim anim-d3" style="margin-left:0"></div>
-      <div style="display:flex; flex-direction:column; gap:8px; margin-bottom:12px">
-        <div class="anim anim-d3" style="display:flex; gap:10px; align-items:start">
-          <span style="font-family:var(--font-display); font-weight:700; color:var(--orange); font-size:0.85rem; min-width:18px">1.</span>
-          <div><strong style="color:var(--black)">Risk-taking:</strong> <span style="font-size:0.88rem; color:var(--text-mid)">teens who use multiple substances and engage in risky behavior also use opioids</span></div>
-        </div>
-        <div class="anim anim-d4" style="display:flex; gap:10px; align-items:start">
-          <span style="font-family:var(--font-display); font-weight:700; color:var(--orange); font-size:0.85rem; min-width:18px">2.</span>
-          <div><strong style="color:var(--black)">Emotional pain:</strong> <span style="font-size:0.88rem; color:var(--text-mid)">bullied or suicidal teens turn to opioids for relief &mdash; because opioids act on the brain&rsquo;s pain system</span></div>
-        </div>
-        <div class="anim anim-d5" style="display:flex; gap:10px; align-items:start">
-          <span style="font-family:var(--font-display); font-weight:700; color:var(--orange); font-size:0.85rem; min-width:18px">3.</span>
-          <div><strong style="color:var(--black)">Tough circumstances:</strong> <span style="font-size:0.88rem; color:var(--text-mid)">unsafe homes, sexual victimization, unsafe neighborhoods &mdash; the weight of accumulated hardship</span></div>
-        </div>
-      </div>
-      <div class="lc anim anim-d6" style="max-width:420px">
-        <div class="lc-label">Deaths of Despair Link</div>
-        <div class="lc-text">Opioid misuse co-occurs with suicidal thoughts, dating violence, and bullying &mdash; the clustering of despair-driven outcomes. This extends <strong>Prof. Liem &amp; Moeller&rsquo;s</strong> work on drugs and violence.</div>
-      </div>
-    </div>
-    <div style="text-align:left">
-      <div class="fc anim anim-d3">
-        <div class="fc-label">CENTRAL FINDING: BULLYING IS UNIQUE TO OPIOIDS</div>
-        <div class="fc-desc" style="margin-bottom:10px">Bullying was the <strong>only risk factor linked specifically to opioid use</strong> and not to alcohol, marijuana, cigarettes, or cocaine. Social rejection may activate the same brain pathways that opioids target.</div>
-        <div class="sub-row"><span class="sub-label">Opioids</span><div style="flex:1;display:flex;align-items:center;gap:6px"><div class="sub-bar sig" style="width:78%"></div><span class="sub-sig">Significant</span></div></div>
-        <div class="sub-row"><span class="sub-label">Alcohol</span><div style="flex:1;display:flex;align-items:center;gap:6px"><div class="sub-bar ns" style="width:18%"></div><span class="sub-sig">Not linked</span></div></div>
-        <div class="sub-row"><span class="sub-label">Marijuana</span><div style="flex:1;display:flex;align-items:center;gap:6px"><div class="sub-bar ns" style="width:15%"></div><span class="sub-sig">Not linked</span></div></div>
-        <div class="sub-row"><span class="sub-label">Cigarettes</span><div style="flex:1;display:flex;align-items:center;gap:6px"><div class="sub-bar ns" style="width:12%"></div><span class="sub-sig">Not linked</span></div></div>
-        <div class="sub-row"><span class="sub-label">Cocaine</span><div style="flex:1;display:flex;align-items:center;gap:6px"><div class="sub-bar ns" style="width:10%"></div><span class="sub-sig">Not linked</span></div></div>
-      </div>
-      <div class="fc anim anim-d5" style="margin-top:8px">
-        <div class="fc-label">ETHNIC DIFFERENCES MATTER</div>
-        <div class="fc-desc">
-          &bull; <strong>Latino/a youth:</strong> higher opioid use driven by tough life circumstances &mdash; family stress, community instability, acculturative pressure<br>
-          &bull; <strong>White youth:</strong> more driven by prescription access, less tied to adversity<br>
-          &bull; <strong>Black youth:</strong> lower opioid use overall, but when present, driven by emotional distress<br>
-          &bull; <strong>Multiracial youth:</strong> highest rates overall &mdash; identity-related stress as a pathway<br>
-          &bull; All three explanations <strong>overlap</strong> &mdash; these aren&rsquo;t separate groups of at-risk youth
-        </div>
-      </div>
-    </div>
+  <div class="research-arc"><div class="arc-dot"></div><div class="arc-dot"></div><div class="arc-dot active"></div><div class="arc-dot"></div><div class="arc-dot"></div><div class="arc-dot"></div></div>
+  <div class="slide-label anim">PAPER 3 &mdash; NATIONAL SURVEY</div>
+  <h2 class="slide-heading anim anim-d1" style="max-width:30ch; font-size:clamp(1.7rem,3.5vw,2.6rem)">Why Opioids? Not All Substances Are Equal</h2>
+  <div class="accent-line anim anim-d2"></div>
+  <div class="video-container anim anim-d3">
+    <video controls preload="metadata">
+      <source src="videos/NMPOU-YRBS.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
   </div>
-  <div class="speaker-note">TIMING: 2.5 minutes. SAY: "This study asks: why do some teenagers turn to opioids specifically, and not other substances? I tested three explanations with 20,000 U.S. high schoolers. [Point to list] Risk-taking, emotional pain, and tough life circumstances. All three mattered. But bullying stood out: it was the ONLY factor uniquely connected to opioid use and not to any other substance. Why? Because social rejection activates the same brain pathways that opioids act on — being excluded literally hurts, and opioids relieve that pain. [Point to ethnic chart] The story also differs by ethnicity. For Latino youth, life circumstances — family stress, community instability — were the primary driver. For White youth, it was more about prescription access. For Black youth, rates were lower overall, but when opioid use was present, emotional distress was the pathway. And all three explanations overlap in the same young people — this is not about neat categories, it's about accumulated burden. [Leiden connection] This directly extends the drugs-violence framework that Professor Liem and Moeller have developed." TRANSITION: "From understanding risk to building solutions."</div>
+  <p class="video-caption anim anim-d4">20,103 U.S. high school students &middot; YRBS 2023 &middot; Three explanations tested</p>
+  <div class="lc anim anim-d5" style="max-width:520px; margin-top:14px">
+    <div class="lc-label">Deaths of Despair connection</div>
+    <div class="lc-text">Opioid misuse clusters with suicidal thoughts, dating violence, and bullying &mdash; the convergence of despair-driven outcomes. Extends <strong>Prof. Liem &amp; Moeller&rsquo;s</strong> work on drugs and violence.</div>
+  </div>
+  <div class="speaker-note">TIMING: 2.5 minutes. Play video if time allows. SAY: "Why do some teenagers turn specifically to opioids, and not other substances? I tested three explanations with 20,000 U.S. high schoolers. [Play clip or summarize] Risk-taking, emotional pain, and tough life circumstances — all three mattered. But bullying stood out: it was the ONLY factor uniquely linked to opioid use and not to alcohol, marijuana, cigarettes, or cocaine. Social rejection activates the same brain pathways opioids target — being excluded literally hurts, and opioids relieve that pain. The story also differs by ethnicity: for Latino youth, life circumstances are the primary driver. For White youth, prescription access. For multiracial youth, identity-related stress. And all three explanations overlap in the same young people — this is accumulated burden, not neat categories. [Leiden] This directly extends the drugs-violence framework Professor Liem and Moeller have developed." TRANSITION: "From understanding risk to building solutions."</div>
 </section>
 
 <!-- ═══════════════════════════════════════════════════════════
      SLIDE 9: THRIVE-BELIZE + MAP
      ═══════════════════════════════════════════════════════════ -->
 <section class="slide">
-  <div class="research-arc"><div class="arc-dot"></div><div class="arc-dot"></div><div class="arc-dot"></div><div class="arc-dot active"></div><div class="arc-dot"></div></div>
+  <div class="research-arc"><div class="arc-dot"></div><div class="arc-dot"></div><div class="arc-dot"></div><div class="arc-dot active"></div><div class="arc-dot"></div><div class="arc-dot"></div></div>
   <div class="thrive-layout">
     <div style="text-align:left">
       <div class="slide-label anim" style="color:var(--green)">PAPER 4 &mdash; LIFE-SKILLS INTERVENTION</div>
@@ -594,31 +625,27 @@ img { -webkit-user-drag: none; user-select: none; }
     </div>
     <div style="text-align:left">
       <div class="lc anim anim-d3" style="margin-bottom:10px">
-        <div class="lc-label">Why Toledo? The data told us.</div>
-        <div class="lc-text">My analysis of Belize&rsquo;s national MICS5 survey showed that violence tolerance is <strong>not evenly spread</strong>. Nationally, 9.8% of people justify physical violence against a partner. But among <strong>Maya adolescents in Toledo District, that number is 34.1%</strong> &mdash; 3.5 times the national rate. The data told me exactly where to go. So I went.</div>
-      </div>
-      <div class="lc anim anim-d4" style="margin-bottom:10px">
         <div class="lc-label">Connection to Dr. Di Marco</div>
         <div class="lc-text">Module 2 &mdash; the &ldquo;Man Box&rdquo; sessions &mdash; puts into practice what Di Marco studies from the perpetrator-narrative side. His research shows <strong>why rigid masculinity norms produce violence</strong>. My curriculum makes sure the next generation never gets there. <strong>Upstream prevention meets downstream understanding.</strong></div>
       </div>
-      <div class="lc anim anim-d5" style="margin-bottom:10px">
+      <div class="lc anim anim-d4" style="margin-bottom:10px">
         <div class="lc-label">Connection to van Wieringen</div>
         <div class="lc-text">THRIVE intervenes at the age when harmful ideas take root &mdash; directly relevant to her research on <strong>how violence and extreme beliefs pass from one generation to the next</strong> within families.</div>
       </div>
-      <div class="lc anim anim-d6">
+      <div class="lc anim anim-d5">
         <div class="lc-label">Connection to Prof. Liem</div>
         <div class="lc-text">THRIVE targets upstream the gender norms that, left unchallenged, contribute to intimate partner violence and femicide &mdash; the outcomes <strong>Liem&rsquo;s Femicide Monitor</strong> documents at the other end.</div>
       </div>
     </div>
   </div>
-  <div class="speaker-note">TIMING: 3 minutes. This is the crown jewel. Name three group members. SAY: "This is the heart of my work. THRIVE-Belize is a life-skills curriculum for adolescents in southern Belize — in the Toledo District. [Point to map] But I didn't pick Toledo randomly. My analysis of Belize's national survey — the MICS5 — showed that while only 10% of people nationally think partner violence is justified, that number jumps to 34% among Maya adolescents in Toledo. Three and a half times the national average. The data told me exactly where the need was greatest. So I went. I moved to Punta Gorda, worked with teachers and students at Toledo Community College, and together we built this curriculum from the ground up. [Point to modules] Seven modules, 28 sessions. I want to highlight Module 2 — the Man Box sessions — where adolescent boys name harmful masculinity norms, feel the cost of rigidity, and commit to change. [Point to Di Marco] Dr. Di Marco, your book 'Taking Lives' shows us, through the words of men who killed their partners, exactly how rigid masculinity norms create a pathway to lethal violence. My curriculum tries to make sure the next generation never reaches that point. [Van Wieringen] Layla, this intervenes at the age when those harmful ideas take root — your core question about intergenerational transmission. [Liem] And Professor Liem, THRIVE addresses upstream what the Femicide Monitor documents downstream." TRANSITION: "Now let me show you the surveillance tools."</div>
+  <div class="speaker-note">TIMING: 3 minutes. This is the crown jewel. Name three group members. WHY TOLEDO context (moved from slide face): My analysis of Belize's national MICS5 survey showed that violence tolerance is not evenly spread. Nationally, 9.8% of people justify physical violence against a partner. But among Maya adolescents in Toledo District, that number is 34.1% — 3.5 times the national rate. The data told me exactly where to go. So I went. SAY: "This is the heart of my work. THRIVE-Belize is a life-skills curriculum for adolescents in southern Belize — in the Toledo District. [Point to map] I didn't pick Toledo randomly. My analysis of Belize's national survey showed that violence tolerance concentrates dramatically: 10% nationally, but 34% among Maya adolescents in Toledo. The data told me where. So I went. I moved to Punta Gorda, worked with teachers and students at Toledo Community College, and together we built this curriculum from the ground up. [Point to modules] Seven modules, 28 sessions. Module 2 — the Man Box sessions — where adolescent boys name harmful masculinity norms, feel the cost of rigidity, and commit to change. [Di Marco] Dr. Di Marco, your book 'Taking Lives' shows us how rigid masculinity norms create a pathway to lethal violence. My curriculum tries to make sure the next generation never reaches that point. [Van Wieringen] Layla, this intervenes at the age when those harmful ideas take root — your core question about intergenerational transmission. [Liem] Professor Liem, THRIVE addresses upstream what the Femicide Monitor documents downstream." TRANSITION: "Now let me show you the surveillance tools."</div>
 </section>
 
 <!-- ═══════════════════════════════════════════════════════════
-     SLIDE 10: SURVEILLANCE — NVDRS + MICS5
+     SLIDE 10a: NVDRS — HIDDEN PARTNERS
      ═══════════════════════════════════════════════════════════ -->
 <section class="slide">
-  <div class="research-arc"><div class="arc-dot"></div><div class="arc-dot"></div><div class="arc-dot"></div><div class="arc-dot"></div><div class="arc-dot active"></div></div>
+  <div class="research-arc"><div class="arc-dot"></div><div class="arc-dot"></div><div class="arc-dot"></div><div class="arc-dot"></div><div class="arc-dot active"></div><div class="arc-dot"></div></div>
   <div class="paper-full">
     <div style="text-align:left">
       <div class="slide-label anim">PAPER 5 &mdash; SURVEILLANCE &amp; TEXT ANALYSIS</div>
@@ -634,36 +661,56 @@ img { -webkit-user-drag: none; user-select: none; }
           <div style="flex:1; background:var(--orange-glow); border-radius:8px; padding:8px; text-align:center; border:1px solid var(--border)"><div style="font-size:0.72rem; font-weight:700; color:var(--orange)">Substance</div><div style="font-size:0.72rem; color:var(--text-light); margin-top:2px">Partner-related overdose</div></div>
         </div>
       </div>
-      <div class="lc anim anim-d6" style="margin-top:10px">
+    </div>
+    <div style="text-align:left">
+      <div class="lc anim anim-d3" style="margin-bottom:12px">
         <div class="lc-label">Direct extension of Prof. Liem&rsquo;s work</div>
         <div class="lc-text">The text analysis methods I built for U.S. death records can be <strong>adapted to the European Homicide Monitor and Dutch Femicide Monitor</strong>. I bring the pipeline. Imagine this applied to EHM data.</div>
       </div>
-    </div>
-    <div style="text-align:left">
-      <div class="slide-label anim" style="margin-top:0">MICS5 BELIZE &mdash; MAPPING VIOLENCE TOLERANCE</div>
-      <h3 class="anim anim-d1" style="font-family:var(--font-display); font-size:clamp(1.2rem,2.4vw,1.6rem); font-weight:700; margin-bottom:10px">From National Data to Targeted Action</h3>
-      <p class="slide-body anim anim-d2" style="max-width:40ch; margin-bottom:12px">Using Belize&rsquo;s MICS5 survey (n = 9,446), I mapped exactly where tolerance for partner violence concentrates &mdash; and used that map to decide where to build THRIVE.</p>
-      <div class="anim anim-d3" style="margin-bottom:12px">
-        <div class="fc-label" style="margin-bottom:8px">HOW RISK CONCENTRATES: THE CASCADE</div>
-        <div class="cascade">
-          <div class="cascade-row"><div class="cascade-bar" style="width:29%; background:var(--orange-dim)">9.8%</div><div class="cascade-label">National average</div></div>
-          <div class="cascade-row"><div class="cascade-bar" style="width:42%; background:var(--orange-dim)">14.1%</div><div class="cascade-label">Adolescents (15-19)</div></div>
-          <div class="cascade-row"><div class="cascade-bar" style="width:71%; background:var(--orange)">23.8%</div><div class="cascade-label">Maya ethnicity</div></div>
-          <div class="cascade-row"><div class="cascade-bar" style="width:66%; background:var(--orange)">22.3%</div><div class="cascade-label">Toledo District</div></div>
-          <div class="cascade-row"><div class="cascade-bar" style="width:100%; background:var(--green)">34.1%</div><div class="cascade-label"><strong>Adolescent + Maya + Toledo</strong></div></div>
-        </div>
-      </div>
       <div class="fc anim anim-d4">
-        <div class="fc-label">THE LOGIC</div>
-        <div class="fc-desc">National averages hide the real story. I used population-level data to find the specific intersection of age, ethnicity, and geography where prevention would have the biggest impact. Then I went there and built a program <em>with</em> that community. <strong>Big data to know where. Fieldwork to build what.</strong></div>
+        <div class="fc-label">HOW IT WORKS</div>
+        <div class="fc-desc">&bull; Trained a text classifier on manually coded NVDRS narratives<br>&bull; Identifies partner presence, relationship type, and conflict context<br>&bull; Applied to 20,000+ death records (2019&ndash;2023)<br>&bull; Found that partner involvement is <strong>systematically undercounted</strong> in coded variables</div>
       </div>
       <div class="fc anim anim-d5" style="margin-top:8px">
-        <div class="fc-label">OTHER FINDINGS</div>
-        <div class="fc-desc">&bull; Maya ethnicity: <strong>2.8&times;</strong> more likely to justify violence (vs. Creole)<br>&bull; Toledo District: <strong>3.3&times;</strong> more likely (vs. Belize City)<br>&bull; Childhood physical punishment and HIV misinformation both linked to violence tolerance<br>&bull; Education was the strongest protective factor</div>
+        <div class="fc-label">WHAT THIS REVEALS</div>
+        <div class="fc-desc">Surveillance systems designed to count deaths miss the relational context &mdash; who was there, what role they played, what happened before. Text narratives hold the story. Machine learning can extract it at scale.</div>
       </div>
     </div>
   </div>
-  <div class="speaker-note">TIMING: 3 minutes. This slide bridges two projects. SAY: "[LEFT] Hidden Partners uses the U.S. National Violent Death Reporting System to find intimate partner violence hidden in death records. When a pregnant woman dies — by homicide, suicide, or overdose — the partner is often mentioned in the narrative text but never coded as a variable. My text classifier makes them visible. This bridges all three Deaths of Despair dimensions in a single study. [Point to Liem connection] Professor Liem, the pipeline I built for NVDRS narratives transfers directly to the EHM and Femicide Monitor. [RIGHT] The MICS5 analysis shows my approach to macro data: I use it to find where to act. Nationally in Belize, 10% of people justify partner violence. But when you look at the intersection of adolescence, Maya ethnicity, and Toledo District, that number jumps to 34%. That's the power of intersectional analysis — it shows you that national averages hide concentrated pockets of risk. And here's the key: I didn't stop at the analysis. I went to Toledo and built THRIVE. That's my philosophy: big data to know where, fieldwork to build what." TRANSITION: "Now let me show you the future."</div>
+  <div class="speaker-note">TIMING: 2 minutes. SAY: "Hidden Partners uses the U.S. National Violent Death Reporting System to find intimate partner violence that's hiding in plain sight. When a pregnant woman dies — by homicide, suicide, or overdose — the partner is often mentioned in the narrative text but never coded as a variable. I built a text classifier to make them visible. This bridges all three Deaths of Despair dimensions in a single study. [Liem] Professor Liem, the pipeline I built for NVDRS narratives transfers directly to the EHM and Femicide Monitor. I bring the methods, you have the data." TRANSITION: "Let me show you how all this surveillance work fits together."</div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════
+     SLIDE 10b: SURVEILLANCE SYNTHESIS
+     ═══════════════════════════════════════════════════════════ -->
+<section class="slide">
+  <div class="research-arc"><div class="arc-dot"></div><div class="arc-dot"></div><div class="arc-dot"></div><div class="arc-dot"></div><div class="arc-dot"></div><div class="arc-dot active"></div></div>
+  <div class="slide-label anim">SURVEILLANCE SYNTHESIS</div>
+  <h2 class="slide-heading anim anim-d1" style="max-width:30ch">Big Data to Know Where. Fieldwork to Build What.</h2>
+  <div class="accent-line anim anim-d2"></div>
+  <div class="synth-grid">
+    <div class="synth-card anim anim-d3">
+      <div class="synth-label">NVDRS + NLP</div>
+      <div class="synth-title">Who is invisible?</div>
+      <div class="synth-desc">Text analysis reveals partner violence hidden in death records &mdash; the relational context surveillance systems miss.</div>
+    </div>
+    <div class="synth-card anim anim-d4">
+      <div class="synth-label">YRBS 2023</div>
+      <div class="synth-title">Who is at risk, and why?</div>
+      <div class="synth-desc">Opioid use links to bullying, violence, and ethnic inequalities &mdash; not all substances are equal, not all pathways are the same.</div>
+    </div>
+    <div class="synth-card anim anim-d5">
+      <div class="synth-label">MICS5 BELIZE</div>
+      <div class="synth-title">Where should we go?</div>
+      <div class="synth-desc">Violence tolerance cascades: 9.8% nationally &rarr; 34.1% among Maya adolescents in Toledo. The data pointed me to Punta Gorda.</div>
+    </div>
+  </div>
+  <div class="anim anim-d6" style="margin-top:22px; display:flex; align-items:center; gap:12px; justify-content:center">
+    <svg viewBox="0 0 24 24" width="28" fill="none" stroke="var(--green)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/></svg>
+    <span style="font-family:var(--font-display); font-size:1.2rem; font-weight:700; color:var(--green)">THRIVE-Belize</span>
+    <span style="font-size:0.95rem; color:var(--text-mid)">&mdash; the data told me where, so I went and built it with the community</span>
+  </div>
+  <div class="speaker-note">TIMING: 1 minute. Bridge slide. SAY: "This is the logic that connects my surveillance work. [Point to cards] Each data source answers a different question. NVDRS tells me who is invisible in our systems. YRBS tells me who is at risk and why. MICS5 tells me exactly where to go. And when you layer those answers — 10% nationally, but 34% among Maya adolescents in Toledo — the map is clear. [Point to THRIVE] That's how THRIVE happened. I didn't design a program in a university office and export it. I used population-level data to find the specific community where prevention would have the biggest impact, went there, and built it from the bottom up. Big data to know where. Fieldwork to build what. That's my approach." TRANSITION: "Now let me show you the future."</div>
 </section>
 
 <!-- ═══════════════════════════════════════════════════════════
@@ -677,7 +724,7 @@ img { -webkit-user-drag: none; user-select: none; }
 </section>
 
 <!-- ═══════════════════════════════════════════════════════════
-     SLIDE 12: ALIGNMENT WEB (more specific)
+     SLIDE 13: ALIGNMENT WEB (more specific)
      ═══════════════════════════════════════════════════════════ -->
 <section class="slide">
   <div class="slide-label anim">ALIGNMENT</div>
@@ -735,38 +782,37 @@ img { -webkit-user-drag: none; user-select: none; }
 </section>
 
 <!-- ═══════════════════════════════════════════════════════════
-     SLIDE 13: RESEARCH PROPOSAL
+     SLIDE 14: RESEARCH PROPOSAL — TIGHTER
      ═══════════════════════════════════════════════════════════ -->
 <section class="slide">
   <div class="slide-label anim">RESEARCH PROPOSAL</div>
-  <h2 class="slide-heading anim anim-d1" style="max-width:30ch">Three Aims for Three Years</h2>
-  <p class="slide-subheading anim anim-d2" style="max-width:50ch">Combining this group&rsquo;s data infrastructure with my computational tools, field evidence, and community partnerships.</p>
-  <div class="accent-line anim anim-d3"></div>
+  <h2 class="slide-heading anim anim-d1" style="max-width:28ch">Three Years, Three Aims</h2>
+  <div class="accent-line anim anim-d2"></div>
   <div class="proposal-aims">
-    <div class="aim-card anim anim-d4">
+    <div class="aim-card anim anim-d3">
       <div class="aim-num">Aim 1</div>
-      <div class="aim-title">Text Analysis for Violence Monitoring</div>
-      <div class="aim-desc">Adapt my text classifiers to detect hidden patterns in the Dutch Femicide Monitor and European Homicide Monitor case descriptions. Train on human-coded samples, validate, and share the tools openly for other countries to use.</div>
+      <div class="aim-title">Text Analysis for Monitoring</div>
+      <div class="aim-desc">Adapt my text classifiers to the Dutch Femicide Monitor and European Homicide Monitor. Train on human-coded samples, validate, and share the tools openly.</div>
       <div class="aim-outputs">Year 1&ndash;2 &middot; 2 publications + open toolkit</div>
     </div>
-    <div class="aim-card anim anim-d5">
+    <div class="aim-card anim anim-d4">
       <div class="aim-num">Aim 2</div>
-      <div class="aim-title">Cross-National Structural Inequality</div>
-      <div class="aim-desc">Compare how violence, substance-related harm, and self-directed violence cluster across Europe, Latin America, and the Caribbean. Use the Dutch Caribbean Homicide Monitor&rsquo;s shared structure with the EHM for direct cross-regional comparison.</div>
+      <div class="aim-title">Cross-National Violence Patterns</div>
+      <div class="aim-desc">Compare how violence, substance harm, and suicide cluster across Europe, Latin America, and the Caribbean &mdash; using the Dutch Caribbean Homicide Monitor for direct comparison.</div>
       <div class="aim-outputs">Year 1&ndash;3 &middot; 2&ndash;3 publications + policy brief</div>
     </div>
-    <div class="aim-card green-top anim anim-d6">
+    <div class="aim-card green-top anim anim-d5">
       <div class="aim-num">Aim 3</div>
-      <div class="aim-title">Life-Skills Prevention in the Caribbean</div>
-      <div class="aim-desc">Submit a grant (NWO or Horizon Europe) for a <strong>multi-site life-skills intervention</strong> in former Dutch colonies in the Caribbean &mdash; building on THRIVE-Belize and co-designed with local communities. Colonial legacies shaped the conditions that produce violence; community-partnered prevention is how we begin to address them. <strong>I need this group&rsquo;s support to make this happen.</strong></div>
-      <div class="aim-outputs">Year 2&ndash;3 &middot; Grant submission + pilot protocol</div>
+      <div class="aim-title">Caribbean Life-Skills Grant</div>
+      <div class="aim-desc">Submit a grant for a multi-site life-skills program in former Dutch Caribbean colonies, building on THRIVE-Belize. <strong>I need this group&rsquo;s support.</strong></div>
+      <div class="aim-outputs">Year 2&ndash;3 &middot; NWO or Horizon Europe grant + pilot</div>
     </div>
   </div>
-  <div class="speaker-note">TIMING: 2 minutes. Be direct about needing their support on Aim 3. SAY: "Three aims across three years. [Aim 1] First, I'll adapt the text analysis tools I built for U.S. death records to work with the Femicide Monitor and EHM. Open-source, replicable, shareable across countries. [Aim 2] Second, I'll use the unique comparability between the EHM and the Dutch Caribbean Homicide Monitor to compare how violence, substance harm, and suicide cluster in Europe versus the Caribbean. The Dutch Caribbean territories offer a rare natural comparison. [Aim 3] Third — and this is where I need your support — I want to submit a grant for a multi-site life-skills intervention in former Dutch colonies in the Caribbean. THRIVE-Belize is the proof of concept. The Caribbean territories share structural conditions shaped by colonial legacies: limited institutional capacity, concentrated violence, under-resourced prevention. I believe we can build community-partnered programs that work. But I can't do this alone. A grant of this scope needs the institutional backing and network of a group like this one. [Pause] Five to six publications. An open-source toolkit. A major grant submission. All integrated with what you already have."</div>
+  <div class="speaker-note">TIMING: 2 minutes. Be direct about needing their support on Aim 3. SAY: "Three aims across three years. [Aim 1] First, I'll adapt my text analysis tools to work with the Femicide Monitor and EHM. Open-source, replicable, shareable across countries. [Aim 2] Second, a cross-national comparison of how violence, substance harm, and suicide cluster — using the unique comparability between the EHM and the Dutch Caribbean Homicide Monitor. [Aim 3] Third — and this is where I need your support — a grant for a multi-site life-skills intervention in former Dutch colonies in the Caribbean. THRIVE-Belize is the proof of concept. The Caribbean territories share structural conditions shaped by colonial legacies. I believe we can build programs that work. But I can't do this alone. [Pause] Five to six publications. An open-source toolkit. A major grant submission. All integrated with what you already have."</div>
 </section>
 
 <!-- ═══════════════════════════════════════════════════════════
-     SLIDE 14: TEACHING
+     SLIDE 15: TEACHING
      ═══════════════════════════════════════════════════════════ -->
 <section class="slide">
   <div class="slide-label anim">TEACHING &amp; MENTORING</div>
@@ -794,7 +840,7 @@ img { -webkit-user-drag: none; user-select: none; }
 </section>
 
 <!-- ═══════════════════════════════════════════════════════════
-     SLIDE 15: CLOSE
+     SLIDE 16: CLOSE
      ═══════════════════════════════════════════════════════════ -->
 <section class="slide">
   <div class="close-heading anim">I don&rsquo;t just study violence from a distance &mdash; I work alongside communities to prevent it.</div>
@@ -810,7 +856,7 @@ img { -webkit-user-drag: none; user-select: none; }
 <!-- NAV -->
 <nav class="nav">
   <button class="nav-btn" id="prev-btn" aria-label="Previous"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg></button>
-  <span class="slide-counter" id="slide-counter">1 / 15</span>
+  <span class="slide-counter" id="slide-counter">1 / 16</span>
   <button class="nav-btn" id="next-btn" aria-label="Next"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></button>
   <span class="pres-timer" id="pres-timer">00:00</span>
 </nav>
