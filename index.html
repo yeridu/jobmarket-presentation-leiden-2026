@@ -115,9 +115,9 @@ a:hover { color: var(--orange-dim); }
 .card.accent-green { border-left: 3px solid var(--green); background: var(--green-glow); }
 
 /* === GAP GRID === */
-.gap-grid { display: grid; grid-template-columns: 1fr auto 1fr; gap: 24px; width: 100%; max-width: 1000px; margin-top: 4px; align-items: start; }
+.gap-grid { display: grid; grid-template-columns: 1fr auto 1fr; gap: 10px 24px; width: 100%; max-width: 1000px; margin-top: 4px; align-items: stretch; }
 .gap-col { display: flex; flex-direction: column; gap: 10px; }
-.gap-plus { display: flex; align-items: center; justify-content: center; font-family: var(--font-display); font-size: 2.4rem; font-weight: 700; color: var(--orange); align-self: center; }
+.gap-plus { display: flex; align-items: center; justify-content: center; font-family: var(--font-display); font-size: 1.2rem; font-weight: 700; color: var(--orange); align-self: center; }
 
 /* === FULL-WIDTH PAPER LAYOUT === */
 .paper-full { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; width: 100%; max-width: 1100px; align-items: start; text-align: left; }
@@ -433,21 +433,26 @@ img { -webkit-user-drag: none; user-select: none; }
   <h2 class="slide-heading anim anim-d1">What You Have. What I Bring.</h2>
   <div class="accent-line anim anim-d2"></div>
   <div class="gap-grid">
-    <div class="gap-col anim anim-d3">
-      <div style="font-size:0.72rem; font-weight:700; text-transform:uppercase; letter-spacing:0.14em; color:var(--orange); margin-bottom:6px; text-align:left">The group excels at</div>
-      <div class="card"><div class="card-title">Homicide &amp; Femicide Research</div><div class="card-desc">European Homicide Monitor, Dutch Femicide Monitor, 25-year trend analysis</div></div>
-      <div class="card"><div class="card-title">Violence Dynamics</div><div class="card-desc">Micro-level analysis, video-based research, TURNING VIOLENT ERC project</div></div>
-      <div class="card"><div class="card-title">Perpetration &amp; Masculinities</div><div class="card-desc">Biographical narratives, femicide perpetrators, pathways out of violence</div></div>
-      <div class="card"><div class="card-title">Governance &amp; Policing</div><div class="card-desc">Police-civilian encounters, security actors, institutional analysis</div></div>
-    </div>
-    <div class="gap-plus anim anim-d4">+</div>
-    <div class="gap-col anim anim-d5">
-      <div style="font-size:0.72rem; font-weight:700; text-transform:uppercase; letter-spacing:0.14em; color:var(--green); margin-bottom:6px; text-align:left">I bring</div>
-      <div class="card accent-green" id="gap-bring-1"><div class="card-title">Computational Tools</div><div class="card-desc">Text analysis and machine learning applied to death records and case narratives (e.g., EHM Incidence Description)</div></div>
-      <div class="card accent-green" id="gap-bring-2"><div class="card-title">Population Surveillance &amp; Bystander Evaluation</div><div class="card-desc">MICS5 cascade mapping of violence tolerance in Belize; 4-year Green Dot bystander trial across 26 Kentucky high schools</div></div>
-      <div class="card accent-green" id="gap-bring-3"><div class="card-title">THRIVE-Belize Life-Skills Curriculum</div><div class="card-desc">7-module prevention program co-designed with Maya adolescents &mdash; addressing masculinity norms before they become pathways to violence</div></div>
-      <div class="card accent-green" id="gap-bring-4"><div class="card-title">ESCUDO &mdash; Police Training in Tijuana</div><div class="card-desc">1,800+ officers trained in harm reduction. Institutional reform from the inside, from curriculum design to delivery</div></div>
-    </div>
+    <!-- Headers -->
+    <div style="font-size:0.72rem; font-weight:700; text-transform:uppercase; letter-spacing:0.14em; color:var(--orange); text-align:left" class="anim anim-d3">The group excels at</div>
+    <div></div>
+    <div style="font-size:0.72rem; font-weight:700; text-transform:uppercase; letter-spacing:0.14em; color:var(--green); text-align:left" class="anim anim-d3">I bring</div>
+    <!-- Row 1 -->
+    <div class="card anim anim-d3"><div class="card-title">Homicide &amp; Femicide Research</div><div class="card-desc">European Homicide Monitor, Dutch Femicide Monitor, 25-year trend analysis</div></div>
+    <div class="gap-plus anim anim-d4">&harr;</div>
+    <div class="card accent-green anim anim-d5" id="gap-bring-1"><div class="card-title">Computational Tools</div><div class="card-desc">Text analysis and machine learning applied to death records and case narratives (e.g., EHM Incidence Description)</div></div>
+    <!-- Row 2 -->
+    <div class="card anim anim-d3"><div class="card-title">Violence Dynamics</div><div class="card-desc">Micro-level analysis, video-based research, TURNING VIOLENT ERC project</div></div>
+    <div class="gap-plus anim anim-d4">&harr;</div>
+    <div class="card accent-green anim anim-d5" id="gap-bring-2"><div class="card-title">Population Surveillance &amp; Bystander Evaluation</div><div class="card-desc">MICS5 cascade mapping of violence tolerance; 4-year Green Dot bystander trial across 26 Kentucky high schools</div></div>
+    <!-- Row 3 -->
+    <div class="card anim anim-d3"><div class="card-title">Perpetration &amp; Masculinities</div><div class="card-desc">Biographical narratives, femicide perpetrators, pathways out of violence</div></div>
+    <div class="gap-plus anim anim-d4">&harr;</div>
+    <div class="card accent-green anim anim-d5" id="gap-bring-3"><div class="card-title">THRIVE-Belize Life-Skills Curriculum</div><div class="card-desc">7-module prevention program co-designed with Maya adolescents &mdash; addressing masculinity norms before they become pathways to violence</div></div>
+    <!-- Row 4 -->
+    <div class="card anim anim-d3"><div class="card-title">Governance &amp; Policing</div><div class="card-desc">Police-civilian encounters, security actors, institutional analysis</div></div>
+    <div class="gap-plus anim anim-d4">&harr;</div>
+    <div class="card accent-green anim anim-d5" id="gap-bring-4"><div class="card-title">ESCUDO &mdash; Police Training in Tijuana</div><div class="card-desc">1,800+ officers trained in harm reduction. Institutional reform from the inside, from curriculum design to delivery</div></div>
   </div>
   <button class="narrate-btn anim anim-d6" type="button" data-narrate="gap">
     <svg class="narrate-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>
