@@ -247,6 +247,13 @@ a:hover { color: var(--orange-dim); }
 .journey-role { font-size: 0.68rem; color: var(--text-light); line-height: 1.3; margin-top: 2px; }
 .journey-line { width: 36px; height: 2px; background: var(--orange-dim); flex-shrink: 0; margin-top: 20px; }
 
+/* === MAP GRID (Slide 1) === */
+.map-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px 24px; width: 100%; max-width: 720px; margin-top: 14px; }
+.map-cell { text-align: center; }
+.map-svg { width: 100%; max-height: 105px; display: block; margin: 0 auto; }
+.map-label { font-family: var(--font-display); font-size: 0.78rem; font-weight: 700; color: var(--black); margin-top: 2px; }
+.map-detail { font-size: 0.62rem; color: var(--text-light); line-height: 1.3; }
+
 /* === PILLAR PIPELINE === */
 .pillar-grid { display: grid; grid-template-columns: 1fr auto 1fr auto 1fr; gap: 16px; width: 100%; max-width: 1080px; margin-top: 12px; align-items: start; }
 .pillar { background: var(--card-bg); border-radius: 14px; padding: 22px 18px; text-align: left; border: 1px solid var(--border); }
@@ -330,6 +337,7 @@ img { -webkit-user-drag: none; user-select: none; }
   .pillar-arrow { display: none; }
   .journey-path { flex-wrap: wrap; gap: 8px; }
   .journey-line { display: none; }
+  .map-grid { grid-template-columns: 1fr; max-width: 360px; }
   .video-container { width: 90%; }
   .synth-grid { grid-template-columns: 1fr; }
 }
@@ -356,80 +364,73 @@ img { -webkit-user-drag: none; user-select: none; }
   <h1 class="slide-heading anim anim-d1" style="font-size:clamp(2.4rem,5vw,3.8rem); max-width:22ch">Mario Morales</h1>
   <div class="accent-line anim anim-d2"></div>
   <p class="slide-subheading anim anim-d3" style="max-width:48ch; font-size:clamp(1rem,2vw,1.2rem)">From ethnographic fieldwork in Oaxaca to classrooms in Belize &mdash; preventing violence where it starts, building life-skills where they&rsquo;re needed most.</p>
-  <div class="journey-path anim anim-d4">
-    <div class="journey-stop">
-      <div class="journey-dot orange">OAX</div>
-      <div class="journey-place">Oaxaca</div>
-      <div class="journey-role">Anthropology<br>Ethnography</div>
+  <!-- 2×2 Map Grid -->
+  <div class="map-grid anim anim-d4">
+    <!-- MEXICO — top left -->
+    <div class="map-cell">
+      <svg viewBox="0 0 200 160" class="map-svg">
+        <!-- Simplified Mexico outline -->
+        <path d="M30,20 L80,15 L100,10 L140,15 L160,25 L175,18 L185,30 L180,45 L170,55 L155,70 L140,90 L120,105 L105,120 L90,130 L75,135 L60,130 L50,120 L40,105 L30,90 L20,70 L15,50 L20,35 Z" fill="none" stroke="var(--orange)" stroke-width="1.5" opacity="0.5"/>
+        <!-- Oaxaca dot -->
+        <circle cx="105" cy="110" r="4" fill="var(--orange)"/>
+        <text x="105" y="125" text-anchor="middle" fill="var(--orange)" font-family="var(--font-display)" font-size="7" font-weight="600">Oaxaca</text>
+        <!-- Tijuana dot -->
+        <circle cx="32" cy="22" r="4" fill="var(--orange)"/>
+        <text x="46" y="20" text-anchor="start" fill="var(--orange)" font-family="var(--font-display)" font-size="7" font-weight="600">Tijuana</text>
+      </svg>
+      <div class="map-label">Mexico</div>
+      <div class="map-detail">Ethnography &middot; ESCUDO &middot; Federal Police</div>
     </div>
-    <div class="journey-line"></div>
-    <div class="journey-stop">
-      <div class="journey-dot orange">MX</div>
-      <div class="journey-place">Mexico City</div>
-      <div class="journey-role">Demography<br>Federal Police</div>
+    <!-- USA — top right -->
+    <div class="map-cell">
+      <svg viewBox="0 0 200 130" class="map-svg">
+        <!-- Simplified US outline -->
+        <path d="M10,35 L25,30 L45,28 L65,25 L85,22 L105,20 L125,18 L145,20 L160,22 L175,28 L190,35 L188,50 L185,65 L180,75 L170,85 L155,90 L140,92 L125,90 L110,88 L95,90 L80,92 L65,90 L50,85 L35,78 L20,65 L12,50 Z" fill="none" stroke="var(--orange)" stroke-width="1.5" opacity="0.5"/>
+        <!-- Arizona dot -->
+        <circle cx="52" cy="75" r="4" fill="var(--orange)"/>
+        <text x="52" y="88" text-anchor="middle" fill="var(--orange)" font-family="var(--font-display)" font-size="7" font-weight="600">Arizona</text>
+        <!-- Kentucky dot -->
+        <circle cx="140" cy="60" r="4" fill="var(--orange)"/>
+        <text x="140" y="53" text-anchor="middle" fill="var(--orange)" font-family="var(--font-display)" font-size="7" font-weight="600">Kentucky</text>
+      </svg>
+      <div class="map-label">United States</div>
+      <div class="map-detail">Public Health &middot; Data Science &middot; Green Dot</div>
     </div>
-    <div class="journey-line"></div>
-    <div class="journey-stop">
-      <div class="journey-dot orange">TJ</div>
-      <div class="journey-place">Tijuana</div>
-      <div class="journey-role">ESCUDO<br>Police training</div>
+    <!-- SOUTH AFRICA — bottom left -->
+    <div class="map-cell">
+      <svg viewBox="0 0 200 160" class="map-svg">
+        <!-- Simplified South Africa outline -->
+        <path d="M55,25 L90,20 L120,22 L145,28 L165,40 L175,55 L178,75 L172,95 L160,110 L145,125 L125,135 L100,140 L80,138 L60,130 L45,115 L35,95 L30,75 L35,55 L42,38 Z" fill="none" stroke="var(--orange)" stroke-width="1.5" opacity="0.5"/>
+        <!-- Lesotho hole hint -->
+        <ellipse cx="130" cy="105" rx="12" ry="9" fill="none" stroke="var(--orange)" stroke-width="0.8" opacity="0.3"/>
+        <!-- Grootbos dot (Western Cape) -->
+        <circle cx="68" cy="128" r="4" fill="var(--green)"/>
+        <text x="68" y="143" text-anchor="middle" fill="var(--green)" font-family="var(--font-display)" font-size="7" font-weight="600">Grootbos</text>
+        <!-- Natural Valley Trust dot (Eastern Cape) -->
+        <circle cx="125" cy="125" r="4" fill="var(--green)"/>
+        <text x="138" y="120" text-anchor="start" fill="var(--green)" font-family="var(--font-display)" font-size="7" font-weight="600">Natural Valley</text>
+      </svg>
+      <div class="map-label">South Africa</div>
+      <div class="map-detail">Grootbos Foundation &middot; Natural Valley Trust</div>
     </div>
-    <div class="journey-line"></div>
-    <div class="journey-stop">
-      <div class="journey-dot orange">AZ</div>
-      <div class="journey-place">Arizona</div>
-      <div class="journey-role">Public Health<br>Data Science</div>
-    </div>
-    <div class="journey-line"></div>
-    <div class="journey-stop">
-      <div class="journey-dot green">BZ</div>
-      <div class="journey-place">Belize</div>
-      <div class="journey-role">Life-Skills<br>Community</div>
-    </div>
-    <div class="journey-line"></div>
-    <div class="journey-stop">
-      <div class="journey-dot outline">?</div>
-      <div class="journey-place">Leiden</div>
-      <div class="journey-role">Your team</div>
+    <!-- BELIZE — bottom right -->
+    <div class="map-cell">
+      <svg viewBox="0 0 140 185" class="map-svg">
+        <!-- Belize outline -->
+        <path d="M35,15 L75,15 L88,28 L92,50 L88,70 L90,90 L92,110 L90,128 L84,145 L72,160 L56,170 L40,162 L30,145 L26,125 L30,103 L26,82 L30,60 L26,38 Z" fill="none" stroke="var(--orange)" stroke-width="1.5" opacity="0.5"/>
+        <!-- Toledo District highlight -->
+        <path d="M40,132 L90,128 L92,138 L90,148 L84,155 L72,165 L56,170 L40,162 L30,152 L26,140 Z" fill="var(--green-glow)" stroke="var(--green)" stroke-width="1.5"/>
+        <!-- Punta Gorda dot -->
+        <circle cx="58" cy="150" r="4" fill="var(--green)"/>
+        <text x="58" y="115" text-anchor="middle" fill="var(--green)" font-family="var(--font-display)" font-size="8" font-weight="600">Punta Gorda</text>
+      </svg>
+      <div class="map-label">Belize</div>
+      <div class="map-detail">THRIVE &middot; Life-Skills &middot; Toledo District</div>
     </div>
   </div>
-  <p class="slide-body anim anim-d5" style="margin-top:18px; max-width:46ch; font-size:0.92rem"><em>Deaths of Despair</em> &mdash; violence, substance use, and self-harm &mdash; is the thread that connects every stop on this journey.</p>
-  <div class="anim anim-d6" style="margin-top:16px"><a href="https://www.yeridu.com" target="_blank" style="font-family:var(--font-display); font-size:1.3rem; font-weight:700; color:var(--orange); border-bottom:3px solid var(--orange); padding-bottom:4px">yeridu.com</a></div>
+  <p class="slide-body anim anim-d5" style="margin-top:12px; max-width:46ch; font-size:0.88rem"><em>Deaths of Despair</em> &mdash; violence, substance use, and self-harm &mdash; connects every stop.</p>
+  <div class="anim anim-d6" style="margin-top:10px"><a href="https://www.yeridu.com" target="_blank" style="font-family:var(--font-display); font-size:1.2rem; font-weight:700; color:var(--orange); border-bottom:3px solid var(--orange); padding-bottom:4px">yeridu.com</a></div>
   <div class="speaker-note">TIMING: 1 minute. Start confident, collegial. SAY: "Good morning / afternoon. My name is Mario Morales. [Point to path] My journey started in Oaxaca, doing ethnographic fieldwork where I first encountered violence research — Los Zetas were operating in the region. That experience taught me to listen before trying to fix anything. From there I moved to Mexico City for demography at El Colegio de México and then to the Federal Police. Then Tijuana, where I trained over 1,800 officers in harm reduction through the ESCUDO project. Then Arizona for public health and data science. And most recently, Belize, where I built a life-skills curriculum from the ground up with Maya adolescents. The thread connecting every stop is Deaths of Despair — the intersection of violence, substance use, and self-harm. Today I want to show you my work, and why this group is the right place for the next stop." TRANSITION: "Let me tell you about my background."</div>
-</section>
-
-<!-- ═══════════════════════════════════════════════════════════
-     SLIDE 2: MY BACKGROUND (full-width, no photo)
-     ═══════════════════════════════════════════════════════════ -->
-<section class="slide">
-  <div class="slide-label anim">MY BACKGROUND</div>
-  <h2 class="slide-heading anim anim-d1" style="max-width:32ch">Trained in the field. Grounded in communities.</h2>
-  <div class="accent-line anim anim-d2"></div>
-  <p class="slide-body anim anim-d3" style="max-width:56ch; text-align:center; margin-bottom:20px">My path started in anthropology and ethnographic fieldwork &mdash; learning to listen before learning to model. I&rsquo;ve since trained in demography, public policy, and public health, always keeping one foot in the community and one foot in the data.</p>
-  <div class="tags anim anim-d4" style="max-width:700px; margin-bottom:20px">
-    <span class="tag">Anthropology</span>
-    <span class="tag">Ethnography</span>
-    <span class="tag">Demography</span>
-    <span class="tag">Public Policy</span>
-    <span class="tag">Public Health</span>
-    <span class="tag">Computational Social Science</span>
-    <span class="tag green">Intervention Design</span>
-  </div>
-  <div style="display:flex; flex-wrap:wrap; gap:20px; justify-content:center; max-width:800px" class="anim anim-d5">
-    <div style="text-align:center; flex:1; min-width:180px">
-      <div style="font-family:var(--font-display); font-size:1.6rem; font-weight:700; color:var(--orange)">1,800+</div>
-      <div style="font-size:0.82rem; color:var(--text-light)">Police officers trained<br>in harm reduction (Tijuana)</div>
-    </div>
-    <div style="text-align:center; flex:1; min-width:180px">
-      <div style="font-family:var(--font-display); font-size:1.6rem; font-weight:700; color:var(--orange)">4</div>
-      <div style="font-size:0.82rem; color:var(--text-light)">Countries of fieldwork<br>U.S., Mexico, Belize, South Africa</div>
-    </div>
-    <div style="text-align:center; flex:1; min-width:180px">
-      <div style="font-family:var(--font-display); font-size:1.6rem; font-weight:700; color:var(--green)">7</div>
-      <div style="font-size:0.82rem; color:var(--text-light)">Life-skills modules<br>designed with communities</div>
-    </div>
-  </div>
-  <div class="speaker-note">TIMING: 1.5 minutes. Emphasize on-the-ground experience. SAY: "I started in anthropology — that's where I learned to sit with people, listen, and understand before trying to measure or intervene. My ethnographic fieldwork in Oaxaca, where I first encountered organized violence, taught me that prevention doesn't come from the top down. It comes from understanding how people actually live. From there I moved to Mexico City for demography at El Colegio de México, then into internal affairs at the Federal Police. In Tijuana I led the ESCUDO project — training over 1,800 officers in harm reduction. Then the University of Arizona for public health and data science, where I combined all of these into what I do now: designing and evaluating community-based prevention programs while using data to know where they're needed most. Four countries of fieldwork. Seven life-skills modules co-designed with communities. Over 1,800 officers trained." TRANSITION: "Now let me show you what I bring to this group specifically."</div>
 </section>
 
 <!-- ═══════════════════════════════════════════════════════════
@@ -874,7 +875,7 @@ Deaths of Despair — Case and Deaton's framework — is the thread connecting m
 <!-- NAV -->
 <nav class="nav">
   <button class="nav-btn" id="prev-btn" aria-label="Previous"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg></button>
-  <span class="slide-counter" id="slide-counter">1 / 17</span>
+  <span class="slide-counter" id="slide-counter">1 / 16</span>
   <button class="nav-btn" id="next-btn" aria-label="Next"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></button>
   <span class="pres-timer" id="pres-timer">00:00</span>
 </nav>
@@ -946,10 +947,10 @@ Deaths of Despair — Case and Deaton's framework — is the thread connecting m
 
   var narrations = {
     gap: [
-      { id: "gap-bring-1", text: "Your group has deep expertise in understanding violence. Homicide patterns, perpetrator trajectories, policing dynamics. What I add is the prevention side — programs that stop these trajectories before they start." },
-      { id: "gap-bring-2", text: "I also bring computational tools. Text analysis, machine learning. Things that plug directly into data you already collect. It's about making your infrastructure do more." },
-      { id: "gap-bring-3", text: "And I've done community-partnered research in the Caribbean, in former colonies where the same structural inequalities you study here play out in very different ways. I think there's real potential for comparative work." },
-      { id: "gap-bring-4", text: "Plus years of practical experience inside security institutions. Training police officers, reforming programs. That kind of field knowledge complements what you do here." }
+      { id: "gap-bring-1", text: "One thing I'd love to contribute is the prevention side. Your group understands how violence unfolds and why. I focus on what happens before it starts — building programs with communities to interrupt those trajectories early." },
+      { id: "gap-bring-2", text: "I also work with computational tools — text analysis, machine learning — and I think they could plug nicely into the data you already collect. A way to get more from what's already there." },
+      { id: "gap-bring-3", text: "Something close to my heart is community-partnered research in the Caribbean, in places shaped by colonial legacies. I think there's real potential for comparative work with what this group does in Europe." },
+      { id: "gap-bring-4", text: "And I've spent years inside security institutions — training police officers, building harm-reduction programs from the inside. That practitioner perspective is something I'd be glad to bring to the table." }
     ],
     web: [
       { id: "node-liem", text: "Professor Liem, I see a natural bridge between my NVDRS work on hidden partners in pregnancy-associated deaths and your domestic homicide research. My text analysis pipeline could bring something genuinely useful to the Femicide Monitor." },
