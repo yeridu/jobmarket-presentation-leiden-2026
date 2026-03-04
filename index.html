@@ -1,0 +1,798 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mario Morales — Leiden University Job Talk</title>
+<meta name="description" content="Mapping Deaths of Despair Across Borders: Violence, Substance Use, and Prevention in Comparative Perspective.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   Leiden Job Talk — White Theme with Navy + Orange Accents
+   Purpose-built for the Violence & Violence Prevention group
+   ============================================================ */
+:root {
+  --black:      #111111;
+  --white:      #FFFFFF;
+  --navy:       #1B365D;
+  --navy-light: #2A4A7F;
+  --navy-glow:  rgba(27,54,93,0.08);
+  --orange:     #E8630A;
+  --orange-dim: #F4A261;
+  --orange-glow:rgba(232,99,10,0.08);
+  --gray:       #888888;
+  --gray-light: #E0E0E0;
+  --gray-bg:    #F5F5F5;
+  --red:        #D32F2F;
+
+  --font-display: "Sora", sans-serif;
+  --font-body:    "Source Sans 3", sans-serif;
+
+  --ease:     cubic-bezier(0.4, 0, 0.2, 1);
+  --duration: 400ms;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-size: 17px; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+body {
+  font-family: var(--font-body);
+  background: var(--white);
+  color: var(--black);
+  overflow: hidden;
+  height: 100vh; width: 100vw;
+}
+a { color: var(--orange); text-decoration: none; }
+a:hover { color: var(--orange-dim); }
+
+/* --- Deck & Slides --- */
+.deck { position: relative; width: 100vw; height: 100vh; overflow: hidden; }
+.slide {
+  position: absolute; inset: 0;
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  text-align: center; padding: 56px 72px;
+  background: var(--white); color: var(--black);
+  opacity: 0; visibility: hidden; transform: scale(0.98);
+  transition: opacity var(--duration) var(--ease), transform var(--duration) var(--ease), visibility 0s var(--duration);
+}
+.slide.active {
+  opacity: 1; visibility: visible; transform: scale(1);
+  transition: opacity var(--duration) var(--ease), transform var(--duration) var(--ease), visibility 0s 0s;
+}
+.slide--left { align-items: flex-start; text-align: left; padding: 48px 64px; }
+
+/* --- Progress --- */
+.progress-bar { position: fixed; top: 0; left: 0; width: 100%; height: 4px; background: rgba(0,0,0,0.06); z-index: 100; }
+.progress-fill { height: 100%; background: var(--navy); width: 0%; transition: width var(--duration) var(--ease); }
+
+/* --- Typography --- */
+.slide-label {
+  font-family: var(--font-body); font-size: 0.7rem; font-weight: 700;
+  text-transform: uppercase; letter-spacing: 0.24em;
+  color: var(--navy); margin-bottom: 16px;
+}
+.slide-heading {
+  font-family: var(--font-display); font-size: clamp(1.9rem, 4.2vw, 3.2rem);
+  font-weight: 700; line-height: 1.12; letter-spacing: -0.02em;
+  max-width: 24ch; margin-bottom: 18px; color: var(--black);
+}
+.slide-subheading {
+  font-family: var(--font-display); font-size: clamp(1.1rem, 2.2vw, 1.4rem);
+  font-weight: 500; line-height: 1.35; color: #555; max-width: 40ch; margin-bottom: 14px;
+}
+.slide-body {
+  font-size: clamp(0.95rem, 1.7vw, 1.1rem);
+  line-height: 1.65; max-width: 46ch; color: #444;
+}
+.accent-line { width: 44px; height: 3px; background: var(--navy); border-radius: 2px; margin: 14px auto 22px; }
+.slide--left .accent-line { margin-left: 0; }
+
+/* --- Animations --- */
+.anim { opacity: 0; transform: translateY(18px); transition: opacity 520ms var(--ease), transform 520ms var(--ease); }
+.slide.active .anim { opacity: 1; transform: translateY(0); }
+.anim-d1 { transition-delay: 70ms; }
+.anim-d2 { transition-delay: 140ms; }
+.anim-d3 { transition-delay: 210ms; }
+.anim-d4 { transition-delay: 280ms; }
+.anim-d5 { transition-delay: 350ms; }
+.anim-d6 { transition-delay: 420ms; }
+.anim-d7 { transition-delay: 490ms; }
+.anim-d8 { transition-delay: 560ms; }
+
+/* --- Chapter Cards --- */
+.chapter-card { background: var(--navy); color: var(--white); }
+.chapter-num { font-family: var(--font-body); font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.3em; color: var(--orange); margin-bottom: 18px; }
+.chapter-title { font-family: var(--font-display); font-size: clamp(2.6rem, 6.5vw, 4.6rem); font-weight: 700; letter-spacing: -0.03em; line-height: 1.08; color: var(--white); margin-bottom: 14px; }
+.chapter-line { width: 52px; height: 3px; background: var(--orange); border-radius: 2px; margin: 0 auto; }
+
+/* === OPENING: Deaths of Despair === */
+.dod-visual { display: flex; gap: 24px; align-items: center; margin: 24px 0 20px; flex-wrap: wrap; justify-content: center; }
+.dod-circle {
+  width: 150px; height: 150px; border-radius: 50%; display: flex; flex-direction: column;
+  align-items: center; justify-content: center; text-align: center;
+  border: 2px solid rgba(255,255,255,0.25); background: rgba(255,255,255,0.06);
+  padding: 16px; transition: border-color 300ms var(--ease);
+}
+.dod-circle:hover { border-color: var(--orange); }
+.dod-circle .dc-label { font-family: var(--font-display); font-size: 0.78rem; font-weight: 600; color: var(--white); line-height: 1.3; }
+.dod-connector { font-size: 1.2rem; color: rgba(255,255,255,0.3); }
+.dod-center { margin-top: 12px; }
+.dod-center-text { font-size: 0.82rem; color: rgba(255,255,255,0.5); font-weight: 600; text-transform: uppercase; letter-spacing: 0.14em; }
+
+/* === PROFILE === */
+.profile-layout { display: grid; grid-template-columns: 1.3fr 1fr; gap: 48px; width: 100%; max-width: 1060px; align-items: center; }
+.profile-text { text-align: left; }
+.profile-name { font-family: var(--font-display); font-size: clamp(2.2rem, 4vw, 3.2rem); font-weight: 700; letter-spacing: -0.02em; margin-bottom: 6px; }
+.profile-role { font-size: 1rem; color: #666; margin-bottom: 20px; line-height: 1.5; }
+.profile-disciplines { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 20px; }
+.disc-tag { font-size: 0.75rem; font-weight: 600; padding: 4px 12px; border-radius: 999px; border: 1px solid var(--gray-light); color: #555; }
+.disc-tag.match { border-color: var(--navy); color: var(--navy); background: var(--navy-glow); }
+.profile-url { display: inline-block; font-family: var(--font-display); font-size: 1.3rem; font-weight: 700; color: var(--orange); border-bottom: 3px solid var(--orange); padding-bottom: 3px; margin-top: 6px; }
+.profile-photo-wrap { display: flex; align-items: center; justify-content: center; }
+.profile-photo { width: 100%; max-width: 300px; max-height: 400px; object-fit: cover; border-radius: 14px; box-shadow: 0 8px 28px rgba(0,0,0,0.12); }
+
+/* === GAP I FILL === */
+.gap-grid { display: grid; grid-template-columns: 1fr auto 1fr; gap: 24px; width: 100%; max-width: 1000px; margin-top: 12px; align-items: start; }
+.gap-col { display: flex; flex-direction: column; gap: 12px; }
+.gap-card { background: var(--gray-bg); border-radius: 12px; padding: 18px 16px; text-align: left; }
+.gap-card .gc-title { font-family: var(--font-display); font-size: 0.88rem; font-weight: 600; color: var(--black); margin-bottom: 4px; }
+.gap-card .gc-desc { font-size: 0.82rem; color: #555; line-height: 1.45; }
+.gap-card.mine { border-left: 3px solid var(--orange); background: var(--orange-glow); }
+.gap-plus { display: flex; align-items: center; justify-content: center; font-family: var(--font-display); font-size: 2.4rem; font-weight: 700; color: var(--navy); padding-top: 40px; }
+
+/* === PAPER LAYOUT === */
+.paper-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 36px; width: 100%; max-width: 1060px; align-items: start; text-align: left; }
+.paper-badge { display: inline-flex; align-items: center; gap: 7px; font-size: 0.75rem; font-weight: 600; padding: 4px 12px; border-radius: 999px; border: 1px solid var(--gray-light); color: #666; margin-bottom: 6px; }
+.paper-badge .badge-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--navy); }
+.finding-card { background: var(--gray-bg); border-radius: 10px; padding: 18px; text-align: left; }
+.finding-card .fc-label { font-size: 0.68rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.12em; color: var(--navy); margin-bottom: 7px; }
+.finding-card .fc-value { font-family: var(--font-display); font-size: 1.6rem; font-weight: 700; color: var(--black); line-height: 1.2; margin-bottom: 5px; }
+.finding-card .fc-desc { font-size: 0.85rem; color: #555; line-height: 1.5; }
+.leiden-connection { background: var(--navy-glow); border-left: 3px solid var(--navy); border-radius: 10px; padding: 16px; text-align: left; margin-top: 4px; }
+.leiden-connection .lc-label { font-size: 0.68rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--navy); margin-bottom: 6px; }
+.leiden-connection .lc-text { font-size: 0.85rem; color: #444; line-height: 1.5; }
+.leiden-connection strong { color: var(--navy); }
+
+/* === PRISMA === */
+.prisma-flow { display: flex; flex-direction: column; align-items: center; gap: 5px; }
+.prisma-box { background: var(--gray-bg); border-radius: 9px; padding: 10px 18px; text-align: center; width: 100%; max-width: 240px; }
+.prisma-box .pb-num { font-family: var(--font-display); font-size: 1.3rem; font-weight: 700; color: var(--orange); }
+.prisma-box .pb-label { font-size: 0.78rem; color: #666; }
+.prisma-box.highlight { border: 2px solid var(--orange); background: var(--orange-glow); }
+.prisma-arrow { width: 2px; height: 14px; background: var(--gray-light); position: relative; }
+.prisma-arrow::after { content: ""; position: absolute; bottom: -3px; left: -3px; width: 0; height: 0; border-left: 4px solid transparent; border-right: 4px solid transparent; border-top: 5px solid var(--gray-light); }
+
+/* === TRAJECTORY CHART === */
+.trajectory-chart { background: var(--gray-bg); border-radius: 10px; padding: 20px; }
+.tc-title { font-size: 0.68rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.12em; color: var(--gray); margin-bottom: 14px; }
+.tc-bars { display: flex; flex-direction: column; gap: 10px; }
+.tc-bar-row { display: flex; align-items: center; gap: 10px; }
+.tc-bar-label { font-size: 0.78rem; color: #666; width: 65px; flex-shrink: 0; text-align: right; }
+.tc-bar-track { flex: 1; height: 26px; background: rgba(0,0,0,0.04); border-radius: 5px; overflow: hidden; }
+.tc-bar-fill { height: 100%; border-radius: 5px; display: flex; align-items: center; padding-left: 9px; font-size: 0.75rem; font-weight: 600; }
+.tc-bar-fill.control { background: #ccc; color: var(--black); }
+.tc-bar-fill.treatment { background: var(--navy); color: var(--white); }
+
+/* === SUBSTANCE BARS === */
+.substance-grid { display: grid; gap: 8px; }
+.sub-row { display: flex; align-items: center; gap: 10px; }
+.sub-label { font-size: 0.78rem; color: #666; width: 72px; flex-shrink: 0; text-align: right; }
+.sub-bar { height: 22px; border-radius: 4px; }
+.sub-bar.sig { background: var(--orange); }
+.sub-bar.ns { background: var(--gray-light); }
+.sub-sig-label { font-size: 0.68rem; font-weight: 600; color: var(--gray); white-space: nowrap; }
+
+/* === THRIVE === */
+.thrive-layout { display: grid; grid-template-columns: 1.2fr 1fr; gap: 36px; width: 100%; max-width: 1060px; align-items: start; text-align: left; }
+.module-list { list-style: none; padding: 0; }
+.module-item { display: flex; align-items: center; gap: 12px; padding: 8px 0; border-bottom: 1px solid var(--gray-light); }
+.module-item:last-child { border-bottom: none; }
+.mod-num { width: 26px; height: 26px; border-radius: 50%; background: var(--navy); color: var(--white); display: flex; align-items: center; justify-content: center; font-size: 0.72rem; font-weight: 700; flex-shrink: 0; }
+.mod-name { font-size: 0.9rem; color: #444; }
+.mod-name.highlight { color: var(--navy); font-weight: 600; }
+
+/* === ALIGNMENT WEB === */
+.web-container { position: relative; width: 600px; height: 440px; margin: 0 auto; }
+.web-center {
+  position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+  width: 110px; height: 110px; border-radius: 50%;
+  background: var(--navy); color: var(--white);
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  text-align: center; z-index: 5; box-shadow: 0 4px 20px rgba(27,54,93,0.3);
+}
+.web-center .wc-name { font-family: var(--font-display); font-size: 0.78rem; font-weight: 700; }
+.web-center .wc-role { font-size: 0.6rem; color: rgba(255,255,255,0.7); margin-top: 2px; }
+.web-node {
+  position: absolute; width: 120px; text-align: center; z-index: 4;
+}
+.wn-dot {
+  width: 44px; height: 44px; border-radius: 50%;
+  background: var(--gray-bg); border: 2px solid var(--navy);
+  display: flex; align-items: center; justify-content: center;
+  margin: 0 auto 6px; font-size: 0.65rem; font-weight: 700; color: var(--navy);
+  transition: background 200ms var(--ease);
+}
+.web-node:hover .wn-dot { background: var(--navy-glow); }
+.wn-name { font-family: var(--font-display); font-size: 0.68rem; font-weight: 600; color: var(--black); line-height: 1.2; }
+.wn-theme { font-size: 0.6rem; color: var(--gray); line-height: 1.3; margin-top: 2px; }
+.web-line {
+  position: absolute; top: 50%; left: 50%;
+  height: 1px; background: var(--navy);
+  opacity: 0.2; transform-origin: left center; z-index: 1;
+}
+
+/* === PROPOSAL === */
+.proposal-aims { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; width: 100%; max-width: 1000px; margin-top: 10px; }
+.aim-card { background: var(--gray-bg); border-radius: 12px; padding: 22px 18px; text-align: left; position: relative; border-top: 3px solid var(--navy); }
+.aim-num { font-family: var(--font-display); font-size: 1.3rem; font-weight: 700; color: var(--navy); margin-bottom: 6px; }
+.aim-title { font-family: var(--font-display); font-size: 0.92rem; font-weight: 600; color: var(--black); margin-bottom: 6px; }
+.aim-desc { font-size: 0.82rem; color: #555; line-height: 1.45; }
+.aim-outputs { font-size: 0.75rem; color: var(--navy); font-weight: 600; margin-top: 10px; }
+
+/* === TEACHING === */
+.teaching-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; width: 100%; max-width: 1000px; margin-top: 10px; }
+.teach-card { background: var(--gray-bg); border-radius: 12px; padding: 22px 18px; text-align: left; }
+.teach-card .tc-title { font-family: var(--font-display); font-size: 0.92rem; font-weight: 600; color: var(--black); margin-bottom: 5px; }
+.teach-card .tc-desc { font-size: 0.85rem; color: #555; line-height: 1.5; }
+
+/* === CLOSE === */
+.close-heading { font-family: var(--font-display); font-size: clamp(2rem, 4.5vw, 3.4rem); font-weight: 700; line-height: 1.12; margin-bottom: 18px; max-width: 26ch; }
+.close-body { font-size: 1.1rem; line-height: 1.6; max-width: 42ch; color: #555; margin-bottom: 36px; }
+.close-url { font-family: var(--font-display); font-size: 2.2rem; font-weight: 700; color: var(--orange); border-bottom: 3px solid var(--orange); padding-bottom: 5px; }
+.close-contact { margin-top: 22px; font-size: 0.9rem; color: #999; }
+
+/* === Research Arc === */
+.research-arc { position: absolute; top: 18px; right: 24px; display: flex; gap: 7px; z-index: 10; }
+.arc-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--gray-light); transition: background 300ms var(--ease), transform 300ms var(--ease); }
+.arc-dot.active { background: var(--navy); transform: scale(1.3); }
+
+/* === NAV === */
+.nav { position: fixed; bottom: 22px; left: 50%; transform: translateX(-50%); display: flex; align-items: center; gap: 11px; z-index: 90; background: rgba(255,255,255,0.92); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); border: 1px solid var(--gray-light); border-radius: 999px; padding: 7px 16px; box-shadow: 0 4px 18px rgba(0,0,0,0.08); }
+.nav-btn { width: 34px; height: 34px; border: none; border-radius: 50%; background: var(--navy); color: var(--white); cursor: pointer; display: flex; align-items: center; justify-content: center; transition: background 200ms var(--ease), opacity 200ms var(--ease); }
+.nav-btn:hover { background: var(--navy-light); }
+.nav-btn:disabled { opacity: 0.2; cursor: not-allowed; }
+.nav-btn .icon { width: 15px; height: 15px; }
+.slide-counter { font-family: var(--font-body); font-size: 0.78rem; font-weight: 600; color: var(--gray); min-width: 46px; text-align: center; font-variant-numeric: tabular-nums; }
+.pres-timer { font-family: var(--font-body); font-size: 0.75rem; font-weight: 600; color: var(--gray); font-variant-numeric: tabular-nums; padding-left: 7px; border-left: 1px solid var(--gray-light); display: none; }
+.pres-timer.visible { display: block; }
+
+/* === Notes === */
+.notes-panel { position: fixed; bottom: 0; left: 0; right: 0; background: rgba(17,17,17,0.95); backdrop-filter: blur(12px); color: var(--white); padding: 18px 28px; z-index: 95; transform: translateY(100%); transition: transform 300ms var(--ease); max-height: 32vh; overflow-y: auto; }
+.notes-panel.visible { transform: translateY(0); }
+.notes-header { font-size: 0.65rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.14em; color: var(--orange); margin-bottom: 8px; }
+.notes-content { font-size: 0.9rem; line-height: 1.6; color: rgba(255,255,255,0.8); max-width: 70ch; white-space: pre-line; }
+
+.kb-hint { position: fixed; bottom: 68px; right: 22px; z-index: 85; font-size: 0.65rem; color: #bbb; }
+.kb-hint kbd { display: inline-block; padding: 2px 4px; background: rgba(0,0,0,0.04); border: 1px solid var(--gray-light); border-radius: 3px; font-family: "Consolas", monospace; font-size: 0.6rem; margin: 0 1px; }
+.speaker-note { display: none; }
+img { -webkit-user-drag: none; user-select: none; }
+.photo-shield { position: relative; display: inline-block; }
+.photo-shield::after { content: ""; position: absolute; inset: 0; z-index: 1; }
+
+/* === RESPONSIVE === */
+@media (max-width: 900px) {
+  .slide { padding: 32px 24px; }
+  .slide--left { padding: 32px 24px; }
+  .profile-layout, .paper-layout, .thrive-layout { grid-template-columns: 1fr; }
+  .gap-grid { grid-template-columns: 1fr; }
+  .gap-plus { padding-top: 0; }
+  .proposal-aims, .teaching-grid { grid-template-columns: 1fr; }
+  .web-container { width: 100%; height: auto; position: static; }
+  .web-center { position: static; transform: none; margin: 0 auto 20px; }
+  .web-node { position: static; width: auto; margin-bottom: 12px; }
+  .web-line { display: none; }
+  .dod-visual { flex-direction: column; }
+  .dod-circle { width: 120px; height: 120px; }
+}
+
+@media print {
+  .slide { position: relative; opacity: 1; visibility: visible; transform: none; page-break-after: always; min-height: auto; padding: 24px; }
+  .chapter-card { background: var(--gray-bg); color: var(--black); }
+  .chapter-title { color: var(--black); }
+  .nav, .progress-bar, .notes-panel, .kb-hint, .pres-timer, .research-arc { display: none; }
+}
+</style>
+</head>
+<body>
+
+<div class="progress-bar"><div class="progress-fill" id="progress-fill"></div></div>
+
+<div class="deck" id="deck">
+
+<!-- ═══════════════════════════════════════════════════════════
+     SLIDE 1: DEATHS OF DESPAIR OPENING
+     ═══════════════════════════════════════════════════════════ -->
+<section class="slide chapter-card active">
+  <div class="chapter-num anim">THE UNIFYING QUESTION</div>
+  <div class="chapter-title anim anim-d1" style="font-size:clamp(2rem,5vw,3.6rem); max-width:20ch">When institutions fail, where does despair go?</div>
+  <div class="chapter-line anim anim-d2"></div>
+  <div class="dod-visual anim anim-d3">
+    <div class="dod-circle"><div class="dc-label">Interpersonal<br>Violence</div></div>
+    <div class="dod-connector">&harr;</div>
+    <div class="dod-circle"><div class="dc-label">Substance-<br>Related Harm</div></div>
+    <div class="dod-connector">&harr;</div>
+    <div class="dod-circle"><div class="dc-label">Self-Directed<br>Violence</div></div>
+  </div>
+  <div class="dod-center anim anim-d4"><div class="dod-center-text">Structural Inequality &middot; Deaths of Despair</div></div>
+  <div class="speaker-note">TIMING: 1.5 minutes. Do NOT start with your name. Start with THEIR question. SAY: "When institutions fail — when economic opportunity erodes, when police become a source of harm rather than protection, when gender norms go unchallenged — where does despair go? [Pause, let them look at the visual] It goes to interpersonal violence: homicide, intimate partner violence, femicide. It goes to substance-related harm: opioid misuse, drug-related mortality. And it goes inward: to suicide, self-harm, and overdose deaths that are sometimes difficult to distinguish from self-directed violence. [Pause] These are not separate problems. They are interconnected manifestations of structural despair. This is the Deaths of Despair framework that anchors this group's research — and it is the framework I have been working within for over a decade, across the United States, Mexico, and Belize." TRANSITION: "Let me briefly introduce myself, and then show you what I bring to this work."</div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════
+     SLIDE 2: WHO I AM
+     ═══════════════════════════════════════════════════════════ -->
+<section class="slide">
+  <div class="profile-layout">
+    <div class="profile-text">
+      <div class="slide-label anim">WHO I AM</div>
+      <div class="profile-name anim anim-d1">Mario Morales</div>
+      <div class="profile-role anim anim-d2">PhD Candidate, Health Behavior &amp; Health Promotion<br>Certificate in Computational Social Science<br>University of Arizona &middot; Graduating May 2026</div>
+      <p class="slide-body anim anim-d3" style="max-width:36ch; margin-bottom:16px; font-weight:500; color:var(--black)">
+        I study the prevention of violence, substance use, and mental illness among adolescents — using mixed methods across the U.S., Mexico, Belize, and South Africa.
+      </p>
+      <div class="profile-disciplines anim anim-d4">
+        <span class="disc-tag match">Anthropology</span>
+        <span class="disc-tag match">Demography</span>
+        <span class="disc-tag match">Public Policy</span>
+        <span class="disc-tag match">Public Health</span>
+        <span class="disc-tag match">Computational Social Science</span>
+        <span class="disc-tag match">Criminology</span>
+      </div>
+      <a href="https://www.yeridu.com" target="_blank" class="profile-url anim anim-d5">yeridu.com</a>
+    </div>
+    <div class="profile-photo-wrap anim anim-d6">
+      <div class="photo-shield">
+        <img src="photos/mario-profile.jpeg" alt="Mario Morales" class="profile-photo" loading="lazy">
+      </div>
+    </div>
+  </div>
+  <div class="speaker-note">TIMING: 1 minute. Brief, collegial. The discipline tags mirror ISGA's stated breadth (sociology, anthropology, public health, public policy, criminology, pedagogy). SAY: "I'm Mario Morales. My training spans anthropology, demography, public policy, public health, and computational social science — a trajectory that mirrors the multidisciplinary identity this group explicitly values. I've conducted fieldwork with police officers in Tijuana, secondary school students in Belize, and communities at the U.S.-Mexico border. My work sits at the intersection of violence, substance use, and mental health — the three dimensions of the Deaths of Despair framework." TRANSITION: "Let me show you what I bring that this group doesn't currently have."</div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════
+     SLIDE 3: THE GAP I FILL
+     ═══════════════════════════════════════════════════════════ -->
+<section class="slide">
+  <div class="slide-label anim">THE GAP I FILL</div>
+  <h2 class="slide-heading anim anim-d1">What You Have. What I Bring.</h2>
+  <div class="accent-line anim anim-d2"></div>
+  <div class="gap-grid">
+    <div class="gap-col anim anim-d3">
+      <div style="font-size:0.72rem; font-weight:700; text-transform:uppercase; letter-spacing:0.14em; color:var(--navy); margin-bottom:8px; text-align:left">The group excels at</div>
+      <div class="gap-card"><div class="gc-title">Homicide &amp; Femicide Research</div><div class="gc-desc">European Homicide Monitor, Dutch Femicide Monitor, 25-year trend analysis</div></div>
+      <div class="gap-card"><div class="gc-title">Violence Dynamics</div><div class="gc-desc">Micro-sociological analysis, video-based research, TURNING VIOLENT ERC</div></div>
+      <div class="gap-card"><div class="gc-title">Perpetration &amp; Masculinities</div><div class="gc-desc">Biographical narratives, femicide perpetrators, desistance processes</div></div>
+      <div class="gap-card"><div class="gc-title">Governance &amp; Policing</div><div class="gc-desc">Police-civilian encounters, security actors, institutional analysis</div></div>
+    </div>
+    <div class="gap-plus anim anim-d4">+</div>
+    <div class="gap-col anim anim-d5">
+      <div style="font-size:0.72rem; font-weight:700; text-transform:uppercase; letter-spacing:0.14em; color:var(--orange); margin-bottom:8px; text-align:left">I bring</div>
+      <div class="gap-card mine"><div class="gc-title">Upstream Prevention Science</div><div class="gc-desc">School-based RCTs, bystander interventions, life-skills curricula — preventing violence before it happens</div></div>
+      <div class="gap-card mine"><div class="gc-title">Computational Methods</div><div class="gc-desc">NLP text classifiers, machine learning, survey-weighted modelling — scalable tools for administrative data</div></div>
+      <div class="gap-card mine"><div class="gc-title">Global South Field Evidence</div><div class="gc-desc">Community-partnered research in Belize, Mexico, and South Africa — testing the Deaths of Despair framework beyond Europe</div></div>
+      <div class="gap-card mine"><div class="gc-title">Practitioner-Level Security Experience</div><div class="gc-desc">1,800+ police officers trained in harm reduction. Federal Police institutional reform. Curriculum design to evaluation.</div></div>
+    </div>
+  </div>
+  <div class="speaker-note">TIMING: 2.5 minutes. This is the key strategic slide. Frame as ADDITIVE, never competitive. SAY: "Let me be direct about what I bring. [Left column] This group already does brilliant work. Professor Liem's European Homicide Monitor and Femicide Monitor provide the most comprehensive lethal violence data in Europe. Professor Weenink's TURNING VIOLENT project is pushing the frontier of micro-sociological violence analysis. Dr. Di Marco's biographical work on femicide perpetrators gives us unprecedented insight into why men kill their partners. And the governance dimension — police-civilian encounters, security institutions — is woven throughout. [Pause, gesture right] What I add is four things the group doesn't currently have. First, upstream prevention science: I don't just study violence after it happens — I build and evaluate interventions designed to prevent it. Second, computational methods: NLP classifiers, machine learning pipelines that can scale your existing registry data. Third, Global South field evidence: I've conducted community-partnered research in Belize, Mexico, and South Africa, which means I can test whether the Deaths of Despair framework operates the same way outside Europe. And fourth, practitioner-level security experience: I've trained over 1,800 police officers in Tijuana in harm reduction. I've worked inside the Mexican Federal Police. This is not theoretical engagement with policing — it's years of direct experience." TRANSITION: "Let me show you my research program and how each project connects to this group."</div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════
+     ACT II CHAPTER CARD
+     ═══════════════════════════════════════════════════════════ -->
+<section class="slide chapter-card">
+  <div class="chapter-num anim">ACT TWO</div>
+  <div class="chapter-title anim anim-d1">What I&rsquo;ve Done</div>
+  <div class="chapter-line anim anim-d2"></div>
+  <div class="speaker-note">TIMING: 3 seconds. Visual beat. Advance.</div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════
+     SLIDE 5: RESEARCH PROGRAM OVERVIEW
+     ═══════════════════════════════════════════════════════════ -->
+<section class="slide">
+  <div class="slide-label anim">RESEARCH PROGRAM</div>
+  <h2 class="slide-heading anim anim-d1">Five Studies, One Framework</h2>
+  <p class="slide-subheading anim anim-d2">Every project maps onto the Deaths of Despair dimensions: interpersonal violence, substance-related harm, self-directed violence, and structural inequality.</p>
+  <div class="accent-line anim anim-d3"></div>
+  <div style="display:grid; grid-template-columns:repeat(5,1fr); gap:12px; width:100%; max-width:1000px; margin-top:8px">
+    <div class="finding-card anim anim-d3" style="border-top:3px solid var(--navy)"><div class="fc-label">1 &middot; Evidence</div><div class="fc-desc" style="font-size:0.8rem">Systematic Review: DV + SU Prevention RCTs</div></div>
+    <div class="finding-card anim anim-d4" style="border-top:3px solid var(--navy)"><div class="fc-label">2 &middot; Mechanisms</div><div class="fc-desc" style="font-size:0.8rem">Green Dot: Bystander Attitude Change (4-yr CRT)</div></div>
+    <div class="finding-card anim anim-d5" style="border-top:3px solid var(--navy)"><div class="fc-label">3 &middot; Etiology</div><div class="fc-desc" style="font-size:0.8rem">NMPOU: Opioid Specificity &amp; Social Pain (YRBS)</div></div>
+    <div class="finding-card anim anim-d6" style="border-top:3px solid var(--orange)"><div class="fc-label" style="color:var(--orange)">4 &middot; Intervention</div><div class="fc-desc" style="font-size:0.8rem">THRIVE-Belize: Life-Skills Feasibility Trial</div></div>
+    <div class="finding-card anim anim-d7" style="border-top:3px solid var(--navy)"><div class="fc-label">5 &middot; Surveillance</div><div class="fc-desc" style="font-size:0.8rem">NVDRS: Hidden Partners &mdash; IPV + NLP</div></div>
+  </div>
+  <div class="speaker-note">TIMING: 1 minute. Quick overview — point to each card. SAY: "Five studies, one framework. Each maps onto at least two Deaths of Despair dimensions. [Point] A systematic review establishing the evidence gap. A secondary analysis of a bystander intervention showing that attitude change takes four years. A computational epidemiology study revealing that bullying is uniquely linked to opioid use. A life-skills intervention in Belize — the prevention arm. And an NLP analysis of death narratives that bridges all three dimensions in a single study. Let me walk through each one, and for each, I'll show you exactly how it connects to this group's work."</div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════
+     SLIDE 6: PAPER 1 — SYSTEMATIC REVIEW
+     ═══════════════════════════════════════════════════════════ -->
+<section class="slide slide--left">
+  <div class="research-arc"><div class="arc-dot active"></div><div class="arc-dot"></div><div class="arc-dot"></div><div class="arc-dot"></div><div class="arc-dot"></div></div>
+  <div class="paper-layout">
+    <div>
+      <div class="slide-label anim">PAPER 1 — SYSTEMATIC REVIEW</div>
+      <h2 class="slide-heading anim anim-d1" style="max-width:28ch">Where Is the Evidence?</h2>
+      <p class="slide-subheading anim anim-d2" style="max-width:36ch">School-Based RCTs Preventing Dating Violence and Substance Use Among Adolescents Worldwide</p>
+      <div class="accent-line anim anim-d3"></div>
+      <div class="anim anim-d4"><div class="paper-badge"><span class="badge-dot"></span> PROSPERO CRD42023457770</div></div>
+      <p class="slide-body anim anim-d5" style="max-width:36ch; margin-top:10px">6 databases. 2012-2025. PRISMA 2020. Cochrane RoB 2 + GRADE. Only 3 eligible RCTs from 5,413 screened. N = 78,545 students.</p>
+      <div class="leiden-connection anim anim-d6" style="max-width:400px; margin-top:14px">
+        <div class="lc-label">Connection to Leiden</div>
+        <div class="lc-text">This review identified the design principles for effective prevention — directly relevant to <strong>Prof. Dekker's T@CKLE</strong> project on sexual violence prevention and to the kind of prevention science this group could lead.</div>
+      </div>
+    </div>
+    <div>
+      <div class="prisma-flow anim anim-d4">
+        <div class="prisma-box"><span class="pb-num">5,413</span><div class="pb-label">Screened</div></div>
+        <div class="prisma-arrow"></div>
+        <div class="prisma-box"><span class="pb-num">147</span><div class="pb-label">Full-Text</div></div>
+        <div class="prisma-arrow"></div>
+        <div class="prisma-box highlight"><span class="pb-num">3</span><div class="pb-label">Eligible RCTs</div></div>
+      </div>
+      <div class="finding-card anim anim-d5" style="margin-top:12px">
+        <div class="fc-label">KEY PARADOX</div>
+        <div class="fc-desc">Green Dot reduced substance-related sexual violence <em>without</em> targeting substance use. Fourth R targeted substance use explicitly but <em>failed</em> to reduce it.</div>
+      </div>
+    </div>
+  </div>
+  <div class="speaker-note">TIMING: 2 minutes. SAY: "I started by asking: what does the evidence base look like? I screened 5,413 manuscripts and found three eligible RCTs — three, in the entire world. And the paradox: the program that didn't target substance use reduced it; the one that did, failed. This paradox motivated my next study. [Point to Leiden connection] This review is directly relevant to Professor Dekker's T@CKLE project on sexual violence prevention — it identifies what actually works in school-based prevention and what doesn't."</div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════
+     SLIDE 7: PAPER 2 — GREEN DOT
+     ═══════════════════════════════════════════════════════════ -->
+<section class="slide slide--left">
+  <div class="research-arc"><div class="arc-dot"></div><div class="arc-dot active"></div><div class="arc-dot"></div><div class="arc-dot"></div><div class="arc-dot"></div></div>
+  <div class="paper-layout">
+    <div>
+      <div class="slide-label anim">PAPER 2 — CLUSTER-RANDOMIZED TRIAL</div>
+      <h2 class="slide-heading anim anim-d1" style="max-width:28ch">Changing Norms Takes Time</h2>
+      <p class="slide-subheading anim anim-d2" style="max-width:36ch">Does Green Dot Reduce Alcohol-Related Sexual Assault Victim-Blaming? 26 Kentucky High Schools, 2010&ndash;2014</p>
+      <div class="accent-line anim anim-d3"></div>
+      <p class="slide-body anim anim-d4" style="max-width:36ch">N = 16,509. Binomial GLMM. GEE with CR2 robust SEs. Year 4 treatment effect: OR = 0.85 (95% CI: 0.76, 0.95).</p>
+      <div class="leiden-connection anim anim-d5" style="max-width:400px; margin-top:14px">
+        <div class="lc-label">Connection to Prof. Weenink</div>
+        <div class="lc-text">Green Dot is a bystander intervention — it trains third parties to intervene. This speaks directly to <strong>Weenink's "Circles of Peace"</strong> research on how bystanders collectively de-escalate violence. My evaluation provides the <em>outcome evidence</em> for the dynamics he observes.</div>
+      </div>
+    </div>
+    <div>
+      <div class="trajectory-chart anim anim-d4">
+        <div class="tc-title">AR-SAVB Prevalence, Year 4</div>
+        <div class="tc-bars">
+          <div class="tc-bar-row"><div class="tc-bar-label">Control</div><div class="tc-bar-track"><div class="tc-bar-fill control" style="width:72%">21.6%</div></div></div>
+          <div class="tc-bar-row"><div class="tc-bar-label">Treatment</div><div class="tc-bar-track"><div class="tc-bar-fill treatment" style="width:63%">18.8%</div></div></div>
+        </div>
+      </div>
+      <div class="finding-card anim anim-d5" style="margin-top:10px">
+        <div class="fc-label">KEY INSIGHT</div>
+        <div class="fc-value" style="font-size:1rem">Attitudes shift before behavior</div>
+        <div class="fc-desc">Both arms declined in parallel through Year 3, then diverged in Year 4. Durable normative change requires sustained exposure.</div>
+      </div>
+    </div>
+  </div>
+  <div class="speaker-note">TIMING: 2.5 minutes. Name Weenink explicitly. SAY: "Green Dot is a bystander intervention. It trains high school students to recognize and intervene in situations involving violence. [Point to chart] Over four years, treatment schools showed a 15% reduction in alcohol-related victim-blaming. The effect emerged only in Year 4 — meaning durable normative change requires sustained programming. [Point to Leiden connection] Professor Weenink, your 'Circles of Peace' research shows how bystanders spontaneously form collective de-escalatory groups around violent incidents. My Green Dot evaluation provides the outcome evidence for what happens when you systematically train those bystanders. The dynamics you observe micro-sociologically — I evaluate at population scale. Together, we could bridge situational analysis with intervention effectiveness."</div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════
+     SLIDE 8: PAPER 3 — NMPOU
+     ═══════════════════════════════════════════════════════════ -->
+<section class="slide slide--left">
+  <div class="research-arc"><div class="arc-dot"></div><div class="arc-dot"></div><div class="arc-dot active"></div><div class="arc-dot"></div><div class="arc-dot"></div></div>
+  <div class="paper-layout">
+    <div>
+      <div class="slide-label anim">PAPER 3 — COMPUTATIONAL EPIDEMIOLOGY</div>
+      <h2 class="slide-heading anim anim-d1" style="max-width:28ch">Why Opioids?</h2>
+      <p class="slide-subheading anim anim-d2" style="max-width:36ch">Testing Three Frameworks for Nonmedical Prescription Opioid Use, YRBS 2023</p>
+      <div class="accent-line anim anim-d3"></div>
+      <p class="slide-body anim anim-d4" style="max-width:36ch">N = 20,103. Survey-weighted logistic regression. KHB decomposition. Stacked-outcome heterogeneity test across 5 substances.</p>
+      <div class="leiden-connection anim anim-d5" style="max-width:400px; margin-top:14px">
+        <div class="lc-label">Deaths of Despair Dimension</div>
+        <div class="lc-text">This paper demonstrates <strong>substance-related harm</strong> as a Deaths of Despair dimension. Opioid misuse co-occurs with suicidality, dating violence, and bullying — the clustering of despair-driven outcomes. It extends <strong>Prof. Liem &amp; Moeller's</strong> expanded drugs-violence framework.</div>
+      </div>
+    </div>
+    <div>
+      <div class="finding-card anim anim-d4">
+        <div class="fc-label">CENTRAL FINDING</div>
+        <div class="fc-value" style="font-size:1.1rem">Bullying is opioid-specific</div>
+        <div class="fc-desc">The only predictor associated with opioid use but NOT with alcohol, marijuana, cigarettes, or cocaine.</div>
+      </div>
+      <div class="finding-card anim anim-d5" style="margin-top:8px">
+        <div class="fc-label">BULLYING &rarr; SUBSTANCE ASSOCIATION</div>
+        <div class="substance-grid" style="margin-top:8px">
+          <div class="sub-row"><span class="sub-label">Opioids</span><div class="sub-bar-wrap" style="flex:1;display:flex;align-items:center;gap:7px"><div class="sub-bar sig" style="width:75%"></div><span class="sub-sig-label">Sig.</span></div></div>
+          <div class="sub-row"><span class="sub-label">Alcohol</span><div class="sub-bar-wrap" style="flex:1;display:flex;align-items:center;gap:7px"><div class="sub-bar ns" style="width:20%"></div><span class="sub-sig-label">n.s.</span></div></div>
+          <div class="sub-row"><span class="sub-label">Marijuana</span><div class="sub-bar-wrap" style="flex:1;display:flex;align-items:center;gap:7px"><div class="sub-bar ns" style="width:18%"></div><span class="sub-sig-label">n.s.</span></div></div>
+          <div class="sub-row"><span class="sub-label">Cigarettes</span><div class="sub-bar-wrap" style="flex:1;display:flex;align-items:center;gap:7px"><div class="sub-bar ns" style="width:15%"></div><span class="sub-sig-label">n.s.</span></div></div>
+          <div class="sub-row"><span class="sub-label">Cocaine</span><div class="sub-bar-wrap" style="flex:1;display:flex;align-items:center;gap:7px"><div class="sub-bar ns" style="width:12%"></div><span class="sub-sig-label">n.s.</span></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="speaker-note">TIMING: 2 minutes. SAY: "This study demonstrates the METHODS I bring. Using 20,000 nationally representative students, I tested opioid specificity across five substances simultaneously. Bullying was the only predictor uniquely linked to opioid use — not alcohol, not marijuana, not cocaine. Social Pain Overlap Theory explains why: social rejection activates the same mu-opioid circuits as physical pain. [Point to Leiden connection] This paper contributes to the substance-related harm dimension of Deaths of Despair, and directly extends Professor Liem and Moeller's recent expansion of Goldstein's drugs-violence framework — adding an upstream, etiological lens to their macro-level analysis."</div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════
+     SLIDE 9: THRIVE-BELIZE
+     ═══════════════════════════════════════════════════════════ -->
+<section class="slide slide--left">
+  <div class="research-arc"><div class="arc-dot"></div><div class="arc-dot"></div><div class="arc-dot"></div><div class="arc-dot active"></div><div class="arc-dot"></div></div>
+  <div class="thrive-layout">
+    <div>
+      <div class="slide-label anim">PAPER 4 — INTERVENTION DEVELOPMENT</div>
+      <h2 class="slide-heading anim anim-d1" style="max-width:28ch">THRIVE-Belize</h2>
+      <p class="slide-subheading anim anim-d2" style="max-width:36ch">Multi-Component Life-Skills Curriculum for Adolescents in Toledo District, Belize</p>
+      <div class="accent-line anim anim-d3"></div>
+      <div class="anim anim-d4" style="margin-top:6px">
+        <div class="slide-label" style="margin-bottom:8px">7 MODULES &middot; 28 SESSIONS</div>
+        <ul class="module-list">
+          <li class="module-item"><span class="mod-num">1</span><span class="mod-name">Communication &amp; Emotional Regulation</span></li>
+          <li class="module-item"><span class="mod-num">2</span><span class="mod-name highlight">Masculinities &amp; Boys' Health</span></li>
+          <li class="module-item"><span class="mod-num">3</span><span class="mod-name">Healthy Relationships &amp; Assertiveness</span></li>
+          <li class="module-item"><span class="mod-num">4</span><span class="mod-name">Sexual &amp; Reproductive Health</span></li>
+          <li class="module-item"><span class="mod-num">5</span><span class="mod-name">Mental &amp; Physical Health</span></li>
+          <li class="module-item"><span class="mod-num">6</span><span class="mod-name">Substance Use &amp; Refusal Skills</span></li>
+          <li class="module-item"><span class="mod-num">7</span><span class="mod-name">Environmental Health</span></li>
+        </ul>
+      </div>
+    </div>
+    <div>
+      <div class="leiden-connection anim anim-d4" style="margin-bottom:10px">
+        <div class="lc-label">Connection to Dr. Di Marco</div>
+        <div class="lc-text">Module 2 — the <strong>"Man Box" sessions</strong> — operationalizes exactly what Di Marco studies from the perpetrator-narrative side. His research tells us WHY rigid masculinity norms produce violence. My curriculum is built to make sure the next generation never gets there. <strong>Upstream prevention meets downstream desistance.</strong></div>
+      </div>
+      <div class="leiden-connection anim anim-d5" style="margin-bottom:10px">
+        <div class="lc-label">Connection to van Wieringen</div>
+        <div class="lc-text">THRIVE intervenes at the developmental stage where harmful ideologies take root — directly relevant to her research on <strong>intergenerational transmission of extremism</strong> within families.</div>
+      </div>
+      <div class="leiden-connection anim anim-d6">
+        <div class="lc-label">Connection to Prof. Liem</div>
+        <div class="lc-text">THRIVE targets upstream gender norms that, left unchallenged, contribute to intimate partner violence and femicide — the outcomes <strong>Liem's Femicide Monitor</strong> documents downstream.</div>
+      </div>
+    </div>
+  </div>
+  <div class="speaker-note">TIMING: 2.5 minutes. This connects to THREE group members — name each. SAY: "THRIVE-Belize is a multi-component life-skills curriculum for adolescents at Toledo Community College in rural southern Belize. Seven modules, 28 sessions, covering everything from emotional regulation to substance use refusal to environmental health. [Point to Module 2] I want to highlight Module 2 — Masculinities and Boys' Health. The 'Man Box' sessions walk adolescent boys through naming harmful gender norms, feeling the cost of rigidity, connecting those norms to violence, and committing to change. [Point to Di Marco connection] Dr. Di Marco — your book 'Taking Lives' shows us, through the biographical narratives of men who killed their partners, exactly how rigid masculinity norms construct a pathway to lethal violence. My curriculum operationalizes the other end of that pathway. Your research tells us WHY men kill their partners. THRIVE is built to make sure the next generation never gets there. [Point to van Wieringen] Layla — this intervenes at the developmental stage where harmful ideologies take root, which is the core question of your intergenerational transmission research. [Point to Liem] And Professor Liem — THRIVE targets upstream the gender norms that your Femicide Monitor documents downstream."</div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════
+     SLIDE 10: NVDRS
+     ═══════════════════════════════════════════════════════════ -->
+<section class="slide slide--left">
+  <div class="research-arc"><div class="arc-dot"></div><div class="arc-dot"></div><div class="arc-dot"></div><div class="arc-dot"></div><div class="arc-dot active"></div></div>
+  <div class="paper-layout">
+    <div>
+      <div class="slide-label anim">PAPER 5 — SURVEILLANCE &amp; NLP</div>
+      <h2 class="slide-heading anim anim-d1" style="max-width:28ch">Hidden Partners</h2>
+      <p class="slide-subheading anim anim-d2" style="max-width:36ch">IPV in Pregnancy-Associated Homicide, Suicide, and Overdose Deaths (NVDRS 2019&ndash;2023)</p>
+      <div class="accent-line anim anim-d3"></div>
+      <p class="slide-body anim anim-d4" style="max-width:36ch">Supervised ML classifier for IPV detection in death narratives. TF-IDF + structured fields. Regularized logistic regression. Target: sensitivity &ge; 0.80, specificity &ge; 0.85.</p>
+      <div class="leiden-connection anim anim-d5" style="max-width:400px; margin-top:14px">
+        <div class="lc-label">Direct Extension of Prof. Liem's Work</div>
+        <div class="lc-text">This project bridges <strong>all three Deaths of Despair dimensions</strong> — homicide, suicide, and overdose — in pregnancy-associated deaths. The NLP methods I built for NVDRS narratives can be adapted to the <strong>European Homicide Monitor</strong> and <strong>Dutch Femicide Monitor</strong> case descriptions. Imagine what this analysis looks like applied to EHM data.</div>
+      </div>
+    </div>
+    <div>
+      <div class="finding-card anim anim-d4">
+        <div class="fc-label">DEATHS OF DESPAIR: ALL THREE DIMENSIONS</div>
+        <div style="display:flex; gap:8px; margin-top:8px">
+          <div style="flex:1; background:var(--navy-glow); border-radius:8px; padding:10px; text-align:center"><div style="font-size:0.72rem; font-weight:700; color:var(--navy)">Interpersonal</div><div style="font-size:0.75rem; color:#555; margin-top:3px">IPV-related homicide</div></div>
+          <div style="flex:1; background:var(--navy-glow); border-radius:8px; padding:10px; text-align:center"><div style="font-size:0.72rem; font-weight:700; color:var(--navy)">Self-Directed</div><div style="font-size:0.75rem; color:#555; margin-top:3px">IPV-related suicide</div></div>
+          <div style="flex:1; background:var(--navy-glow); border-radius:8px; padding:10px; text-align:center"><div style="font-size:0.72rem; font-weight:700; color:var(--navy)">Substance</div><div style="font-size:0.75rem; color:#555; margin-top:3px">IPV-related overdose</div></div>
+        </div>
+      </div>
+      <div class="finding-card anim anim-d5" style="margin-top:10px">
+        <div class="fc-label">COMPUTATIONAL INNOVATION</div>
+        <div class="fc-desc">Hand-labeled ~1,500-2,000 narratives. TF-IDF features + structured NVDRS fields (intimate partner problem, jealousy, stalking). 5-fold cross-validation. Open-source toolkit for replication across administrative text corpora.</div>
+      </div>
+    </div>
+  </div>
+  <div class="speaker-note">TIMING: 2 minutes. Make Liem lean forward. SAY: "This project should make Professor Liem particularly interested, because it bridges all three Deaths of Despair dimensions in a single study. I'm using the U.S. National Violent Death Reporting System — which captures narrative text for every violent death — to detect intimate partner violence hidden in pregnancy-associated homicides, suicides, and overdose deaths. [Pause] The word 'hidden' is key. NVDRS does not systematically code IPV for suicides and overdoses. The intimate partners are there in the text, but invisible to the surveillance system. My NLP classifier makes them visible. [Point to Leiden connection] Now imagine this method applied to the European Homicide Monitor's case descriptions, or to the Dutch Femicide Monitor's records. I've already built the pipeline. The methodological transfer is direct. I bring NVDRS access through my collaboration with Dr. Maeve Wallace — which means this group could conduct comparative U.S.-European analyses of IPV-related mortality."</div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════
+     ACT III CHAPTER CARD
+     ═══════════════════════════════════════════════════════════ -->
+<section class="slide chapter-card">
+  <div class="chapter-num anim">ACT THREE</div>
+  <div class="chapter-title anim anim-d1">What I&rsquo;ll Do &mdash; With You</div>
+  <div class="chapter-line anim anim-d2"></div>
+  <div class="speaker-note">TIMING: 3 seconds. This is the marriage proposal. Advance.</div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════
+     SLIDE 12: ALIGNMENT WEB
+     ═══════════════════════════════════════════════════════════ -->
+<section class="slide">
+  <div class="slide-label anim">ALIGNMENT</div>
+  <h2 class="slide-heading anim anim-d1">How My Work Connects to Yours</h2>
+  <div class="accent-line anim anim-d2"></div>
+  <div class="web-container anim anim-d3">
+    <!-- SVG connection lines -->
+    <svg style="position:absolute;inset:0;width:100%;height:100%;z-index:1" viewBox="0 0 600 440">
+      <line x1="300" y1="220" x2="95" y2="60" stroke="#1B365D" stroke-width="1" opacity="0.15"/>
+      <line x1="300" y1="220" x2="505" y2="60" stroke="#1B365D" stroke-width="1" opacity="0.15"/>
+      <line x1="300" y1="220" x2="40" y2="260" stroke="#1B365D" stroke-width="1" opacity="0.15"/>
+      <line x1="300" y1="220" x2="560" y2="260" stroke="#1B365D" stroke-width="1" opacity="0.15"/>
+      <line x1="300" y1="220" x2="140" y2="400" stroke="#1B365D" stroke-width="1" opacity="0.15"/>
+      <line x1="300" y1="220" x2="460" y2="400" stroke="#1B365D" stroke-width="1" opacity="0.15"/>
+    </svg>
+    <!-- Center node -->
+    <div class="web-center">
+      <div class="wc-name">Mario Morales</div>
+      <div class="wc-role">Prevention &middot; NLP<br>Global South</div>
+    </div>
+    <!-- Researcher nodes -->
+    <div class="web-node" style="top:18px; left:35px">
+      <div class="wn-dot">ML</div>
+      <div class="wn-name">Prof. Liem</div>
+      <div class="wn-theme">EHM, Femicide<br>Deaths of Despair</div>
+    </div>
+    <div class="web-node" style="top:18px; right:35px">
+      <div class="wn-dot">BY</div>
+      <div class="wn-name">Prof. Weenink</div>
+      <div class="wn-theme">Circles of Peace<br>TURNING VIOLENT</div>
+    </div>
+    <div class="web-node" style="top:210px; left:-20px">
+      <div class="wn-dot">MN</div>
+      <div class="wn-name">Dr. Di Marco</div>
+      <div class="wn-theme">Masculinities<br>Femicide Perpetrators</div>
+    </div>
+    <div class="web-node" style="top:210px; right:-20px">
+      <div class="wn-dot">IG</div>
+      <div class="wn-name">van Wieringen</div>
+      <div class="wn-theme">Intergenerational<br>Transmission</div>
+    </div>
+    <div class="web-node" style="bottom:0; left:80px">
+      <div class="wn-dot">YV</div>
+      <div class="wn-name">Dr. Aarten</div>
+      <div class="wn-theme">Youth Violence<br>Victim-Offender</div>
+    </div>
+    <div class="web-node" style="bottom:0; right:80px">
+      <div class="wn-dot">SV</div>
+      <div class="wn-name">Prof. Dekker</div>
+      <div class="wn-theme">T@CKLE<br>Sexual Violence</div>
+    </div>
+  </div>
+  <div class="speaker-note">TIMING: 1.5 minutes. This is the "I read your work" moment. Point to each node. SAY: "Let me make the connections explicit. [Point to Liem] Professor Liem — my NLP classifiers for the NVDRS can be adapted to the EHM and Femicide Monitor. I bring U.S. data access through Dr. Maeve Wallace for comparative analyses. [Point to Weenink] Professor Weenink — my Green Dot evaluation provides outcome evidence for bystander dynamics. My ESCUDO police training experience complements your work on police-civilian encounters. [Point to Di Marco] Dr. Di Marco — my THRIVE masculinities module operationalizes what your biographical research reveals about gendered pathways to violence. Upstream prevention meets downstream desistance. [Point to van Wieringen] Layla — THRIVE intervenes at the developmental stage where harmful ideologies take root. [Point to Aarten] Dr. Aarten — my YRBS analysis of co-occurring violence, substance use, and suicidality among adolescents maps onto your victim-offender overlap research. [Point to Dekker] Professor Dekker — my systematic review of dating violence prevention RCTs and THRIVE's gender-based violence modules are directly relevant to T@CKLE. These are not generic connections. I have read your work, and I have a plan for how to build on it."</div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════
+     SLIDE 13: RESEARCH PROPOSAL
+     ═══════════════════════════════════════════════════════════ -->
+<section class="slide">
+  <div class="slide-label anim">RESEARCH PROPOSAL</div>
+  <h2 class="slide-heading anim anim-d1" style="max-width:28ch">Mapping Deaths of Despair Across Borders</h2>
+  <p class="slide-subheading anim anim-d2">Three aims for three years — leveraging this group's data infrastructure with my computational methods and Global South evidence.</p>
+  <div class="accent-line anim anim-d3"></div>
+  <div class="proposal-aims">
+    <div class="aim-card anim anim-d4">
+      <div class="aim-num">Aim 1</div>
+      <div class="aim-title">Computational Detection in Administrative Text</div>
+      <div class="aim-desc">Adapt NLP classifiers to identify deaths-of-despair indicators in Dutch Femicide Monitor and EHM case descriptions. Train on human-coded subsets, validate, apply to full corpora.</div>
+      <div class="aim-outputs">Year 1-2: 2 publications + open-source toolkit</div>
+    </div>
+    <div class="aim-card anim anim-d5">
+      <div class="aim-num">Aim 2</div>
+      <div class="aim-title">Cross-National Structural Inequality</div>
+      <div class="aim-desc">Compare deaths-of-despair profiles across Europe, Latin America, and the Caribbean using GBD 2023 data and EHM-DCHM case-level analysis. Apply Intersectional Priority Cascade methodology.</div>
+      <div class="aim-outputs">Year 1-3: 2-3 publications + policy brief</div>
+    </div>
+    <div class="aim-card anim anim-d6">
+      <div class="aim-num">Aim 3</div>
+      <div class="aim-title">From Evidence to Prevention</div>
+      <div class="aim-desc">Scoping review of evaluated interventions targeting 2+ deaths-of-despair dimensions. Develop collaborative grant proposal (NWO, Horizon Europe) for comparative prevention study.</div>
+      <div class="aim-outputs">Year 2-3: 1-2 publications + grant submission</div>
+    </div>
+  </div>
+  <div class="speaker-note">TIMING: 2 minutes. Show you've already started. SAY: "I have already designed a research agenda for this position — three aims across three years. [Aim 1] First, I'll adapt the NLP classifiers I built for the NVDRS to work with the Dutch Femicide Monitor and European Homicide Monitor. I'll train on human-coded subsets, validate against gold-standard annotations, and produce an open-source toolkit for multi-country application. [Aim 2] Second, I'll use Global Burden of Disease data and the unique EHM-DCHM comparability to compare deaths-of-despair profiles across Europe, Latin America, and the Caribbean. The Dutch Caribbean Homicide Monitor shares the EHM's 85+ variable structure — this is a rare opportunity for direct cross-regional comparison. [Aim 3] Third, I'll conduct a scoping review of interventions that target multiple despair dimensions, and use that synthesis to develop a grant proposal — NWO or Horizon Europe — for a comparative prevention study. [Pause] Five to six publications. An open-source toolkit. A grant submission. And all of it integrated with the group's existing data infrastructure."</div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════
+     SLIDE 14: TEACHING
+     ═══════════════════════════════════════════════════════════ -->
+<section class="slide">
+  <div class="slide-label anim">TEACHING &amp; MENTORING</div>
+  <h2 class="slide-heading anim anim-d1">Ready for Your Curriculum</h2>
+  <div class="accent-line anim anim-d2"></div>
+  <div class="teaching-grid">
+    <div class="teach-card anim anim-d3">
+      <div class="tc-title">MSc Violence, Interventions, and Policing</div>
+      <div class="tc-desc">Interpersonal violence causes and prevention. Policing and harm reduction — drawing on ESCUDO (1,800+ officers). Gender-based violence. Thesis supervision across the specialisation.</div>
+    </div>
+    <div class="teach-card anim anim-d4">
+      <div class="tc-title">Computational Methods for Violence Research</div>
+      <div class="tc-desc">A new methodological dimension: NLP, machine learning, survey-weighted modelling, reproducible workflows in R and Python. Currently absent from the specialisation's curriculum.</div>
+    </div>
+    <div class="teach-card anim anim-d5">
+      <div class="tc-title">Minor in Violence Studies</div>
+      <div class="tc-desc">Drug-related Violence, Violence and Gender electives. Introduction to Violence Studies. Bring Global South case studies and prevention science perspective to undergraduate teaching.</div>
+    </div>
+  </div>
+  <div class="speaker-note">TIMING: 1 minute. Name specific programs. SAY: "I'm ready to teach in your MSc Violence, Interventions, and Policing specialisation — interpersonal violence, policing and harm reduction from my ESCUDO experience, gender-based violence from my systematic review and THRIVE work. I can also offer something the specialisation doesn't currently have: a computational methods component covering NLP, machine learning, and reproducible workflows. And for the Minor in Violence Studies, I bring Global South case studies and prevention science that complement the existing European focus. I'm experienced with thesis supervision and I use AI-enhanced pedagogy — not to replace critical thinking, but to scaffold it."</div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════
+     SLIDE 15: CLOSE
+     ═══════════════════════════════════════════════════════════ -->
+<section class="slide">
+  <div class="close-heading anim">I study how structural despair produces violence — and I build the tools to prevent it.</div>
+  <div class="accent-line anim anim-d1"></div>
+  <p class="close-body anim anim-d2">Upstream prevention. Computational methods. Global South evidence. Practitioner-level experience. All within the Deaths of Despair framework that anchors this group.</p>
+  <div class="anim anim-d3"><a href="https://www.yeridu.com" target="_blank" class="close-url">yeridu.com</a></div>
+  <div class="close-contact anim anim-d4">Mario Morales &middot; University of Arizona &middot; mariomorales@arizona.edu</div>
+  <div class="speaker-note">TIMING: 30 seconds. Eye contact. SAY: "I study how structural despair produces violence — and I build the tools to prevent it. [Pause] I bring upstream prevention science, computational methods, Global South field evidence, and practitioner-level experience with security actors. All of it within the Deaths of Despair framework that anchors this group's mission. [Pause] Thank you." Q&A PREP: (1) How would you prioritize among the three aims? (2) What challenges do you anticipate adapting NLP to Dutch/European text? (3) How does THRIVE-Belize scale beyond a single school? (4) What grant mechanisms specifically? — NWO Veni, NWO Open Competition, Horizon Europe Cluster 2. (5) Teaching load preferences. (6) How would you integrate with TURNING VIOLENT methodologically? (7) Timeline for EHM classifier development. (8) Your Dutch language plans — I am committed to learning Dutch and already speak English and Spanish fluently.</div>
+</section>
+
+</div><!-- /deck -->
+
+<!-- NAV -->
+<nav class="nav">
+  <button class="nav-btn" id="prev-btn" aria-label="Previous"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg></button>
+  <span class="slide-counter" id="slide-counter">1 / 15</span>
+  <button class="nav-btn" id="next-btn" aria-label="Next"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></button>
+  <span class="pres-timer" id="pres-timer">00:00</span>
+</nav>
+<div class="notes-panel" id="notes-panel"><div class="notes-header">Speaker Notes</div><div class="notes-content" id="notes-content"></div></div>
+<div class="kb-hint"><kbd>&larr;</kbd> <kbd>&rarr;</kbd> navigate &nbsp;<kbd>S</kbd> notes &nbsp;<kbd>F</kbd> fullscreen &nbsp;<kbd>T</kbd> timer</div>
+
+<script>
+(function () {
+  "use strict";
+  var slides = [], currentIndex = 0, notesVisible = false, timerVisible = false, timerInterval = null, timerSeconds = 0, timerRunning = false;
+
+  function init() {
+    slides = Array.prototype.slice.call(document.querySelectorAll(".slide"));
+    if (!slides.length) return;
+    document.getElementById("prev-btn").addEventListener("click", prevSlide);
+    document.getElementById("next-btn").addEventListener("click", nextSlide);
+    document.addEventListener("keydown", function (e) {
+      var tag = (e.target.tagName || "").toLowerCase();
+      if (tag === "input" || tag === "textarea") return;
+      switch (e.key) {
+        case "ArrowRight": case "PageDown": e.preventDefault(); nextSlide(); break;
+        case " ": if (tag !== "button") { e.preventDefault(); nextSlide(); } break;
+        case "ArrowLeft": case "PageUp": e.preventDefault(); prevSlide(); break;
+        case "Home": e.preventDefault(); goToSlide(0); break;
+        case "End": e.preventDefault(); goToSlide(slides.length - 1); break;
+        case "s": case "S": toggleNotes(); break;
+        case "f": case "F": toggleFullscreen(); break;
+        case "t": case "T": toggleTimer(); break;
+      }
+    });
+    document.addEventListener("contextmenu", function (e) { if (e.target.tagName === "IMG" || e.target.closest(".photo-shield")) e.preventDefault(); });
+    var imgs = document.querySelectorAll("img");
+    for (var i = 0; i < imgs.length; i++) imgs[i].setAttribute("draggable", "false");
+    goToSlide(0);
+  }
+
+  function goToSlide(i) {
+    if (i < 0 || i >= slides.length) return;
+    slides[currentIndex].classList.remove("active");
+    currentIndex = i;
+    slides[currentIndex].classList.add("active");
+    var fill = document.getElementById("progress-fill");
+    if (fill) fill.style.width = (slides.length > 1 ? (currentIndex / (slides.length - 1)) * 100 : 100) + "%";
+    var counter = document.getElementById("slide-counter");
+    if (counter) counter.textContent = (currentIndex + 1) + " / " + slides.length;
+    var prev = document.getElementById("prev-btn"), next = document.getElementById("next-btn");
+    if (prev) prev.disabled = currentIndex === 0;
+    if (next) next.disabled = currentIndex === slides.length - 1;
+    var panel = document.getElementById("notes-content");
+    if (panel) { var note = slides[currentIndex].querySelector(".speaker-note"); panel.textContent = note ? note.textContent : ""; }
+  }
+  function nextSlide() { goToSlide(Math.min(slides.length - 1, currentIndex + 1)); }
+  function prevSlide() { goToSlide(Math.max(0, currentIndex - 1)); }
+  function toggleNotes() { var p = document.getElementById("notes-panel"); if (p) { notesVisible = !notesVisible; p.classList.toggle("visible", notesVisible); } }
+  function toggleFullscreen() { if (!document.fullscreenElement) document.documentElement.requestFullscreen().catch(function(){}); else document.exitFullscreen().catch(function(){}); }
+  function toggleTimer() {
+    var el = document.getElementById("pres-timer"); if (!el) return;
+    timerVisible = !timerVisible; el.classList.toggle("visible", timerVisible);
+    if (timerVisible && !timerRunning) { timerRunning = true; timerInterval = setInterval(function () { timerSeconds++; var m = Math.floor(timerSeconds/60), s = timerSeconds%60; el.textContent = (m<10?"0":"")+m+":"+(s<10?"0":"")+s; if (timerSeconds>=1500) el.style.color="#D32F2F"; else if (timerSeconds>=1200) el.style.color="#E8630A"; else el.style.color=""; }, 1000); }
+  }
+
+  if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", init); else init();
+})();
+</script>
+</body>
+</html>
