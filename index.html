@@ -479,31 +479,42 @@ img { -webkit-user-drag: none; user-select: none; }
   <h2 class="slide-heading anim anim-d1" style="max-width:32ch">Review &rarr; Surveillance &rarr; Intervention</h2>
   <p class="slide-subheading anim anim-d2" style="max-width:54ch">Every project feeds the next: understanding what works, mapping where the need is, then building prevention on the ground.</p>
   <div class="accent-line anim anim-d3"></div>
-  <div class="pillar-grid">
-    <div class="pillar anim anim-d3" style="border-top:3px solid var(--orange)">
-      <div class="pillar-label" style="color:var(--orange)">REVIEW</div>
-      <div class="pillar-title">What works?</div>
-      <div class="pillar-items">
-        <div class="pillar-item"><strong>Systematic Review</strong> &mdash; 5,413 studies screened, only 3 programs prevent both dating violence &amp; substance use worldwide</div>
+  <div style="display:grid; grid-template-columns:1fr 1fr; gap:24px; width:100%; max-width:1080px; align-items:start">
+    <!-- LEFT: The pipeline (orange) -->
+    <div style="display:flex; flex-direction:column; gap:10px">
+      <div class="pillar anim anim-d3" style="border-top:3px solid var(--orange)">
+        <div class="pillar-label" style="color:var(--orange)">1 &middot; REVIEW</div>
+        <div class="pillar-title">What works?</div>
+        <div class="pillar-items">
+          <div class="pillar-item"><strong>Systematic Review</strong> &mdash; 5,413 studies screened, only 3 programs prevent both dating violence &amp; substance use worldwide</div>
+        </div>
+      </div>
+      <div class="pillar anim anim-d4" style="border-top:3px solid var(--orange)">
+        <div class="pillar-label" style="color:var(--orange)">2 &middot; SURVEILLANCE</div>
+        <div class="pillar-title">Where is the need?</div>
+        <div class="pillar-items">
+          <div class="pillar-item"><strong>NMPOU / YRBS</strong> &mdash; Why adolescents turn to opioids: risk, emotional pain, tough circumstances</div>
+          <div class="pillar-item"><strong>NVDRS + NLP</strong> &mdash; Hidden partner violence in 20,000+ U.S. death records</div>
+          <div class="pillar-item"><strong>MICS5 Belize</strong> &mdash; Mapping violence tolerance to find where prevention is most needed</div>
+        </div>
       </div>
     </div>
-    <div class="pillar-arrow anim anim-d4">&rarr;</div>
-    <div class="pillar anim anim-d5" style="border-top:3px solid var(--orange)">
-      <div class="pillar-label" style="color:var(--orange)">SURVEILLANCE</div>
-      <div class="pillar-title">Where is the need?</div>
-      <div class="pillar-items">
-        <div class="pillar-item"><strong>NMPOU / YRBS</strong> &mdash; Why adolescents turn to opioids: risk, emotional pain, tough circumstances</div>
-        <div class="pillar-item"><strong>NVDRS + NLP</strong> &mdash; Hidden partner violence in 20,000+ U.S. death records</div>
-        <div class="pillar-item"><strong>MICS5 Belize</strong> &mdash; Mapping violence tolerance to find where prevention is most needed</div>
+    <!-- RIGHT: Intervention (green) + PRISMA funnel -->
+    <div style="display:flex; flex-direction:column; gap:10px; justify-content:space-between; height:100%">
+      <div class="prisma-flow anim anim-d3" style="align-self:center">
+        <div class="prisma-box"><span class="pb-num">5,413</span><div class="pb-label">Studies screened</div></div>
+        <div class="prisma-arrow"></div>
+        <div class="prisma-box"><span class="pb-num">147</span><div class="pb-label">Full texts reviewed</div></div>
+        <div class="prisma-arrow"></div>
+        <div class="prisma-box highlight"><span class="pb-num">3</span><div class="pb-label">Eligible programs</div></div>
       </div>
-    </div>
-    <div class="pillar-arrow anim anim-d6">&rarr;</div>
-    <div class="pillar anim anim-d7" style="border-top:3px solid var(--green)">
-      <div class="pillar-label" style="color:var(--green)">INTERVENTION</div>
-      <div class="pillar-title">Build what&rsquo;s needed</div>
-      <div class="pillar-items">
-        <div class="pillar-item green"><strong>Green Dot</strong> &mdash; 4-year bystander trial in 26 Kentucky schools: norms change before behavior</div>
-        <div class="pillar-item green"><strong>THRIVE-Belize</strong> &mdash; 7-module life-skills curriculum co-designed with Maya adolescents</div>
+      <div class="pillar anim anim-d5" style="border-top:3px solid var(--green)">
+        <div class="pillar-label" style="color:var(--green)">3 &middot; INTERVENTION</div>
+        <div class="pillar-title">Build what&rsquo;s needed</div>
+        <div class="pillar-items">
+          <div class="pillar-item green"><strong>Green Dot</strong> &mdash; 4-year bystander trial in 26 Kentucky schools: norms change before behavior</div>
+          <div class="pillar-item green"><strong>THRIVE-Belize</strong> &mdash; 7-module life-skills curriculum built with teachers and students in southern Belize</div>
+        </div>
       </div>
     </div>
   </div>
