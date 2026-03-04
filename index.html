@@ -248,11 +248,10 @@ a:hover { color: var(--orange-dim); }
 .journey-line { width: 36px; height: 2px; background: var(--orange-dim); flex-shrink: 0; margin-top: 20px; }
 
 /* === MAP GRID (Slide 1) === */
-.map-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px 24px; width: 100%; max-width: 720px; margin-top: 14px; }
+.map-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; width: 100%; max-width: 820px; margin-top: 12px; }
 .map-cell { text-align: center; }
-.map-svg { width: 100%; max-height: 105px; display: block; margin: 0 auto; }
-.map-label { font-family: var(--font-display); font-size: 0.78rem; font-weight: 700; color: var(--black); margin-top: 2px; }
-.map-detail { font-size: 0.62rem; color: var(--text-light); line-height: 1.3; }
+.map-svg { width: 100%; max-height: 80px; display: block; margin: 0 auto; }
+.map-label { font-family: var(--font-display); font-size: 0.72rem; font-weight: 600; color: var(--text-mid); margin-top: 3px; }
 
 /* === PILLAR PIPELINE === */
 .pillar-grid { display: grid; grid-template-columns: 1fr auto 1fr auto 1fr; gap: 16px; width: 100%; max-width: 1080px; margin-top: 12px; align-items: start; }
@@ -337,7 +336,7 @@ img { -webkit-user-drag: none; user-select: none; }
   .pillar-arrow { display: none; }
   .journey-path { flex-wrap: wrap; gap: 8px; }
   .journey-line { display: none; }
-  .map-grid { grid-template-columns: 1fr; max-width: 360px; }
+  .map-grid { grid-template-columns: 1fr 1fr; }
   .video-container { width: 90%; }
   .synth-grid { grid-template-columns: 1fr; }
 }
@@ -364,72 +363,64 @@ img { -webkit-user-drag: none; user-select: none; }
   <h1 class="slide-heading anim anim-d1" style="font-size:clamp(2.4rem,5vw,3.8rem); max-width:22ch">Mario Morales</h1>
   <div class="accent-line anim anim-d2"></div>
   <p class="slide-subheading anim anim-d3" style="max-width:48ch; font-size:clamp(1rem,2vw,1.2rem)">From ethnographic fieldwork in Oaxaca to classrooms in Belize &mdash; preventing violence where it starts, building life-skills where they&rsquo;re needed most.</p>
-  <!-- 2×2 Map Grid -->
-  <div class="map-grid anim anim-d4">
-    <!-- MEXICO — top left -->
-    <div class="map-cell">
-      <svg viewBox="0 0 200 160" class="map-svg">
-        <!-- Simplified Mexico outline -->
-        <path d="M30,20 L80,15 L100,10 L140,15 L160,25 L175,18 L185,30 L180,45 L170,55 L155,70 L140,90 L120,105 L105,120 L90,130 L75,135 L60,130 L50,120 L40,105 L30,90 L20,70 L15,50 L20,35 Z" fill="none" stroke="var(--orange)" stroke-width="1.5" opacity="0.5"/>
-        <!-- Oaxaca dot -->
-        <circle cx="105" cy="110" r="4" fill="var(--orange)"/>
-        <text x="105" y="125" text-anchor="middle" fill="var(--orange)" font-family="var(--font-display)" font-size="7" font-weight="600">Oaxaca</text>
-        <!-- Tijuana dot -->
-        <circle cx="32" cy="22" r="4" fill="var(--orange)"/>
-        <text x="46" y="20" text-anchor="start" fill="var(--orange)" font-family="var(--font-display)" font-size="7" font-weight="600">Tijuana</text>
-      </svg>
-      <div class="map-label">Mexico</div>
-      <div class="map-detail">Ethnography &middot; ESCUDO &middot; Federal Police</div>
+  <div class="journey-path anim anim-d4">
+    <div class="journey-stop">
+      <div class="journey-dot orange">OAX</div>
+      <div class="journey-place">Oaxaca</div>
+      <div class="journey-role">Anthropology<br>Ethnography</div>
     </div>
-    <!-- USA — top right -->
-    <div class="map-cell">
-      <svg viewBox="0 0 200 130" class="map-svg">
-        <!-- Simplified US outline -->
-        <path d="M10,35 L25,30 L45,28 L65,25 L85,22 L105,20 L125,18 L145,20 L160,22 L175,28 L190,35 L188,50 L185,65 L180,75 L170,85 L155,90 L140,92 L125,90 L110,88 L95,90 L80,92 L65,90 L50,85 L35,78 L20,65 L12,50 Z" fill="none" stroke="var(--orange)" stroke-width="1.5" opacity="0.5"/>
-        <!-- Arizona dot -->
-        <circle cx="52" cy="75" r="4" fill="var(--orange)"/>
-        <text x="52" y="88" text-anchor="middle" fill="var(--orange)" font-family="var(--font-display)" font-size="7" font-weight="600">Arizona</text>
-        <!-- Kentucky dot -->
-        <circle cx="140" cy="60" r="4" fill="var(--orange)"/>
-        <text x="140" y="53" text-anchor="middle" fill="var(--orange)" font-family="var(--font-display)" font-size="7" font-weight="600">Kentucky</text>
-      </svg>
-      <div class="map-label">United States</div>
-      <div class="map-detail">Public Health &middot; Data Science &middot; Green Dot</div>
+    <div class="journey-line"></div>
+    <div class="journey-stop">
+      <div class="journey-dot orange">MX</div>
+      <div class="journey-place">Mexico City</div>
+      <div class="journey-role">Demography<br>Federal Police</div>
     </div>
-    <!-- SOUTH AFRICA — bottom left -->
-    <div class="map-cell">
-      <svg viewBox="0 0 200 160" class="map-svg">
-        <!-- Simplified South Africa outline -->
-        <path d="M55,25 L90,20 L120,22 L145,28 L165,40 L175,55 L178,75 L172,95 L160,110 L145,125 L125,135 L100,140 L80,138 L60,130 L45,115 L35,95 L30,75 L35,55 L42,38 Z" fill="none" stroke="var(--orange)" stroke-width="1.5" opacity="0.5"/>
-        <!-- Lesotho hole hint -->
-        <ellipse cx="130" cy="105" rx="12" ry="9" fill="none" stroke="var(--orange)" stroke-width="0.8" opacity="0.3"/>
-        <!-- Grootbos dot (Western Cape) -->
-        <circle cx="68" cy="128" r="4" fill="var(--green)"/>
-        <text x="68" y="143" text-anchor="middle" fill="var(--green)" font-family="var(--font-display)" font-size="7" font-weight="600">Grootbos</text>
-        <!-- Natural Valley Trust dot (Eastern Cape) -->
-        <circle cx="125" cy="125" r="4" fill="var(--green)"/>
-        <text x="138" y="120" text-anchor="start" fill="var(--green)" font-family="var(--font-display)" font-size="7" font-weight="600">Natural Valley</text>
-      </svg>
-      <div class="map-label">South Africa</div>
-      <div class="map-detail">Grootbos Foundation &middot; Natural Valley Trust</div>
+    <div class="journey-line"></div>
+    <div class="journey-stop">
+      <div class="journey-dot orange">TJ</div>
+      <div class="journey-place">Tijuana</div>
+      <div class="journey-role">ESCUDO<br>Police training</div>
     </div>
-    <!-- BELIZE — bottom right -->
-    <div class="map-cell">
-      <svg viewBox="0 0 140 185" class="map-svg">
-        <!-- Belize outline -->
-        <path d="M35,15 L75,15 L88,28 L92,50 L88,70 L90,90 L92,110 L90,128 L84,145 L72,160 L56,170 L40,162 L30,145 L26,125 L30,103 L26,82 L30,60 L26,38 Z" fill="none" stroke="var(--orange)" stroke-width="1.5" opacity="0.5"/>
-        <!-- Toledo District highlight -->
-        <path d="M40,132 L90,128 L92,138 L90,148 L84,155 L72,165 L56,170 L40,162 L30,152 L26,140 Z" fill="var(--green-glow)" stroke="var(--green)" stroke-width="1.5"/>
-        <!-- Punta Gorda dot -->
-        <circle cx="58" cy="150" r="4" fill="var(--green)"/>
-        <text x="58" y="115" text-anchor="middle" fill="var(--green)" font-family="var(--font-display)" font-size="8" font-weight="600">Punta Gorda</text>
-      </svg>
-      <div class="map-label">Belize</div>
-      <div class="map-detail">THRIVE &middot; Life-Skills &middot; Toledo District</div>
+    <div class="journey-line"></div>
+    <div class="journey-stop">
+      <div class="journey-dot orange">AZ</div>
+      <div class="journey-place">Arizona</div>
+      <div class="journey-role">Public Health<br>Data Science</div>
+    </div>
+    <div class="journey-line"></div>
+    <div class="journey-stop">
+      <div class="journey-dot green">BZ</div>
+      <div class="journey-place">Belize</div>
+      <div class="journey-role">Life-Skills<br>Community</div>
+    </div>
+    <div class="journey-line"></div>
+    <div class="journey-stop">
+      <div class="journey-dot outline">?</div>
+      <div class="journey-place">Leiden</div>
+      <div class="journey-role">Your team</div>
     </div>
   </div>
-  <p class="slide-body anim anim-d5" style="margin-top:12px; max-width:46ch; font-size:0.88rem"><em>Deaths of Despair</em> &mdash; violence, substance use, and self-harm &mdash; connects every stop.</p>
-  <div class="anim anim-d6" style="margin-top:10px"><a href="https://www.yeridu.com" target="_blank" style="font-family:var(--font-display); font-size:1.2rem; font-weight:700; color:var(--orange); border-bottom:3px solid var(--orange); padding-bottom:4px">yeridu.com</a></div>
+  <!-- 4 Country Maps -->
+  <div class="map-grid anim anim-d5">
+    <div class="map-cell">
+      <svg viewBox="345.2 359.0 158.4 125.7" class="map-svg"><path d="M444.4 407.8l-3.6-1.4-3.9-2-.8-3-.2-4.5-2.4-3.6-1-3.7-1.6-4.4-3.1-2.5-4.4.1-4.8 5-4-1.9-2.2-1.9-.4-3.5-.8-3.3-2.4-2.8-2.1-2-1.3-2.2h-9.3l-.8 2.6h-15l-10.7-4.4-7.1-3.1 1-1.3-7 .7-6.3.5.2 5.7.7 5.1.7 4.1.8 4 2.6 1.8 2.9 4.5-1 2.9-2.7 2.3-2.1-.3-.6.5 2.3 3.7 2.9 1.5 1 1.7.9-.9 3.1 2.9 2.1 2 .1 3.4-1.2 4.7 2.5 1.6 3.3 3.1 2.9 3.6.7 3.9h1l2.7-2.3.4-1.2-1.5-2.8-1.6-2.9-2.6-.2.4-3.4-.9-3-1-2.8-.5-5.9-2.6-3.2-.6-2.3-1.2-1.6v-4.1l-1 .1-.1-2.2-.7-.5-.4-1.4-2.7-4.4-1.1-2.6 1-4.8.1-3 1.8-2.6 2.4 1.7 1.9-.2 3.1 2.5-.9 2.4.4 4.9 1.5 4.7-.4 2 1.7 3.1 2.3 3.4 2.7.5.3 4.4 2.4 3.1 2.5 1.5-1.8 4 .7 1.5 4.1 2.6 1.9 4 4.5 4.9 3.8 6.4 1.3 3.2v2.5l1.4 2.9-.3 2.2-1.6 1.6.3 1.8-1.9.7.8 3.1 2.2 4 5.3 3.6 1.9 2.9 5.4 2 3 .4 1.2 1.7 4.2 3 5.9 3 4 .9 4.8 2.9 4 1.2 3.7 1.7 2.9-.7 4.8-2.4 3.1-.4 4.4 1.6 2.6 2.1 5.5 6.9.4-1.9.8-1.5-.7-1.2 3.3-5.2h7.1l.4-2.1-.8-.4-.5-1.4-1.9-1.5-1.8-2.1h2.6l.4-3.6h5.2l5.1.1.1-1 .7-.3.9.8 2.5-3.9h1l1.2-.1 1.2 1.6 2-5 1.2-2.7-.9-1.1 1.8-3.9 3.5-3.8.6-3.1-1.2-1.3-3.4.5-4.8-.2-6 1.5-4 1.7-1.2 1.8-1.2 5.4-1.8 3.7-3.9 2.6-3.6 1.1-4.3 1.1-4.3.6-5.1 1.8-1.9-2.6-5.6-1.7-1.8-3.2-.7-3.6-3-4.7-.4-5-1.2-3.1-.5-3.4 1.1-3.1 1.8-8.6 1.8-4.5 3.1-5.6-2.1.2z" fill="none" stroke="var(--orange)" stroke-width="1.2" opacity="0.5"/><circle cx="410" cy="453" r="3.5" fill="var(--orange)"/><text x="410" y="462" text-anchor="middle" fill="var(--orange)" font-family="var(--font-display)" font-size="6" font-weight="600">Oaxaca</text><circle cx="354" cy="368" r="3.5" fill="var(--orange)"/><text x="362" y="365" text-anchor="start" fill="var(--orange)" font-family="var(--font-display)" font-size="6" font-weight="600">Tijuana</text></svg>
+      <div class="map-label">Mexico</div>
+    </div>
+    <div class="map-cell">
+      <svg viewBox="194.5 127.2 450.0 290.4" class="map-svg"><path d="M512.2 259.1h-1.6l-1.3 2.4H373.4l-1.6 5.1-2.4 5.1-2.3 1.6 1.1-5.9-5.8-2.1-1.4 1.2-.4 2.9-1.8 5.4-4.2 8.3-4 5.6-4 5.6-5.4 5.8-1.1 4.7-2.8 5.3-3.9 5.2 1 3.4-1.9 5.2 1.5 5.4 1.3 2.2-.8 1.5.4 9 2.5 6.5-.8 3.5 1 1 4.6.7 1.3 1.7 2.8.3-.1 1.9 2.2.7 2.1 3.7-.3 3.2 6.3-.5 7-.7-1 1.3 7.1 3.1 10.7 4.4h15l.8-2.6h9.3l1.3 2.2 2.1 2 2.4 2.8.8 3.3.4 3.5 2.2 1.9 4 1.9 4.8-5 4.4-.1 3.1 2.5 1.6 4.4 1 3.7 2.4 3.6.2 4.5.8 3 3.9 2 3.6 1.4 2.1-.2-.6-2.2.4-3.1 1-4.4 1.9-2.8 3.7-3.1 6-2.7 6.1-4.7 4.9-1.5 3.5-.4 3.5 1.4 4.9-.8 3.3 3.4 3.8.2 2.4-1.2 1.7.9 1.3-.8-.9-1.3.7-2.5-.5-1.7 2.4-1 4.2-.4 4.7.7 6.2-.8 3 1.5 2 3 .9.3 6.1-2.9 1.9 1 3 5.3.8 3.5-2 4.2.4 2.5 1.6 4.9 2 5.5 1.8 1.4.4 2.8 2.6.8 1.7-.8 2-3.9.7-2.5.9-4.3-1.2-7.4.5-2.7-1.5-4.5-.7-5.4.1-4.4 1.8-4.5 3.5-3.8 3.7-3 6.9-4.1 1.3-2.2 3.3-2.3 2.8-.4 4.4-3.8 6-1.9 4.6-4.8.9-6.5.1-2.2-1.4-.4 1.5-6.2-3-2.1 3.2 1v-4.1l1.9-2.7-1 5.3 2 2.5-2.9 4.4.4.2 4.4-5.1 2.4-2.5.6-2.5-.9-1.1-.1-3.5 1.2 1.6 1.1.4-.1 1.6 5.2-4.9 2.5-4.5-1.4-.3 2.1-1.8-.4.8h3.3l7.8-1.9-1.1-1.2-7.9 1.2 4.8-1.8 3.1-.3 2.4-.3 4.1-1.1 2.4.1 3.8-1 1-1.7-1.1-1.4-.2 2.2-2.1-.1-.6-3.3 1.1-3.3 1.4-1.3 3.9-3.7 5.9-1.8 6-2.1 6.3-3-.2-2-2.1-3.5 2.8-8.5-1.5-1.8-3.7 1.1-1.1-1.7-5.5 4.7-3.2 4.9-2.7 2.8-2.5.9-1.7.3-1 1.6h-17l-2.7 1.2-6.7 4.2.2.9-.6 2.4-4.6 2-3.9-.5-4-.2-2.6.7-.3 1.8-.1.6-5.8 3.7-4.5 1.8-2.9.8-3.7 1.7-4 .9-2.5-.3-2.7-1.3 2.7-2.4 2-2.2 3.7-3.4.7-2.5.5-3.5-1.6-.7-4.3 2.8-.9-.1.3-1.5 3.8-2.5 1.6-2.8.7-2.8-2.7-2.4-3.7-1.3-1.7 2.4-1.4.6-2.2 3.1.4-2.1-2.6 1.5-2.1 2-2.6 3.1-1.3 2.6.1 3.8-1.8 4-3.3 3-1.4.9-1.6.7h-1.8l-.3-.4-.1-3.3.7-1.6.7-1.5.6-3 2.5-3.5 2.9-4.3 4.6-4.7h-.7l-5.4 4-.4-.7 2.9-2.3 4.7-4 3.7-.5 4.4-1.3 3.7.7h.1l4.7-.5-1.5-2.5-1.2-.2-1.4-.3-.4-1.7-5.1.5-5 1.4-2.5-2.3-2.5-.8 3.1-3.3-5.3 2-4.9 2.1-4.6 1.5-2.1-2.1-5.5 1.3.4-.9 4.6-2.6 4.7-2.5 5.9-2.1-5.3-1.6-4.4.8-3.8-1.9-4.6-1-3.2-.4-1-1 .8-3.4zM359 133.3l-4.4-1.1-10.2 2.8-3.2-.3-11 2.3-4.8.6-7.8 2.5-4.8 2.6-8.6 2.5-7.6.1-6.3 2.9 3.2 1.7.7 2.3-.8 2.7 2.3 2.1-1.2 3.5-9.2.2 4.3-2.8h-3.4l-13.1 2.7-9.1 2.3 1 3.3-1.2 2.2 4.5 1.4 6.9-.7 1.8 1.3 2.9-1.3 6.1-1.2h2.7l-5.9 2.1 1.1 1-2.5 2.6-5.5 1.8-2.5-.5-7 2.7-1.8-.9-4.1.4-5.3 3-7.6 3.1-5.8 3.4.3 2.4-4 3.3 1.4 1.4.5 2.7 7.2-1.1.4 2.1-3.3 2.1-3.6 3.5h2.8l7.2-2.3-1.6 2.9 3.6-2.1-.4 3 4.8-2.2.4 1.1 7.2-1.8-6.2 3.4-5.7 4.5-5.7 2.1-2.3 1.2-10.3 3.6-4.9 2.4-6.5.7-8.5 3.3-6.6 1.8-8.1 2.8-.4 1 10-1.7 6-2 6.9-2 6.1-1.7 2.8.5 8.1-2.6 4.5-2.8 10.5-3.1 3.9-2.6 6.6-1.8 7.6-2.5 8.9-4.2-.2-2.9 11.1-4.1 7.4-3.9 9.2-3.2-.4 1.4-6.7 1.8-8.3 5.7-3.2 3.5 6.4-1.3 6.1-1.9 6.5-1.3 2.9-.3 3.5-4.1 6.3-1.2 2.6 2.5 6 2.7 6.7-.5 5.7 2 3.2 1.1 3.3 6.1 3.7 1.7 7.1.2 4.1.4-2.7 5.5 1.6 4.9-3.3 5.2 2.5 1.9.6 2.2 5.1-2.9 3.1-3.7-4.6-3.8 1.5-6.8 1.1-4.2-1.7-2.7-.7-2.4.5-3-6.4 1.9-7.6 3.3-.2-3.9-.6-2.6-2.7-1.6-4.2-.1 35.4-32.4 24.3-20.2-3.5-.7-4.1-1.6-6.5.8-2.2-.7-7.1-.5-6.2-1.6-4.8.5-4.9-.9 2-1.2-6.3-.3-3.3 1 .5-2.4z" fill="none" stroke="var(--orange)" stroke-width="2" opacity="0.5"/><circle cx="345" cy="340" r="4.5" fill="var(--orange)"/><text x="345" y="355" text-anchor="middle" fill="var(--orange)" font-family="var(--font-display)" font-size="9" font-weight="600">Arizona</text><circle cx="495" cy="275" r="4.5" fill="var(--orange)"/><text x="495" y="267" text-anchor="middle" fill="var(--orange)" font-family="var(--font-display)" font-size="9" font-weight="600">Kentucky</text></svg>
+      <div class="map-label">United States</div>
+    </div>
+    <div class="map-cell">
+      <svg viewBox="1060.3 707.7 100.2 91.0" class="map-svg"><path d="M1148.2 713.7l-2.9-.6-1.9.8-2.6-1.1-2.2-.1-8 4.7-5.2 4.7-2 4.3-1.7 2.4-3 .5-1.2 3-.6 2-3.6 1.5-4.4-.3-2.5-1.8-2.3-.8-2.7 1.5-1.5 3.1-2.7 1.9-2.8 2.8-4 .7-1.1-2.3.7-3.8-3-6.1-1.4-1-1.1 23.6-5 3.2-2.9.5-3.3-1.2-2.4-.5-.8-2.7-2.1-1.8-2.7 3.2 3.5 8.2v.1l2.5 5.3 3.2 6-.2 4.8-1.7 1.2 1.4 4.2-.2 3.8.6 1.7.3-.9 2.1 2.9 1.8.1 2.1 2.3 2.4-.2 3.5-2.4 4.6-1 5.6-2.5 2.2.3 3.3-.8 5.7 1.2 2.7-1.2 3.2 1 .8-1.8 2.7-.3 5.8-2.5 4.3-2.9 4.1-3.8 6.7-6.5 3.4-4.6 1.8-3.2 2.5-3.3 1.2-.9 3.9-3.2 1.6-2.9 1.1-5.2 1.7-4.7h-4.1l-1.3 2.8-3.3.7-3-3.5.1-2.2 1.6-2.4.7-1.8 1.6-.5 2.7 1.2-.4-2.3 1.4-7.1-1.1-4.5-2.2-9zm-20.1 52.8l-2 .6-3.7-4.9 3.2-4 3.1-2.5 2.6-1.3 2.3 2 1.7 1.9-1.9 3.1-1.1 2.1-3.1 1-1.1 2z" fill="none" stroke="var(--green)" stroke-width="0.8" opacity="0.5"/><circle cx="1083" cy="786" r="2.5" fill="var(--green)"/><text x="1075" y="795" text-anchor="end" fill="var(--green)" font-family="var(--font-display)" font-size="5" font-weight="600">Grootbos</text><circle cx="1115" cy="775" r="2.5" fill="var(--green)"/><text x="1123" y="773" text-anchor="start" fill="var(--green)" font-family="var(--font-display)" font-size="5" font-weight="600">Natural Valley</text></svg>
+      <div class="map-label">South Africa</div>
+    </div>
+    <div class="map-cell">
+      <svg viewBox="475.9 449.5 18.1 26.6" class="map-svg"><path d="M482.5 471.1l1.4-2.2 1-.2 1.3-1.7 1-3.2-.3-.6.9-2.3-.4-1 1.3-2.7.3-1.8h-1.1l.1-.9h-1l-2.5 3.9-.9-.8-.7.3-.1 1-.7 5-1.2 7.2h1.6z" fill="none" stroke="var(--green)" stroke-width="0.3" opacity="0.5"/><circle cx="482" cy="470" r="1.2" fill="var(--green)"/><text x="482" y="474" text-anchor="middle" fill="var(--green)" font-family="var(--font-display)" font-size="2.5" font-weight="600">Punta Gorda</text></svg>
+      <div class="map-label">Belize</div>
+    </div>
+  </div>
+  <p class="slide-body anim anim-d6" style="margin-top:14px; max-width:46ch; font-size:0.92rem"><em>Deaths of Despair</em> &mdash; violence, substance use, and self-harm &mdash; is the thread that connects every stop on this journey.</p>
+  <div class="anim anim-d7" style="margin-top:16px"><a href="https://www.yeridu.com" target="_blank" style="font-family:var(--font-display); font-size:1.3rem; font-weight:700; color:var(--orange); border-bottom:3px solid var(--orange); padding-bottom:4px">yeridu.com</a></div>
   <div class="speaker-note">TIMING: 1 minute. Start confident, collegial. SAY: "Good morning / afternoon. My name is Mario Morales. [Point to path] My journey started in Oaxaca, doing ethnographic fieldwork where I first encountered violence research — Los Zetas were operating in the region. That experience taught me to listen before trying to fix anything. From there I moved to Mexico City for demography at El Colegio de México and then to the Federal Police. Then Tijuana, where I trained over 1,800 officers in harm reduction through the ESCUDO project. Then Arizona for public health and data science. And most recently, Belize, where I built a life-skills curriculum from the ground up with Maya adolescents. The thread connecting every stop is Deaths of Despair — the intersection of violence, substance use, and self-harm. Today I want to show you my work, and why this group is the right place for the next stop." TRANSITION: "Let me tell you about my background."</div>
 </section>
 
