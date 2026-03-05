@@ -26,6 +26,10 @@
   --text-mid:   #444444;
   --text-light: #555555;
 
+  --turquoise:  #48C9B0;
+  --turq-light: rgba(72,201,176,0.12);
+  --turq-faint: rgba(72,201,176,0.06);
+
   --font-display: "Sora", sans-serif;
   --font-body:    "Source Sans 3", sans-serif;
 
@@ -54,11 +58,88 @@ a:hover { color: var(--orange-dim); }
   text-align: center; padding: 48px 64px;
   background: var(--white); color: var(--black);
   opacity: 0; visibility: hidden; transform: scale(0.98);
+  overflow: hidden;
   transition: opacity var(--duration) var(--ease), transform var(--duration) var(--ease), visibility 0s var(--duration);
 }
 .slide.active {
   opacity: 1; visibility: visible; transform: scale(1);
   transition: opacity var(--duration) var(--ease), transform var(--duration) var(--ease), visibility 0s 0s;
+}
+
+/* --- Water Ripples (turquoise frame accents) --- */
+.ripple-tr::before, .ripple-bl::after,
+.ripple-tl::before, .ripple-br::after,
+.ripple-r::before, .ripple-l::after {
+  content: ""; position: absolute; pointer-events: none; z-index: 0;
+  opacity: 0; transition: opacity 800ms var(--ease) 300ms;
+}
+.slide.active .ripple-tr::before, .slide.active .ripple-bl::after,
+.slide.active .ripple-tl::before, .slide.active .ripple-br::after,
+.slide.active .ripple-r::before, .slide.active .ripple-l::after { opacity: 1; }
+
+/* Top-right: 3 concentric arcs flowing from corner */
+.ripple-tr::before {
+  top: -60px; right: -60px; width: 280px; height: 280px;
+  background:
+    radial-gradient(ellipse at 100% 0%, transparent 52%, var(--turq-faint) 53%, var(--turq-faint) 55%, transparent 56%),
+    radial-gradient(ellipse at 100% 0%, transparent 64%, var(--turq-light) 65%, var(--turq-light) 66.5%, transparent 67.5%),
+    radial-gradient(ellipse at 100% 0%, transparent 78%, var(--turq-faint) 79%, var(--turq-faint) 80.5%, transparent 81.5%);
+  border-radius: 0 0 0 100%;
+}
+
+/* Bottom-left: organic arcs rising from bottom corner */
+.ripple-bl::after {
+  bottom: -40px; left: -50px; width: 240px; height: 220px;
+  background:
+    radial-gradient(ellipse at 0% 100%, transparent 48%, var(--turq-faint) 49%, var(--turq-faint) 51%, transparent 52%),
+    radial-gradient(ellipse at 0% 100%, transparent 62%, var(--turq-light) 63%, var(--turq-light) 64.5%, transparent 65.5%),
+    radial-gradient(ellipse at 0% 100%, transparent 76%, var(--turq-faint) 77%, var(--turq-faint) 78.5%, transparent 79.5%);
+  border-radius: 0 100% 0 0;
+}
+
+/* Top-left: arcs from upper-left */
+.ripple-tl::before {
+  top: -50px; left: -50px; width: 260px; height: 260px;
+  background:
+    radial-gradient(ellipse at 0% 0%, transparent 50%, var(--turq-faint) 51%, var(--turq-faint) 53%, transparent 54%),
+    radial-gradient(ellipse at 0% 0%, transparent 65%, var(--turq-light) 66%, var(--turq-light) 67.5%, transparent 68.5%),
+    radial-gradient(ellipse at 0% 0%, transparent 80%, var(--turq-faint) 81%, var(--turq-faint) 82.5%, transparent 83.5%);
+  border-radius: 0 0 100% 0;
+}
+
+/* Bottom-right: arcs from lower-right */
+.ripple-br::after {
+  bottom: -50px; right: -50px; width: 260px; height: 240px;
+  background:
+    radial-gradient(ellipse at 100% 100%, transparent 50%, var(--turq-faint) 51%, var(--turq-faint) 53%, transparent 54%),
+    radial-gradient(ellipse at 100% 100%, transparent 63%, var(--turq-light) 64%, var(--turq-light) 65.5%, transparent 66.5%),
+    radial-gradient(ellipse at 100% 100%, transparent 78%, var(--turq-faint) 79%, var(--turq-faint) 80.5%, transparent 81.5%);
+  border-radius: 100% 0 0 0;
+}
+
+/* Right edge: horizontal ripple streaks */
+.ripple-r::before {
+  top: 50%; right: -20px; width: 160px; height: 320px; transform: translateY(-50%);
+  background:
+    radial-gradient(ellipse at 100% 50%, transparent 55%, var(--turq-faint) 56%, var(--turq-faint) 58%, transparent 59%),
+    radial-gradient(ellipse at 100% 50%, transparent 70%, var(--turq-light) 71%, var(--turq-light) 72.5%, transparent 73.5%),
+    radial-gradient(ellipse at 100% 50%, transparent 84%, var(--turq-faint) 85%, var(--turq-faint) 86.5%, transparent 87.5%);
+}
+
+/* Left edge: horizontal ripple streaks */
+.ripple-l::after {
+  top: 40%; left: -20px; width: 140px; height: 300px; transform: translateY(-50%);
+  background:
+    radial-gradient(ellipse at 0% 50%, transparent 55%, var(--turq-faint) 56%, var(--turq-faint) 58%, transparent 59%),
+    radial-gradient(ellipse at 0% 50%, transparent 70%, var(--turq-light) 71%, var(--turq-light) 72%, transparent 73%),
+    radial-gradient(ellipse at 0% 50%, transparent 85%, var(--turq-faint) 86%, var(--turq-faint) 87%, transparent 88%);
+}
+
+/* Chapter cards use lighter turquoise on dark bg */
+.chapter-card.ripple-tr::before,
+.chapter-card.ripple-bl::after {
+  --turq-faint: rgba(72,201,176,0.08);
+  --turq-light: rgba(72,201,176,0.15);
 }
 
 /* --- Progress --- */
@@ -361,7 +442,7 @@ img { -webkit-user-drag: none; user-select: none; }
 <!-- ═══════════════════════════════════════════════════════════
      SLIDE 1: JOURNEY
      ═══════════════════════════════════════════════════════════ -->
-<section class="slide active">
+<section class="slide ripple-tr active">
   <div class="slide-label anim">LEIDEN UNIVERSITY &middot; VIOLENCE &amp; VIOLENCE PREVENTION</div>
   <h1 class="slide-heading anim anim-d1" style="font-size:clamp(2.4rem,5vw,3.8rem); max-width:22ch">Mario Morales</h1>
   <div class="accent-line anim anim-d2"></div>
@@ -428,7 +509,7 @@ img { -webkit-user-drag: none; user-select: none; }
 <!-- ═══════════════════════════════════════════════════════════
      SLIDE 3: THE GAP I FILL
      ═══════════════════════════════════════════════════════════ -->
-<section class="slide">
+<section class="slide ripple-bl">
   <div class="slide-label anim" style="margin-bottom:8px">THE GAP I FILL</div>
   <h2 class="slide-heading anim anim-d1" style="margin-bottom:8px">What You Have. What I Bring.</h2>
   <div class="accent-line anim anim-d2" style="margin:6px auto 10px"></div>
@@ -464,7 +545,7 @@ img { -webkit-user-drag: none; user-select: none; }
 <!-- ═══════════════════════════════════════════════════════════
      ACT II CHAPTER CARD
      ═══════════════════════════════════════════════════════════ -->
-<section class="slide chapter-card chapter-white">
+<section class="slide chapter-card chapter-white ripple-tr">
   <div class="chapter-num anim">ACT TWO</div>
   <div class="chapter-title anim anim-d1">What I&rsquo;ve Done</div>
   <div class="chapter-line anim anim-d2"></div>
@@ -513,7 +594,7 @@ img { -webkit-user-drag: none; user-select: none; }
 <!-- ═══════════════════════════════════════════════════════════
      SLIDE 6: PAPER 1 — SYSTEMATIC REVIEW (full-width)
      ═══════════════════════════════════════════════════════════ -->
-<section class="slide">
+<section class="slide ripple-r">
   <div class="research-arc"><div class="arc-dot active"></div><div class="arc-dot"></div><div class="arc-dot"></div><div class="arc-dot"></div><div class="arc-dot"></div><div class="arc-dot"></div></div>
   <div class="paper-full">
     <div style="text-align:left">
@@ -550,7 +631,7 @@ img { -webkit-user-drag: none; user-select: none; }
 <!-- ═══════════════════════════════════════════════════════════
      SLIDE 7: PAPER 2 — GREEN DOT VIDEO
      ═══════════════════════════════════════════════════════════ -->
-<section class="slide">
+<section class="slide ripple-tl">
   <div class="research-arc"><div class="arc-dot"></div><div class="arc-dot active"></div><div class="arc-dot"></div><div class="arc-dot"></div><div class="arc-dot"></div><div class="arc-dot"></div></div>
   <div class="slide-label anim">PAPER 2 &mdash; BYSTANDER TRIAL</div>
   <h2 class="slide-heading anim anim-d1" style="font-size:clamp(1.5rem,3vw,2.2rem); margin-bottom:14px">Green Dot: Changing Norms Takes Years</h2>
@@ -582,7 +663,7 @@ img { -webkit-user-drag: none; user-select: none; }
 <!-- ═══════════════════════════════════════════════════════════
      SLIDE 9: THRIVE-BELIZE + MAP
      ═══════════════════════════════════════════════════════════ -->
-<section class="slide">
+<section class="slide ripple-br">
   <div class="research-arc"><div class="arc-dot"></div><div class="arc-dot"></div><div class="arc-dot"></div><div class="arc-dot active"></div><div class="arc-dot"></div><div class="arc-dot"></div></div>
   <div class="thrive-layout">
     <div style="text-align:left">
@@ -635,7 +716,7 @@ img { -webkit-user-drag: none; user-select: none; }
 <!-- ═══════════════════════════════════════════════════════════
      SLIDE 10a: NVDRS — HIDDEN PARTNERS
      ═══════════════════════════════════════════════════════════ -->
-<section class="slide">
+<section class="slide ripple-l">
   <div class="research-arc"><div class="arc-dot"></div><div class="arc-dot"></div><div class="arc-dot"></div><div class="arc-dot"></div><div class="arc-dot active"></div><div class="arc-dot"></div></div>
   <div class="paper-full">
     <div style="text-align:left">
@@ -674,7 +755,7 @@ img { -webkit-user-drag: none; user-select: none; }
 <!-- ═══════════════════════════════════════════════════════════
      ACT III CHAPTER CARD
      ═══════════════════════════════════════════════════════════ -->
-<section class="slide chapter-card chapter-white">
+<section class="slide chapter-card chapter-white ripple-bl">
   <div class="chapter-num anim">ACT THREE</div>
   <div class="chapter-title anim anim-d1">What I&rsquo;ll Do &mdash; With You</div>
   <div class="chapter-line anim anim-d2"></div>
@@ -684,7 +765,7 @@ img { -webkit-user-drag: none; user-select: none; }
 <!-- ═══════════════════════════════════════════════════════════
      SLIDE 13: ALIGNMENT WEB (more specific)
      ═══════════════════════════════════════════════════════════ -->
-<section class="slide">
+<section class="slide ripple-tl">
   <div class="slide-label anim">ALIGNMENT</div>
   <h2 class="slide-heading anim anim-d1">How My Work Connects to Yours</h2>
   <div class="accent-line anim anim-d2"></div>
@@ -772,7 +853,7 @@ img { -webkit-user-drag: none; user-select: none; }
 <!-- ═══════════════════════════════════════════════════════════
      SLIDE: THE CARIBBEAN OPPORTUNITY
      ═══════════════════════════════════════════════════════════ -->
-<section class="slide" style="justify-content:center; padding:36px 28px">
+<section class="slide ripple-r" style="justify-content:center; padding:36px 28px">
   <div class="slide-label anim" style="color:var(--green)">AIM 3 &mdash; WHY THE DUTCH CARIBBEAN</div>
   <h2 class="slide-heading anim anim-d1" style="font-size:clamp(1.5rem,3.2vw,2.2rem); margin-bottom:8px; max-width:36ch">The <a href="https://www.universiteitleiden.nl/en/research/research-projects/governance-and-global-affairs/dutch-caribbean-homicide-monitor-murder-and-manslaughter-in-the-caribbean-part-of-the-kingdom-of-the-netherlands" target="_blank" style="color:var(--orange)">DCHM</a> Tells Us Where. Now We Need to Act.</h2>
   <div class="accent-line anim anim-d2" style="margin:4px auto 12px; background:var(--green)"></div>
@@ -965,7 +1046,7 @@ img { -webkit-user-drag: none; user-select: none; }
 <!-- ═══════════════════════════════════════════════════════════
      SLIDE 15: TEACHING
      ═══════════════════════════════════════════════════════════ -->
-<section class="slide">
+<section class="slide ripple-tr">
   <div class="slide-label anim">TEACHING &amp; MENTORING</div>
   <h2 class="slide-heading anim anim-d1">Ready for Your Curriculum</h2>
   <div class="accent-line anim anim-d2"></div>
@@ -993,7 +1074,7 @@ img { -webkit-user-drag: none; user-select: none; }
 <!-- ═══════════════════════════════════════════════════════════
      SLIDE 16: CLOSE
      ═══════════════════════════════════════════════════════════ -->
-<section class="slide">
+<section class="slide ripple-bl">
   <div class="close-heading anim">I don&rsquo;t just study violence from a distance &mdash; I work alongside communities to prevent it.</div>
   <div class="accent-line anim anim-d1"></div>
   <p class="close-body anim anim-d2">Ethnographic training taught me to listen first. National data tells me where to go. Fieldwork &mdash; in Belizean classrooms, Tijuana police stations, border communities &mdash; is where the real work happens. I believe effective prevention starts from the bottom up: with communities, not committees. And I bring that approach, along with the computational tools to make it scalable, to everything I do.</p>
@@ -1005,7 +1086,7 @@ img { -webkit-user-drag: none; user-select: none; }
 <!-- ═══════════════════════════════════════════════════════════
      SLIDE 17: THANK YOU & Q&A
      ═══════════════════════════════════════════════════════════ -->
-<section class="slide">
+<section class="slide ripple-br">
   <h1 class="anim" style="font-family:var(--font-display); font-size:clamp(2.8rem,6vw,4.2rem); font-weight:700; color:var(--black); margin-bottom:14px">Thank You</h1>
   <div class="chapter-line anim anim-d1"></div>
   <div class="anim anim-d2" style="margin-top:36px; display:flex; flex-direction:column; align-items:center; gap:12px">
