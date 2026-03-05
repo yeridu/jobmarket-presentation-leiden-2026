@@ -79,60 +79,56 @@ a:hover { color: var(--orange-dim); }
 
 /* Top-right: 3 concentric arcs flowing from corner */
 .ripple-tr::before {
-  top: -60px; right: -60px; width: 280px; height: 280px;
+  top: 0; right: 0; width: 320px; height: 320px;
   background:
-    radial-gradient(ellipse at 100% 0%, transparent 52%, var(--turq-faint) 53%, var(--turq-faint) 55%, transparent 56%),
-    radial-gradient(ellipse at 100% 0%, transparent 64%, var(--turq-light) 65%, var(--turq-light) 66.5%, transparent 67.5%),
-    radial-gradient(ellipse at 100% 0%, transparent 78%, var(--turq-faint) 79%, var(--turq-faint) 80.5%, transparent 81.5%);
-  border-radius: 0 0 0 100%;
+    radial-gradient(ellipse at 100% 0%, transparent 30%, var(--turq-faint) 31%, var(--turq-faint) 33%, transparent 34%),
+    radial-gradient(ellipse at 100% 0%, transparent 44%, var(--turq-light) 45%, var(--turq-light) 47%, transparent 48%),
+    radial-gradient(ellipse at 100% 0%, transparent 60%, var(--turq-faint) 61%, var(--turq-faint) 63%, transparent 64%);
 }
 
 /* Bottom-left: organic arcs rising from bottom corner */
 .ripple-bl::after {
-  bottom: -40px; left: -50px; width: 240px; height: 220px;
+  bottom: 0; left: 0; width: 280px; height: 260px;
   background:
-    radial-gradient(ellipse at 0% 100%, transparent 48%, var(--turq-faint) 49%, var(--turq-faint) 51%, transparent 52%),
-    radial-gradient(ellipse at 0% 100%, transparent 62%, var(--turq-light) 63%, var(--turq-light) 64.5%, transparent 65.5%),
-    radial-gradient(ellipse at 0% 100%, transparent 76%, var(--turq-faint) 77%, var(--turq-faint) 78.5%, transparent 79.5%);
-  border-radius: 0 100% 0 0;
+    radial-gradient(ellipse at 0% 100%, transparent 28%, var(--turq-faint) 29%, var(--turq-faint) 31%, transparent 32%),
+    radial-gradient(ellipse at 0% 100%, transparent 44%, var(--turq-light) 45%, var(--turq-light) 47%, transparent 48%),
+    radial-gradient(ellipse at 0% 100%, transparent 62%, var(--turq-faint) 63%, var(--turq-faint) 65%, transparent 66%);
 }
 
 /* Top-left: arcs from upper-left */
 .ripple-tl::before {
-  top: -50px; left: -50px; width: 260px; height: 260px;
+  top: 0; left: 0; width: 300px; height: 300px;
   background:
-    radial-gradient(ellipse at 0% 0%, transparent 50%, var(--turq-faint) 51%, var(--turq-faint) 53%, transparent 54%),
-    radial-gradient(ellipse at 0% 0%, transparent 65%, var(--turq-light) 66%, var(--turq-light) 67.5%, transparent 68.5%),
-    radial-gradient(ellipse at 0% 0%, transparent 80%, var(--turq-faint) 81%, var(--turq-faint) 82.5%, transparent 83.5%);
-  border-radius: 0 0 100% 0;
+    radial-gradient(ellipse at 0% 0%, transparent 30%, var(--turq-faint) 31%, var(--turq-faint) 33%, transparent 34%),
+    radial-gradient(ellipse at 0% 0%, transparent 46%, var(--turq-light) 47%, var(--turq-light) 49%, transparent 50%),
+    radial-gradient(ellipse at 0% 0%, transparent 64%, var(--turq-faint) 65%, var(--turq-faint) 67%, transparent 68%);
 }
 
 /* Bottom-right: arcs from lower-right */
 .ripple-br::after {
-  bottom: -50px; right: -50px; width: 260px; height: 240px;
+  bottom: 0; right: 0; width: 300px; height: 280px;
   background:
-    radial-gradient(ellipse at 100% 100%, transparent 50%, var(--turq-faint) 51%, var(--turq-faint) 53%, transparent 54%),
-    radial-gradient(ellipse at 100% 100%, transparent 63%, var(--turq-light) 64%, var(--turq-light) 65.5%, transparent 66.5%),
-    radial-gradient(ellipse at 100% 100%, transparent 78%, var(--turq-faint) 79%, var(--turq-faint) 80.5%, transparent 81.5%);
-  border-radius: 100% 0 0 0;
+    radial-gradient(ellipse at 100% 100%, transparent 28%, var(--turq-faint) 29%, var(--turq-faint) 31%, transparent 32%),
+    radial-gradient(ellipse at 100% 100%, transparent 44%, var(--turq-light) 45%, var(--turq-light) 47%, transparent 48%),
+    radial-gradient(ellipse at 100% 100%, transparent 62%, var(--turq-faint) 63%, var(--turq-faint) 65%, transparent 66%);
 }
 
 /* Right edge: horizontal ripple streaks */
 .ripple-r::before {
-  top: 50%; right: -20px; width: 160px; height: 320px; transform: translateY(-50%);
+  top: 50%; right: 0; width: 180px; height: 360px; transform: translateY(-50%);
   background:
-    radial-gradient(ellipse at 100% 50%, transparent 55%, var(--turq-faint) 56%, var(--turq-faint) 58%, transparent 59%),
-    radial-gradient(ellipse at 100% 50%, transparent 70%, var(--turq-light) 71%, var(--turq-light) 72.5%, transparent 73.5%),
-    radial-gradient(ellipse at 100% 50%, transparent 84%, var(--turq-faint) 85%, var(--turq-faint) 86.5%, transparent 87.5%);
+    radial-gradient(ellipse at 100% 50%, transparent 30%, var(--turq-faint) 31%, var(--turq-faint) 34%, transparent 35%),
+    radial-gradient(ellipse at 100% 50%, transparent 50%, var(--turq-light) 51%, var(--turq-light) 54%, transparent 55%),
+    radial-gradient(ellipse at 100% 50%, transparent 72%, var(--turq-faint) 73%, var(--turq-faint) 76%, transparent 77%);
 }
 
 /* Left edge: horizontal ripple streaks */
 .ripple-l::after {
-  top: 40%; left: -20px; width: 140px; height: 300px; transform: translateY(-50%);
+  top: 40%; left: 0; width: 160px; height: 340px; transform: translateY(-50%);
   background:
-    radial-gradient(ellipse at 0% 50%, transparent 55%, var(--turq-faint) 56%, var(--turq-faint) 58%, transparent 59%),
-    radial-gradient(ellipse at 0% 50%, transparent 70%, var(--turq-light) 71%, var(--turq-light) 72%, transparent 73%),
-    radial-gradient(ellipse at 0% 50%, transparent 85%, var(--turq-faint) 86%, var(--turq-faint) 87%, transparent 88%);
+    radial-gradient(ellipse at 0% 50%, transparent 30%, var(--turq-faint) 31%, var(--turq-faint) 34%, transparent 35%),
+    radial-gradient(ellipse at 0% 50%, transparent 50%, var(--turq-light) 51%, var(--turq-light) 54%, transparent 55%),
+    radial-gradient(ellipse at 0% 50%, transparent 72%, var(--turq-faint) 73%, var(--turq-faint) 76%, transparent 77%);
 }
 
 /* Chapter cards use lighter turquoise on dark bg */
