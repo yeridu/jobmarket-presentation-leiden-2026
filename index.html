@@ -541,6 +541,10 @@ img { -webkit-user-drag: none; user-select: none; }
     </video>
   </div>
   <p class="video-caption anim anim-d3">4-year trial &middot; 26 Kentucky high schools &middot; 16,509 students &middot; Attitudes shifted only in Year 4</p>
+  <button class="narrate-btn anim anim-d4" type="button" data-narrate="greendot_methods" style="margin-top:6px; font-size:0.72rem">
+    <svg class="narrate-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>
+    Methods
+  </button>
   <div class="speaker-note">TIMING: 2.5 minutes. Play video. KEY FINDINGS if summarizing: (1) No difference in Years 1-3, effect emerged ONLY in Year 4 — lasting change takes sustained effort. (2) Boys 1.7x more likely to endorse victim-blaming than girls. (3) Non-White students endorsed at 1.5x rate — need culturally responsive programming. (4) Attitudes shifted but reported violence did not yet decrease — norms change before behavior. CONNECTION TO WEENINK: Green Dot trains bystanders to intervene — the same dynamic Weenink's "Circles of Peace" (BJC 2022, https://academic.oup.com/bjc/article/62/1/18/6299950) captures in real-time. My evaluation provides outcome evidence for the process he observes. Together we could connect situational dynamics to population-level outcomes.</div>
 </section>
 
@@ -559,6 +563,10 @@ img { -webkit-user-drag: none; user-select: none; }
     </video>
   </div>
   <p class="video-caption anim anim-d3">20,103 U.S. high schoolers &middot; YRBS 2023 &middot; Bullying uniquely linked to opioid use, not other substances</p>
+  <button class="narrate-btn anim anim-d4" type="button" data-narrate="nmpou_methods" style="margin-top:6px; font-size:0.72rem">
+    <svg class="narrate-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>
+    Methods
+  </button>
   <div class="speaker-note">TIMING: 2.5 minutes. Play video. KEY FINDINGS: (1) Three explanations tested: risk-taking, emotional pain, tough circumstances — all mattered. (2) Bullying ONLY factor uniquely linked to opioids, not alcohol/marijuana/cigarettes/cocaine. Social rejection activates same brain pathways opioids target. (3) Ethnic differences: Latino youth driven by life circumstances, White youth by prescription access, Black youth by emotional distress, Multiracial youth highest rates (identity stress). (4) All three explanations overlap — accumulated burden, not neat categories. DEATHS OF DESPAIR CONNECTION: Opioid misuse clusters with suicidal thoughts, dating violence, and bullying — extends Prof. Liem &amp; Moeller's drugs-violence framework.</div>
 </section>
 
@@ -1186,6 +1194,12 @@ Deaths of Despair — Case and Deaton's framework — is the thread connecting m
   var STOP_HTML = '<svg class="narrate-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="4" width="4" height="16"/><rect x="14" y="4" width="4" height="16"/></svg> Stop';
 
   var narrations = {
+    greendot_methods: [
+      { id: "greendot-methods-audio", text: "This is a cluster-randomized controlled trial — the gold standard for causal inference in prevention research. Twenty-six Kentucky high schools were randomly paired by demographics and assigned to treatment or control. Over 16,000 students completed anonymous surveys annually from 2010 to 2014. The unit of randomization is the school, not the student — so I used binomial mixed models with a random intercept for school to properly account for that clustering. The key test is a Treatment-by-Year interaction: did the gap between treatment and control schools widen over time? A joint likelihood ratio test confirmed it did. But the effect only emerged in Year 4 — 15 percent lower odds of victim-blaming in treatment schools. Why so late? Because changing social norms takes sustained exposure. One semester is not enough. I also checked whether the effect differed by sex, race, or grade using individual-level Poisson models with small-sample corrected standard errors. No subgroup differences were detected — the effect was consistent across demographics. All results held across five sensitivity analyses, including outlier exclusion and alternative model specifications." }
+    ],
+    nmpou_methods: [
+      { id: "nmpou-methods-audio", text: "This study uses the 2023 Youth Risk Behavior Survey — a nationally representative sample of over 20,000 U.S. high school students, with a complex survey design that accounts for clustering and nonresponse. The question is: what makes opioid use different from other substance use? I tested three theoretical frameworks — generalized risk-taking, emotional distress, and contextual adversity — each measured with validated composite indicators from the survey. The key methodological innovation is the stacked-outcome specificity test. I restructured the data so each student appears five times — once per substance: opioids, alcohol, marijuana, cigarettes, cocaine. Then I tested whether each predictor is more strongly associated with opioids than with the other four, using interaction terms and a joint Wald test. This directly separates opioid-specific risk factors from general substance use markers. Bullying was the only predictor with a statistically significant opioid-specific association. I also used Karlson-Holm-Breen decomposition to quantify how much of each predictor's link to opioids operates through polysubstance involvement versus directly. This matters because if bullyings effect is just a marker of general risk-taking, the decomposition would show it. It did not — bullyings association is genuinely opioid-specific. Ten sensitivity analyses confirmed the results." }
+    ],
     gap: [
       { id: "gap-bring-1", text: "I bring computational tools — text analysis and machine learning — that could plug directly into the Homicide Monitor and Femicide Monitor. Methods designed to extract patterns from death records and case narratives at scale." },
       { id: "gap-bring-2", text: "I've also done population-level surveillance and program evaluation. My analysis of Belize's national survey on physical domestic violence mapped exactly where violence tolerance concentrates — and my Green Dot evaluation tested bystander training across 26 high schools over four years." },
