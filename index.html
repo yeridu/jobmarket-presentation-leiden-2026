@@ -73,9 +73,9 @@ a:hover { color: var(--orange-dim); }
   content: ""; position: absolute; pointer-events: none; z-index: 0;
   opacity: 0; transition: opacity 800ms var(--ease) 300ms;
 }
-.slide.active .ripple-tr::before, .slide.active .ripple-bl::after,
-.slide.active .ripple-tl::before, .slide.active .ripple-br::after,
-.slide.active .ripple-r::before, .slide.active .ripple-l::after { opacity: 1; }
+.slide.active.ripple-tr::before, .slide.active.ripple-bl::after,
+.slide.active.ripple-tl::before, .slide.active.ripple-br::after,
+.slide.active.ripple-r::before, .slide.active.ripple-l::after { opacity: 1; }
 
 /* Top-right: 3 concentric arcs flowing from corner */
 .ripple-tr::before {
