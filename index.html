@@ -145,13 +145,6 @@ a:hover { color: var(--orange-dim); }
 .lc strong { color: var(--green); }
 
 /* === PRISMA === */
-.prisma-flow { display: flex; flex-direction: column; align-items: center; gap: 5px; }
-.prisma-box { background: var(--card-bg); border-radius: 9px; padding: 10px 18px; text-align: center; width: 100%; max-width: 240px; border: 1px solid var(--border); }
-.prisma-box .pb-num { font-family: var(--font-display); font-size: 1.3rem; font-weight: 700; color: var(--orange); }
-.prisma-box .pb-label { font-size: 0.78rem; color: var(--text-light); }
-.prisma-box.highlight { border: 2px solid var(--orange); background: var(--orange-glow); }
-.prisma-arrow { width: 2px; height: 14px; background: var(--orange-dim); position: relative; }
-.prisma-arrow::after { content: ""; position: absolute; bottom: -3px; left: -3px; width: 0; height: 0; border-left: 4px solid transparent; border-right: 4px solid transparent; border-top: 5px solid var(--orange-dim); }
 
 /* === BAR CHART === */
 .bar-chart { display: flex; flex-direction: column; gap: 8px; }
@@ -532,54 +525,15 @@ img { -webkit-user-drag: none; user-select: none; }
 </section>
 
 <!-- ═══════════════════════════════════════════════════════════
-     SLIDE 6: PAPER 1 — SYSTEMATIC REVIEW (full-width)
-     ═══════════════════════════════════════════════════════════ -->
-<section class="slide">
-  <svg class="ripple" style="top:50%;left:0;transform:translateY(-50%)" width="130" height="360" viewBox="0 0 130 360" fill="none"><path d="M0,30 Q45,80 40,170 Q35,260 0,310" stroke="#48C9B0" stroke-width="1.5" opacity="0.16"/><path d="M0,50 Q55,100 50,170 Q45,240 0,290" stroke="#48C9B0" stroke-width="1" opacity="0.10"/></svg>
-  <svg class="ripple" style="top:50%;right:0;transform:translateY(-50%)" width="130" height="360" viewBox="0 0 130 360" fill="none"><path d="M130,30 Q85,80 90,170 Q95,260 130,310" stroke="#48C9B0" stroke-width="1.5" opacity="0.16"/><path d="M130,50 Q95,100 98,170 Q102,260 130,290" stroke="#48C9B0" stroke-width="1" opacity="0.10"/></svg>
-  <div class="research-arc"><div class="arc-dot active"></div><div class="arc-dot"></div><div class="arc-dot"></div><div class="arc-dot"></div><div class="arc-dot"></div><div class="arc-dot"></div></div>
-  <div class="paper-full">
-    <div style="text-align:left">
-      <div class="slide-label anim">PAPER 1 &mdash; SYSTEMATIC REVIEW</div>
-      <h2 class="slide-heading anim anim-d1" style="max-width:28ch; font-size:clamp(1.7rem,3.5vw,2.6rem)">Where Is the Evidence?</h2>
-      <p class="slide-subheading anim anim-d2" style="max-width:42ch; text-align:left">School-based programs preventing <em>both</em> dating violence and substance use &mdash; how many exist?</p>
-      <div class="accent-line anim anim-d3" style="margin-left:0"></div>
-      <div class="fc anim anim-d4" style="max-width:420px">
-        <div class="fc-label">METHOD</div>
-        <div class="fc-desc">PROSPERO-registered protocol. 6 databases, 2012&ndash;2025. This is how I start every new research question: map the evidence first, then act on the gaps.</div>
-      </div>
-      <div class="fc anim anim-d5" style="max-width:420px; margin-top:10px">
-        <div class="fc-label">KEY FINDING</div>
-        <div class="fc-desc">The program that <em>didn&rsquo;t</em> target substance use (Green Dot) reduced it. The one that did (Fourth R) failed. <strong>Norm change outperforms direct instruction.</strong></div>
-      </div>
-    </div>
-    <div style="text-align:left; display:flex; flex-direction:column; justify-content:space-between; align-items:center; gap:16px; padding-top:40px">
-      <div class="prisma-flow anim anim-d3">
-        <div class="prisma-box"><span class="pb-num">5,413</span><div class="pb-label">Studies screened</div></div>
-        <div class="prisma-arrow"></div>
-        <div class="prisma-box"><span class="pb-num">147</span><div class="pb-label">Full texts reviewed</div></div>
-        <div class="prisma-arrow"></div>
-        <div class="prisma-box highlight"><span class="pb-num">3</span><div class="pb-label">Eligible programs</div></div>
-      </div>
-      <div class="lc anim anim-d6" style="max-width:420px; width:100%">
-        <div class="lc-label">Connection to <a href="https://www.nwo.nl/en/projects/nwa173423001" target="_blank" style="color:var(--green)">T@CKLE</a></div>
-        <div class="lc-text">Dekker&rsquo;s research shows boys deflect responsibility in awareness programs (<a href="https://journals.sagepub.com/doi/full/10.1177/1097184X241289915" target="_blank" style="color:var(--green)">Men &amp; Masculinities, 2025</a>). My review explains why: <strong>direct instruction fails; norm change works</strong>. This finding directly informs T@CKLE&rsquo;s prevention design.</div>
-      </div>
-    </div>
-  </div>
-  <div class="speaker-note">TIMING: 2 minutes. SAY: "I start every new research question the same way: with a PROSPERO-registered systematic review. Map the evidence, find the gaps, then act. Here, the question was simple: how many school-based programs prevent both dating violence AND substance use? I screened 5,413 studies across 6 databases. The answer? Three programs worldwide. And here's the paradox: the program that didn't target substance use — Green Dot — actually reduced it. The one that did — Fourth R — failed. Norm change outperforms direct instruction. That finding is directly relevant to Dr. Dekker's T@CKLE project, which is designing prevention for sexually transgressive behaviour. His own research shows boys deflect responsibility in awareness programs. My review explains why: direct instruction doesn't work. You have to change norms first." TRANSITION: "Which is the Green Dot evaluation."</div>
-</section>
-
-<!-- ═══════════════════════════════════════════════════════════
-     SLIDE 7: PAPER 2 — GREEN DOT VIDEO
+     SLIDE 6: PAPER 1 — GREEN DOT BYSTANDER TRIAL
      ═══════════════════════════════════════════════════════════ -->
 <section class="slide">
   <svg class="ripple" style="top:0;left:0" width="200" height="180" viewBox="0 0 200 180" fill="none"><path d="M0,0 Q42,42 50,95 Q55,140 38,175" stroke="#48C9B0" stroke-width="1.5" opacity="0.16"/><path d="M0,0 Q55,50 65,105 Q70,148 55,178" stroke="#48C9B0" stroke-width="1" opacity="0.10"/></svg>
   <svg class="ripple" style="top:0;right:0" width="200" height="180" viewBox="0 0 200 180" fill="none"><path d="M200,0 Q158,42 150,95 Q145,140 162,175" stroke="#48C9B0" stroke-width="1.5" opacity="0.16"/><path d="M200,0 Q145,50 135,105 Q130,148 145,178" stroke="#48C9B0" stroke-width="1" opacity="0.10"/></svg>
   <svg class="ripple" style="bottom:0;left:0" width="200" height="180" viewBox="0 0 200 180" fill="none"><path d="M0,180 Q42,138 50,85 Q55,40 38,5" stroke="#48C9B0" stroke-width="1.5" opacity="0.16"/><path d="M0,180 Q55,130 65,75 Q70,32 55,2" stroke="#48C9B0" stroke-width="1" opacity="0.10"/></svg>
   <svg class="ripple" style="bottom:0;right:0" width="200" height="180" viewBox="0 0 200 180" fill="none"><path d="M200,180 Q158,138 150,85 Q145,40 162,5" stroke="#48C9B0" stroke-width="1.5" opacity="0.16"/><path d="M200,180 Q145,130 135,75 Q130,32 145,2" stroke="#48C9B0" stroke-width="1" opacity="0.10"/></svg>
-  <div class="research-arc"><div class="arc-dot"></div><div class="arc-dot active"></div><div class="arc-dot"></div><div class="arc-dot"></div><div class="arc-dot"></div><div class="arc-dot"></div></div>
-  <div class="slide-label anim">PAPER 2 &mdash; BYSTANDER TRIAL</div>
+  <div class="research-arc"><div class="arc-dot active"></div><div class="arc-dot"></div><div class="arc-dot"></div><div class="arc-dot"></div><div class="arc-dot"></div></div>
+  <div class="slide-label anim">PAPER 1 &mdash; BYSTANDER TRIAL</div>
   <h2 class="slide-heading anim anim-d1" style="font-size:clamp(1.5rem,3vw,2.2rem); margin-bottom:14px">Green Dot: Changing Norms Takes Years</h2>
   <div class="video-container anim anim-d2">
     <video controls preload="metadata">
@@ -591,13 +545,13 @@ img { -webkit-user-drag: none; user-select: none; }
 </section>
 
 <!-- ═══════════════════════════════════════════════════════════
-     SLIDE 8: PAPER 3 — NMPOU VIDEO
+     SLIDE 7: PAPER 2 — NMPOU VIDEO
      ═══════════════════════════════════════════════════════════ -->
 <section class="slide">
   <svg class="ripple" style="top:50%;left:0;transform:translateY(-50%)" width="130" height="360" viewBox="0 0 130 360" fill="none"><path d="M0,30 Q45,80 40,170 Q35,260 0,310" stroke="#48C9B0" stroke-width="1.5" opacity="0.16"/><path d="M0,50 Q55,100 50,170 Q45,240 0,290" stroke="#48C9B0" stroke-width="1" opacity="0.10"/></svg>
   <svg class="ripple" style="top:50%;right:0;transform:translateY(-50%)" width="130" height="360" viewBox="0 0 130 360" fill="none"><path d="M130,30 Q85,80 90,170 Q95,260 130,310" stroke="#48C9B0" stroke-width="1.5" opacity="0.16"/><path d="M130,50 Q95,100 98,170 Q102,260 130,290" stroke="#48C9B0" stroke-width="1" opacity="0.10"/></svg>
-  <div class="research-arc"><div class="arc-dot"></div><div class="arc-dot"></div><div class="arc-dot active"></div><div class="arc-dot"></div><div class="arc-dot"></div><div class="arc-dot"></div></div>
-  <div class="slide-label anim">PAPER 3 &mdash; NATIONAL SURVEY</div>
+  <div class="research-arc"><div class="arc-dot"></div><div class="arc-dot active"></div><div class="arc-dot"></div><div class="arc-dot"></div><div class="arc-dot"></div></div>
+  <div class="slide-label anim">PAPER 2 &mdash; NATIONAL SURVEY</div>
   <h2 class="slide-heading anim anim-d1" style="font-size:clamp(1.5rem,3vw,2.2rem); margin-bottom:14px">Why Opioids? Bullying Is the Unique Link</h2>
   <div class="video-container anim anim-d2">
     <video controls preload="metadata">
@@ -609,17 +563,17 @@ img { -webkit-user-drag: none; user-select: none; }
 </section>
 
 <!-- ═══════════════════════════════════════════════════════════
-     SLIDE 9: THRIVE-BELIZE + MAP
+     SLIDE 8: PAPER 3 — THRIVE-BELIZE + MAP
      ═══════════════════════════════════════════════════════════ -->
 <section class="slide">
   <svg class="ripple" style="top:0;left:0" width="200" height="180" viewBox="0 0 200 180" fill="none"><path d="M0,0 Q42,42 50,95 Q55,140 38,175" stroke="#48C9B0" stroke-width="1.5" opacity="0.16"/><path d="M0,0 Q55,50 65,105 Q70,148 55,178" stroke="#48C9B0" stroke-width="1" opacity="0.10"/></svg>
   <svg class="ripple" style="top:0;right:0" width="200" height="180" viewBox="0 0 200 180" fill="none"><path d="M200,0 Q158,42 150,95 Q145,140 162,175" stroke="#48C9B0" stroke-width="1.5" opacity="0.16"/><path d="M200,0 Q145,50 135,105 Q130,148 145,178" stroke="#48C9B0" stroke-width="1" opacity="0.10"/></svg>
   <svg class="ripple" style="bottom:0;left:0" width="200" height="180" viewBox="0 0 200 180" fill="none"><path d="M0,180 Q42,138 50,85 Q55,40 38,5" stroke="#48C9B0" stroke-width="1.5" opacity="0.16"/><path d="M0,180 Q55,130 65,75 Q70,32 55,2" stroke="#48C9B0" stroke-width="1" opacity="0.10"/></svg>
   <svg class="ripple" style="bottom:0;right:0" width="200" height="180" viewBox="0 0 200 180" fill="none"><path d="M200,180 Q158,138 150,85 Q145,40 162,5" stroke="#48C9B0" stroke-width="1.5" opacity="0.16"/><path d="M200,180 Q145,130 135,75 Q130,32 145,2" stroke="#48C9B0" stroke-width="1" opacity="0.10"/></svg>
-  <div class="research-arc"><div class="arc-dot"></div><div class="arc-dot"></div><div class="arc-dot"></div><div class="arc-dot active"></div><div class="arc-dot"></div><div class="arc-dot"></div></div>
+  <div class="research-arc"><div class="arc-dot"></div><div class="arc-dot"></div><div class="arc-dot active"></div><div class="arc-dot"></div><div class="arc-dot"></div></div>
   <div class="thrive-layout">
     <div style="text-align:left">
-      <div class="slide-label anim" style="color:var(--green)">PAPER 4 &mdash; LIFE-SKILLS INTERVENTION</div>
+      <div class="slide-label anim" style="color:var(--green)">PAPER 3 &mdash; LIFE-SKILLS INTERVENTION</div>
       <h2 class="slide-heading anim anim-d1" style="max-width:28ch; font-size:clamp(1.7rem,3.5vw,2.6rem)">THRIVE-Belize</h2>
       <p class="slide-subheading anim anim-d2" style="max-width:40ch; text-align:left">A life-skills curriculum designed <em>with</em> adolescents in Toledo District, Belize &mdash; not <em>for</em> them.</p>
       <div class="accent-line anim anim-d3" style="margin-left:0; background:var(--green)"></div>
@@ -666,15 +620,15 @@ img { -webkit-user-drag: none; user-select: none; }
 </section>
 
 <!-- ═══════════════════════════════════════════════════════════
-     SLIDE 10a: NVDRS — HIDDEN PARTNERS
+     SLIDE 9: PAPER 4 — NVDRS HIDDEN PARTNERS
      ═══════════════════════════════════════════════════════════ -->
 <section class="slide">
   <svg class="ripple" style="top:50%;left:0;transform:translateY(-50%)" width="130" height="360" viewBox="0 0 130 360" fill="none"><path d="M0,30 Q45,80 40,170 Q35,260 0,310" stroke="#48C9B0" stroke-width="1.5" opacity="0.16"/><path d="M0,50 Q55,100 50,170 Q45,240 0,290" stroke="#48C9B0" stroke-width="1" opacity="0.10"/></svg>
   <svg class="ripple" style="top:50%;right:0;transform:translateY(-50%)" width="130" height="360" viewBox="0 0 130 360" fill="none"><path d="M130,30 Q85,80 90,170 Q95,260 130,310" stroke="#48C9B0" stroke-width="1.5" opacity="0.16"/><path d="M130,50 Q95,100 98,170 Q102,260 130,290" stroke="#48C9B0" stroke-width="1" opacity="0.10"/></svg>
-  <div class="research-arc"><div class="arc-dot"></div><div class="arc-dot"></div><div class="arc-dot"></div><div class="arc-dot"></div><div class="arc-dot active"></div><div class="arc-dot"></div></div>
+  <div class="research-arc"><div class="arc-dot"></div><div class="arc-dot"></div><div class="arc-dot"></div><div class="arc-dot active"></div><div class="arc-dot"></div></div>
   <div class="paper-full">
     <div style="text-align:left">
-      <div class="slide-label anim">PAPER 5 &mdash; SURVEILLANCE &amp; TEXT ANALYSIS</div>
+      <div class="slide-label anim">PAPER 4 &mdash; SURVEILLANCE &amp; TEXT ANALYSIS</div>
       <h2 class="slide-heading anim anim-d1" style="max-width:28ch; font-size:clamp(1.6rem,3.2vw,2.4rem)">Hidden Partners</h2>
       <p class="slide-subheading anim anim-d2" style="max-width:40ch; text-align:left">Using machine learning to find intimate partner violence hidden in U.S. death records (NVDRS 2019&ndash;2023)</p>
       <div class="accent-line anim anim-d3" style="margin-left:0"></div>
@@ -721,7 +675,7 @@ img { -webkit-user-drag: none; user-select: none; }
 </section>
 
 <!-- ═══════════════════════════════════════════════════════════
-     SLIDE 13: ALIGNMENT WEB (more specific)
+     SLIDE 11: ALIGNMENT WEB
      ═══════════════════════════════════════════════════════════ -->
 <section class="slide">
   <svg class="ripple" style="top:50%;left:0;transform:translateY(-50%)" width="130" height="360" viewBox="0 0 130 360" fill="none"><path d="M0,30 Q45,80 40,170 Q35,260 0,310" stroke="#48C9B0" stroke-width="1.5" opacity="0.16"/><path d="M0,50 Q55,100 50,170 Q45,240 0,290" stroke="#48C9B0" stroke-width="1" opacity="0.10"/></svg>
@@ -781,7 +735,7 @@ img { -webkit-user-drag: none; user-select: none; }
 </section>
 
 <!-- ═══════════════════════════════════════════════════════════
-     SLIDE 14: RESEARCH PROPOSAL — TIGHTER
+     SLIDE 12: RESEARCH PROPOSAL
      ═══════════════════════════════════════════════════════════ -->
 <section class="slide">
   <svg class="ripple" style="top:0;left:0" width="200" height="180" viewBox="0 0 200 180" fill="none"><path d="M0,0 Q42,42 50,95 Q55,140 38,175" stroke="#48C9B0" stroke-width="1.5" opacity="0.16"/><path d="M0,0 Q55,50 65,105 Q70,148 55,178" stroke="#48C9B0" stroke-width="1" opacity="0.10"/></svg>
@@ -1010,7 +964,7 @@ img { -webkit-user-drag: none; user-select: none; }
 </section>
 
 <!-- ═══════════════════════════════════════════════════════════
-     SLIDE 15: TEACHING
+     SLIDE 14: TEACHING
      ═══════════════════════════════════════════════════════════ -->
 <section class="slide">
   <svg class="ripple" style="top:0;left:0" width="200" height="180" viewBox="0 0 200 180" fill="none"><path d="M0,0 Q42,42 50,95 Q55,140 38,175" stroke="#48C9B0" stroke-width="1.5" opacity="0.16"/><path d="M0,0 Q55,50 65,105 Q70,148 55,178" stroke="#48C9B0" stroke-width="1" opacity="0.10"/></svg>
@@ -1042,7 +996,7 @@ img { -webkit-user-drag: none; user-select: none; }
 </section>
 
 <!-- ═══════════════════════════════════════════════════════════
-     SLIDE 16: CLOSE
+     SLIDE 15: CLOSE
      ═══════════════════════════════════════════════════════════ -->
 <section class="slide">
   <svg class="ripple" style="top:50%;left:0;transform:translateY(-50%)" width="130" height="360" viewBox="0 0 130 360" fill="none"><path d="M0,30 Q45,80 40,170 Q35,260 0,310" stroke="#48C9B0" stroke-width="1.5" opacity="0.16"/><path d="M0,50 Q55,100 50,170 Q45,240 0,290" stroke="#48C9B0" stroke-width="1" opacity="0.10"/></svg>
@@ -1056,7 +1010,7 @@ img { -webkit-user-drag: none; user-select: none; }
 </section>
 
 <!-- ═══════════════════════════════════════════════════════════
-     SLIDE 17: THANK YOU & Q&A
+     SLIDE 16: THANK YOU & Q&A
      ═══════════════════════════════════════════════════════════ -->
 <section class="slide">
   <svg class="ripple" style="top:0;left:0" width="200" height="180" viewBox="0 0 200 180" fill="none"><path d="M0,0 Q42,42 50,95 Q55,140 38,175" stroke="#48C9B0" stroke-width="1.5" opacity="0.16"/><path d="M0,0 Q55,50 65,105 Q70,148 55,178" stroke="#48C9B0" stroke-width="1" opacity="0.10"/></svg>
@@ -1084,7 +1038,7 @@ Deaths of Despair — Case and Deaton's framework — is the thread connecting m
 </section>
 
 <!-- ═══════════════════════════════════════════════════════════
-     SLIDE 18: REFERENCES
+     SLIDE 17: REFERENCES
      ═══════════════════════════════════════════════════════════ -->
 <section class="slide" style="justify-content:flex-start; padding-top:36px; padding-bottom:24px; overflow-y:auto">
   <svg class="ripple" style="top:50%;left:0;transform:translateY(-50%)" width="130" height="360" viewBox="0 0 130 360" fill="none"><path d="M0,30 Q45,80 40,170 Q35,260 0,310" stroke="#48C9B0" stroke-width="1.5" opacity="0.16"/><path d="M0,50 Q55,100 50,170 Q45,240 0,290" stroke="#48C9B0" stroke-width="1" opacity="0.10"/></svg>
@@ -1161,7 +1115,7 @@ Deaths of Despair — Case and Deaton's framework — is the thread connecting m
 <!-- NAV -->
 <nav class="nav">
   <button class="nav-btn" id="prev-btn" aria-label="Previous"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg></button>
-  <span class="slide-counter" id="slide-counter">1 / 17</span>
+  <span class="slide-counter" id="slide-counter">1 / 16</span>
   <button class="nav-btn" id="next-btn" aria-label="Next"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></button>
   <span class="pres-timer" id="pres-timer">00:00</span>
 </nav>
