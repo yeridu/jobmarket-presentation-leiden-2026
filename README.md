@@ -1,16 +1,20 @@
 # Job Market Presentation — Leiden University 2026
 
-Single-page, scroll-based presentation website for a 30-minute postdoc job talk, purpose-built for the **Violence & Violence Prevention** group at ISGA, Leiden University.
+## [View the Live Presentation](https://yeridu.github.io/jobmarket-presentation-leiden-2026/)
+
+> Single-page, scroll-based presentation website for a 25-minute postdoc job talk, purpose-built for the **Violence & Violence Prevention** group at ISGA, Faculty of Governance and Global Affairs, Leiden University.
 
 **Mario Morales** — PhD Candidate, Health Behavior & Health Promotion, University of Arizona
 
-## Topic
+---
+
+### Talk Title
 
 *Deaths of Despair and the Prevention Science Gap: Connecting Violence, Substance Use, and Mental Health Across Borders*
 
-## Structure
+---
 
-15 slides — Three-act persuasion architecture:
+## Structure (16 slides)
 
 ### Act I — Why This Matters
 1. Deaths of Despair — opening hook
@@ -19,19 +23,28 @@ Single-page, scroll-based presentation website for a 30-minute postdoc job talk,
 
 ### Act II — What I've Done
 4. Chapter Card — "What I've Done"
-5. Research Program Overview — five interconnected studies
-6. Paper 1 — Systematic Review (DV + SU Prevention)
-7. Paper 2 — Green Dot Bystander Program (4-Year CRT)
-8. Paper 3 — NMPOU & Opioid Specificity (YRBS 2023)
-9. Paper 4 — THRIVE-Belize Feasibility Trial
-10. Paper 5 — Hidden Partners (NVDRS + NLP)
+5. Paper 1 — Green Dot Bystander Program (4-year cluster-RCT, 26 Kentucky high schools)
+6. Paper 2 — NMPOU & Opioid Specificity (YRBS 2023, 20,103 students)
+7. Paper 3 — THRIVE-Belize (life-skills curriculum, Toledo District)
+8. Paper 4 — Hidden Partners (NVDRS + NLP, pregnancy-associated deaths)
 
 ### Act III — What I'll Do With You
-11. Chapter Card — "What I'll Do — With You"
-12. Alignment Web — connections to Leiden researchers
-13. Research Proposal — three aims
-14. Teaching & Mentoring
-15. Close
+9. Chapter Card — "What I'll Do — With You"
+10. Research Proposal — three aims
+11. Alignment Web — connections to Leiden researchers
+12. Teaching & Mentoring
+13. Close
+14–16. References & supplementary slides
+
+## Features
+
+- Web Speech API narration with per-slide audio segments
+- Methods audio buttons on paper slides (5, 6, 7, 8) for committee Q&A
+- Keyboard navigation, speaker notes, fullscreen, presentation timer
+- Orange / Black / Green / Turquoise color palette
+- Water ripple SVG decorations
+- Responsive design (projector + mobile)
+- Single HTML file — no build tools required
 
 ## Keyboard Shortcuts
 
@@ -46,21 +59,12 @@ Single-page, scroll-based presentation website for a 30-minute postdoc job talk,
 
 ## Setup
 
-1. Add your photos to the `photos/` directory
-2. Open `index.html` in a browser
-3. Press `F` for fullscreen, `S` for speaker notes
-
-## Photos Needed
-
-- `photos/mario-profile.jpeg` — Professional headshot
-- `photos/belize-field.jpeg` — Fieldwork photo (optional)
-- `photos/thrive-team.jpeg` — Team photo (optional)
+1. Open `index.html` in a browser — or visit the [live site](https://yeridu.github.io/jobmarket-presentation-leiden-2026/)
+2. Press `F` for fullscreen, `S` for speaker notes
 
 ## Technical Details
 
 - Single HTML file with embedded CSS and JS
-- No build tools or npm required
 - Google Fonts (Sora + Source Sans 3) loaded from CDN
-- Responsive design (projector + mobile)
+- No npm, no build step
 - Print-friendly CSS for PDF backup
-- Navy (#1B365D) + Orange (#E8630A) dual accent color scheme
